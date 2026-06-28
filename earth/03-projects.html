@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NIC - المشاريع</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&amp;family=Tajawal:wght@300;400;500;700&amp;family=Cormorant+Garamond:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        basalt: '#1C1B19',
+                        bone: '#EFEAE0',
+                        bronze: '#B07C3A',
+                        clay: '#A9794F',
+                        greige: '#C9BEAD',
+                    },
+                    fontFamily: {
+                        headline: ['"Aref Ruqaa"', 'serif'],
+                        body: ['Tajawal', 'sans-serif'],
+                        display: ['"Cormorant Garamond"', 'serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "4px",
+                        lg: "4px",
+                        xl: "4px",
+                        full: "4px"
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #1C1B19;
+            color: #EFEAE0;
+        }
+        /* Custom scrollbar for a premium feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1C1B19; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #A9794F; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B07C3A; 
+        }
+        
+        .project-card-hover .overlay {
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+        .project-card-hover:hover .overlay {
+            opacity: 1;
+        }
+        .project-card-hover img {
+            transition: transform 0.6s ease-in-out;
+        }
+        .project-card-hover:hover img {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body class="font-body antialiased bg-basalt text-bone selection:bg-bronze selection:text-basalt flex flex-col min-h-screen">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-md border-b border-[#B07C3A]/10">
+<div class="flex flex-row-reverse justify-between items-center px-12 py-6 w-full max-w-[1920px] mx-auto">
+<!-- Brand Logo -->
+<a class="font-display text-2xl font-light tracking-[0.3em] text-[#EFEAE0] hover:opacity-80 transition-opacity" href="#">
+                NIC
+            </a>
+<!-- Navigation Links -->
+<div class="hidden md:flex flex-row-reverse space-x-reverse space-x-12 items-center">
+<a class="font-headline text-headline-sm tracking-widest text-[#EFEAE0] hover:text-[#B07C3A] transition-colors duration-300" href="#">المجموعات</a>
+<a class="font-headline text-headline-sm tracking-widest text-[#EFEAE0] hover:text-[#B07C3A] transition-colors duration-300" href="#">حاسبة التكلفة الذكية</a>
+<a class="font-headline text-headline-sm tracking-widest text-[#B07C3A] border-b border-[#B07C3A] pb-1 transition-colors duration-300" href="#">المشاريع</a>
+<a class="font-headline text-headline-sm tracking-widest text-[#EFEAE0] hover:text-[#B07C3A] transition-colors duration-300" href="#">عن العلامة</a>
+<a class="font-headline text-headline-sm tracking-widest text-[#EFEAE0] hover:text-[#B07C3A] transition-colors duration-300" href="#">اتصل بنا</a>
+</div>
+<!-- Actions -->
+<div class="flex flex-row-reverse space-x-reverse space-x-6 items-center">
+<button class="text-[#B07C3A] hover:opacity-80 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+</button>
+<button class="text-[#B07C3A] hover:opacity-80 transition-opacity active:scale-95 duration-150">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24">
+<!-- Header Section -->
+<section class="px-6 md:px-12 max-w-[1920px] mx-auto mb-16 text-center md:text-right">
+<div class="max-w-3xl">
+<h1 class="font-headline text-5xl md:text-7xl text-bronze mb-6 leading-tight">مشاريع تتحدث عن نفسها</h1>
+<p class="font-body text-lg md:text-xl text-greige leading-relaxed font-light">
+                    حيث تلتقي الأرض بالمساحة، نستعرض هنا مجموعة منتقاة من المساحات التي تعكس رؤيتنا في دمج الخزف الفاخر مع العمارة الحديثة.
+                </p>
+</div>
+</section>
+<!-- Filter Bar -->
+<section class="px-6 md:px-12 max-w-[1920px] mx-auto mb-16">
+<div class="flex flex-wrap justify-center md:justify-start gap-8 border-b border-basalt/50 pb-4">
+<button class="font-body text-lg text-bronze border-b border-bronze pb-2 transition-colors">الكل</button>
+<button class="font-body text-lg text-greige hover:text-bronze transition-colors pb-2">سكني</button>
+<button class="font-body text-lg text-greige hover:text-bronze transition-colors pb-2">تجارى</button>
+<button class="font-body text-lg text-greige hover:text-bronze transition-colors pb-2">ضيافة</button>
+<button class="font-body text-lg text-greige hover:text-bronze transition-colors pb-2">مؤسسي</button>
+</div>
+</section>
+<!-- Featured Project -->
+<section class="px-6 md:px-12 max-w-[1920px] mx-auto mb-24">
+<div class="relative group overflow-hidden rounded-sm w-full h-[60vh] md:h-[80vh]">
+<div class="absolute inset-0 bg-basalt">
+<div class="w-full h-full bg-cover bg-center transition-transform duration-1000 group-hover:scale-105" data-alt="A grand, dimly lit architectural exterior of a luxury villa at dusk, showcasing large scale ceramic cladding that resembles natural stone. Warm light spills from large windows, contrasting with the dark, moody sky. The design is sleek, modern, and monolithic, emphasizing texture and scale in a cinematic, low-key lighting setup." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLsY8up9__Lnaz033KlWDBHPivL060Tq7Nb-T8acfYW0KFEolhYyuXBlxTcG6hRCUDucOaSHivSu7feFWeRmvlx87a4Jp5Pki0jVzq0RPDyDCn0xVtdN_I_lUpW5LCgIcxUeJNi4rXLGg6O4MIAMEnHTXGJYMrTX-5C-MCWnhg-ayOCE8gZ51WZ52kJUzweGh46YKg_Zm1SF3do9Dr8KqoieAzKA7NEq6iHv4cE3NW1SY5DY1SEHfWjGTE0')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-basalt via-basalt/40 to-transparent"></div>
+</div>
+<div class="absolute bottom-0 left-0 right-0 p-8 md:p-16 flex flex-col md:flex-row md:items-end justify-between">
+<div class="mb-6 md:mb-0">
+<span class="font-body text-sm text-clay uppercase tracking-widest mb-2 block">مشروع مميز</span>
+<h2 class="font-headline text-4xl md:text-5xl text-bone mb-4">فيلا النور، البدع</h2>
+<div class="flex items-center space-x-reverse space-x-4 font-body text-greige text-sm">
+<span class="flex items-center"><span class="material-symbols-outlined text-base ml-1">location_on</span> الكويت</span>
+<span class="opacity-50">|</span>
+<span>رخام كلكتا، حجر صحراوي</span>
+</div>
+</div>
+<a class="inline-flex items-center space-x-reverse space-x-2 font-body text-bronze border border-bronze px-6 py-3 rounded-sm hover:bg-bronze hover:text-basalt transition-colors duration-300" href="#">
+<span>اقرأ القصة</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Project Grid -->
+<section class="px-6 md:px-12 max-w-[1920px] mx-auto mb-24">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Card 1 -->
+<a class="project-card-hover block group relative overflow-hidden rounded-sm aspect-[4/5] bg-basalt" href="#">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="Minimalist luxury bathroom interior featuring large format marble-effect ceramic tiles on walls and floors, soft natural light, high-end architectural photography, 'Ambientazioni' style, calm and sophisticated atmosphere." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLv1Lzs42OI1vpScckyFfpXvxNoqUGREFQrVCmGQwh8Cm1JFu04rQZ8A-tgCGsypSwvma6M6B0mxrRbNPd4JCTeCSQHNb8g0UMCIUhEWbSY3RA1KiV-bs5SVku0Exsj1zLOSwW4bf8g74Uc9s3jx9I3aW1Ce2-h4_PXE6JWenKKljzL3qjRTnPNZMxT5HKAZwi4w1o_HWOo-XFQSBGcPMtwoVW_ltn-OtyHO0hynwhvmb6I7la__BdAeulk')"></div>
+<div class="overlay absolute inset-0 bg-basalt/80 flex flex-col justify-end p-8">
+<h3 class="font-headline text-2xl text-bone mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">منتجع الرمال</h3>
+<p class="font-body text-clay text-sm mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">ضيافة</p>
+<p class="font-body text-greige text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">ترافرتين، بازلت أسود</p>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="project-card-hover block group relative overflow-hidden rounded-sm aspect-[4/5] bg-basalt" href="#">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A sophisticated corporate lobby interior with soaring ceilings, clad in dark, textured ceramic slabs. dramatic, cinematic lighting highlights the rich earthy tones of the tiles. A sleek reception desk sits prominently. The mood is powerful, modern, and museum-like." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLu0W6Lx5DOydRhsS19OBhtKlY5SkkAvfh0Kde_G9hr0ka_pz6BE-bmDWx4Rp3B0Q-pqTXxoj5EyOeT-fhbnC8K530w7NIhkv6o9Twp5EmvTkSI3Ji9eb2wknk1-wdkp6_P820NIfhnZ816ijXbK7H2L9N_terhbGxPY3s3y7IsHVCuY2opFiFza3QbDpfRV828mcrGzga7k83dJcEGpfMce1nVNHKzOWmUVrhJsTPWI1HDVKxI9Iu0wvg')"></div>
+<div class="overlay absolute inset-0 bg-basalt/80 flex flex-col justify-end p-8">
+<h3 class="font-headline text-2xl text-bone mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">مقر شركة المدار</h3>
+<p class="font-body text-clay text-sm mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">مؤسسي</p>
+<p class="font-body text-greige text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">سيراميك معدني، كونكريت</p>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="project-card-hover block group relative overflow-hidden rounded-sm aspect-[4/5] bg-basalt md:col-span-2 lg:col-span-1" href="#">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A close-up, highly textured architectural detail showing the intersection of two ceramic planes, one smooth bone-colored and one rough dark basalt. Deep shadows create a dramatic, sculptural feel. The lighting is low-key, focusing on the material quality and craftsmanship." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLta3wixC_cVx-8EgoaJAypDNiMOJhHe5Em20truNmtnYGNY7TUpr464pDhXB5odW5-nPo7qFeE4ZoLDPm3m5IPx7jOzxwv57g2YzUyKB3D4hqS8t5DYmxhlBWtqZj0yqDWk93V4U2geyjJl5ZoA_P8G9bImgvv3Tw45O4dChOm_lnlTA46j_il3YwzhoaGuWglpvwv9jM4fbq5NlCfxrlM0GDkbYl86-198iF0OppEzpW9yBfoJp1RSAhc')"></div>
+<div class="overlay absolute inset-0 bg-basalt/80 flex flex-col justify-end p-8">
+<h3 class="font-headline text-2xl text-bone mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">جناح الفن المعاصر</h3>
+<p class="font-body text-clay text-sm mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">تجارى</p>
+<p class="font-body text-greige text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">بورسلين أبيض نقي، حجر بركاني</p>
+</div>
+</a>
+<!-- Card 4 -->
+<a class="project-card-hover block group relative overflow-hidden rounded-sm aspect-[4/5] bg-basalt lg:col-span-2" href="#">
+<div class="absolute inset-0 bg-cover bg-center" data-alt="A wide, panoramic interior shot of a high-end luxury retail space. The floor is entirely clad in polished bronze-toned ceramic tiles that reflect soft, cinematic light. Dark, monolithic display plinths stand against textured clay-colored walls. The space feels warm, exclusive, and finely crafted." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLuimzOJRes4a8gH2uOWKiDDinGtfjcqE0u1ln_WYYDGKPkWSpNFSOGUFP8IEIbIAHB8AAxTEK1uTG0dhPxMx32Iixa44jXm_Y-j6ala0F14jvF8_P4fmRDostYWWMFf700nEi2O-f9hy0tUUO6yj4zHotwKr6FmoPs3uYcO7A3NnvLegIEamF5w-EefRFvK_XtTS0SfGsYwkNHP1ymWbHRv7WDRAavp9LFKN8pJ3gIbR_jhYx_hu_iCrnM')"></div>
+<div class="overlay absolute inset-0 bg-basalt/80 flex flex-col justify-end p-8">
+<h3 class="font-headline text-2xl text-bone mb-2 translate-y-4 group-hover:translate-y-0 transition-transform duration-500">بوتيك الأناقة</h3>
+<p class="font-body text-clay text-sm mb-4 translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-75">تجارى</p>
+<p class="font-body text-greige text-xs translate-y-4 group-hover:translate-y-0 transition-transform duration-500 delay-100">سيراميك برونزي، رخام أسود</p>
+</div>
+</a>
+</div>
+</section>
+<!-- Stats Bar -->
+<section class="bg-[#151412] py-20 px-6 border-y border-bronze/10 mb-24">
+<div class="max-w-[1920px] mx-auto flex flex-col md:flex-row justify-around items-center text-center space-y-12 md:space-y-0">
+<div>
+<span class="block font-headline text-5xl md:text-6xl text-bronze mb-2">+150</span>
+<span class="font-body text-lg text-greige tracking-wide">مشروع</span>
+</div>
+<div class="hidden md:block w-px h-16 bg-bronze/20"></div>
+<div>
+<span class="block font-headline text-5xl md:text-6xl text-bronze mb-2">12</span>
+<span class="font-body text-lg text-greige tracking-wide">دولة</span>
+</div>
+<div class="hidden md:block w-px h-16 bg-bronze/20"></div>
+<div>
+<span class="block font-headline text-5xl md:text-6xl text-bronze mb-2">+40</span>
+<span class="font-body text-lg text-greige tracking-wide">عام</span>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="px-6 text-center mb-12">
+<h2 class="font-headline text-3xl md:text-4xl text-bone mb-8">هل لديك مشروع؟</h2>
+<a class="inline-block font-body text-bronze border border-bronze px-8 py-4 rounded-sm hover:bg-bronze hover:text-basalt transition-colors duration-300 tracking-wide" href="#">
+                تواصل مع فريق المعماريين
+            </a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-16 px-12 mt-auto bg-[#1C1B19] border-t border-[#A9794F]/20">
+<div class="flex flex-col items-center text-center space-y-6 w-full max-w-[1920px] mx-auto">
+<!-- Brand Logo -->
+<div class="font-display text-3xl text-[#B07C3A] mb-8">
+                NIC
+            </div>
+<!-- Links -->
+<div class="flex flex-wrap justify-center gap-8 mb-8">
+<a class="font-body text-label-md text-[#C9BEAD] hover:text-[#B07C3A] transition-colors" href="#">سياسة الخصوصية</a>
+<a class="font-body text-label-md text-[#C9BEAD] hover:text-[#B07C3A] transition-colors" href="#">الشروط والأحكام</a>
+<a class="font-body text-label-md text-[#C9BEAD] hover:text-[#B07C3A] transition-colors" href="#">الأسئلة الشائعة</a>
+</div>
+<!-- Copyright -->
+<div class="font-body text-label-md text-[#C9BEAD]">
+                © 2024 National Industries Ceramics
+            </div>
+</div>
+</footer>
+</body></html>

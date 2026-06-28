@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NIC - المخزون</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&amp;family=Cormorant+Garamond:wght@400;600;700&amp;family=Tajawal:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        basalt: "#1C1B19",
+                        bone: "#EFEAE0",
+                        bronze: "#B07C3A",
+                        clay: "#A9794F",
+                        greige: "#C9BEAD",
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.25rem",
+                        "xl": "0.25rem",
+                        "full": "0.25rem"
+                    },
+                    fontFamily: {
+                        headline: ["Aref Ruqaa", "serif"],
+                        display: ["Cormorant Garamond", "serif"],
+                        body: ["Tajawal", "sans-serif"],
+                        label: ["Tajawal", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* Custom Scrollbar for a premium feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(28, 27, 25, 1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(169, 121, 79, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(176, 124, 58, 0.6);
+        }
+        
+        .glass-panel {
+            background: rgba(28, 27, 25, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(169, 121, 79, 0.15);
+        }
+    </style>
+</head>
+<body class="bg-basalt text-bone font-body antialiased min-h-screen overflow-x-hidden flex">
+<!-- SideNavBar (Shared Component) -->
+<nav class="fixed right-0 top-0 h-full w-64 border-l border-clay/30 bg-[#1C1B19] shadow-2xl flex flex-col p-6 rtl z-50">
+<!-- Brand Header -->
+<div class="flex items-center gap-4 mb-12">
+<div class="w-12 h-12 rounded bg-clay/10 border border-bronze/30 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover opacity-80 mix-blend-luminosity" data-alt="Abstract bronze and clay ceramic texture, macro shot, warm dramatic lighting, acting as a sophisticated user avatar placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbjwJrFXwuvGO9Lnn6cq3f8yP19HSIripyQxKrO8_nvPmhrE4oNua28lqtZwcq-kunW8BBFWsO6A8Chekc0xQlfBdv0UCXnJ1P_wiESctdK_0fVwSugCTRZ5DGPo-A-w4Hg1sExaY2xaf9EPXib7XVx1F_5a87KEai3ye_eVgT2T2SK5aPTGouFFwwg8UGe6ygWasuI8y2HGXplntjjqN2l5qvBAHUAXBS_8c6LrnaXv5shJ4qv6VVQlwfcfz0o84o_Ahhq0M0EWc"/>
+</div>
+<div>
+<h1 class="font-display text-2xl tracking-[0.2em] text-[#B07C3A] leading-none">NIC</h1>
+<p class="font-body text-xs text-greige mt-1">إدارة المخزون</p>
+</div>
+</div>
+<!-- Navigation Links -->
+<div class="flex flex-col gap-2 flex-grow">
+<a class="flex items-center gap-4 px-4 py-3 rounded text-[#C9BEAD] hover:text-[#EFEAE0] transition-colors hover:bg-[#A9794F]/5" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body text-sm">لوحة التحكم</span>
+</a>
+<!-- Active Nav Item -->
+<a class="flex items-center gap-4 px-4 py-3 rounded text-[#B07C3A] font-bold border-r-2 border-[#B07C3A] bg-[#A9794F]/10 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span class="font-body text-sm">المخزون</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded text-[#C9BEAD] hover:text-[#EFEAE0] transition-colors hover:bg-[#A9794F]/5" href="#">
+<span class="material-symbols-outlined">reorder</span>
+<span class="font-body text-sm">الطلبات</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded text-[#C9BEAD] hover:text-[#EFEAE0] transition-colors hover:bg-[#A9794F]/5" href="#">
+<span class="material-symbols-outlined">factory</span>
+<span class="font-body text-sm">المصنع</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded text-[#C9BEAD] hover:text-[#EFEAE0] transition-colors hover:bg-[#A9794F]/5 mt-auto" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body text-sm">الإعدادات</span>
+</a>
+</div>
+<!-- CTA -->
+<button class="mt-6 w-full py-3 px-4 bg-bronze/10 border border-bronze text-bronze rounded hover:bg-bronze hover:text-basalt transition-all duration-300 font-body text-sm flex items-center justify-center gap-2 group">
+<span class="material-symbols-outlined text-lg group-hover:scale-110 transition-transform">add</span>
+            إضافة مادة
+        </button>
+</nav>
+<!-- Main Content Canvas -->
+<main class="mr-64 w-full flex flex-col min-h-screen relative">
+<!-- Subtle Ambient Background Gradient -->
+<div class="fixed inset-0 pointer-events-none bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-clay/5 via-basalt to-basalt z-0"></div>
+<!-- TopNavBar (Shared Component) -->
+<header class="fixed top-0 left-0 right-64 h-16 border-b border-[#A9794F]/10 bg-[#1C1B19]/80 backdrop-blur-md flex justify-between items-center px-8 rtl z-40 transition-all duration-300">
+<!-- Left Side Actions -->
+<div class="flex items-center gap-6">
+<div class="relative group">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-greige group-hover:text-bronze transition-colors text-sm">search</span>
+<input class="bg-basalt border border-clay/20 text-bone text-sm rounded focus:ring-1 focus:ring-bronze focus:border-bronze block w-64 pr-10 p-2 placeholder-greige/50 transition-all" placeholder="البحث في المخزون..." type="text"/>
+</div>
+</div>
+<!-- Title & Right Side Actions -->
+<div class="flex items-center gap-8">
+<h2 class="font-display text-xl text-[#EFEAE0]">المخزون المركزي</h2>
+<div class="h-6 w-px bg-clay/20"></div>
+<div class="flex gap-4">
+<button class="text-[#C9BEAD] hover:text-[#B07C3A] transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-[#C9BEAD] hover:text-[#B07C3A] transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined">history</span>
+</button>
+<button class="text-[#C9BEAD] hover:text-[#B07C3A] transition-colors cursor-pointer active:scale-95">
+<span class="material-symbols-outlined">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="pt-24 px-8 pb-20 relative z-10 w-full max-w-7xl mx-auto flex flex-col gap-8">
+<!-- Page Header & Actions -->
+<div class="flex justify-between items-end">
+<div>
+<h1 class="font-headline text-4xl text-bone mb-2">إدارة المخزون</h1>
+<p class="font-body text-sm text-greige">نظرة شاملة على مستويات المخزون والمواد الخام والمنتجات النهائية.</p>
+</div>
+<div class="flex gap-4 items-center">
+<!-- Filters -->
+<div class="flex gap-2">
+<select class="bg-basalt border border-clay/20 text-greige text-sm rounded focus:ring-1 focus:ring-bronze focus:border-bronze py-2 pl-8 pr-4 appearance-none cursor-pointer hover:border-clay/40 transition-colors">
+<option>النوع: الكل</option>
+<option>بورسلان</option>
+<option>سيراميك حائط</option>
+<option>مواد خام</option>
+</select>
+<select class="bg-basalt border border-clay/20 text-greige text-sm rounded focus:ring-1 focus:ring-bronze focus:border-bronze py-2 pl-8 pr-4 appearance-none cursor-pointer hover:border-clay/40 transition-colors">
+<option>الحالة: الكل</option>
+<option>متوفر</option>
+<option>قارب على النفاد</option>
+<option>نافد</option>
+</select>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 border border-clay/30 text-bone hover:text-bronze hover:border-bronze rounded transition-all text-sm font-medium bg-basalt">
+<span class="material-symbols-outlined text-sm">download</span>
+                        تصدير التقرير
+                    </button>
+</div>
+</div>
+<!-- Stats Row (Bento Style) -->
+<div class="grid grid-cols-4 gap-6">
+<div class="glass-panel p-5 rounded relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-1 h-full bg-clay/20"></div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-body text-sm text-greige">إجمالي الأصناف</h3>
+<span class="material-symbols-outlined text-clay/50">category</span>
+</div>
+<div class="font-display text-3xl text-bone">1,248</div>
+</div>
+<div class="glass-panel p-5 rounded relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-1 h-full bg-bronze/30"></div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-body text-sm text-greige">المتوفر</h3>
+<span class="material-symbols-outlined text-bronze/50">check_circle</span>
+</div>
+<div class="font-display text-3xl text-bone">1,092</div>
+</div>
+<div class="glass-panel p-5 rounded relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-1 h-full bg-red-900/40"></div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-body text-sm text-greige">النافد</h3>
+<span class="material-symbols-outlined text-red-900/50">error</span>
+</div>
+<div class="font-display text-3xl text-bone">45</div>
+</div>
+<div class="glass-panel p-5 rounded relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-1 h-full bg-clay/40"></div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="font-body text-sm text-greige">قارب على النفاد</h3>
+<span class="material-symbols-outlined text-clay/50">warning</span>
+</div>
+<div class="font-display text-3xl text-bone">111</div>
+</div>
+</div>
+<!-- Inventory Table -->
+<div class="glass-panel rounded border border-clay/10 overflow-hidden">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="border-b border-clay/20 bg-basalt/50">
+<th class="py-4 px-6 font-body text-xs text-greige font-normal w-16">الصورة</th>
+<th class="py-4 px-6 font-body text-xs text-greige font-normal">المنتج / الرمز</th>
+<th class="py-4 px-6 font-body text-xs text-greige font-normal">الفئة</th>
+<th class="py-4 px-6 font-body text-xs text-greige font-normal">الكمية (م² / كرتون)</th>
+<th class="py-4 px-6 font-body text-xs text-greige font-normal">الحد الأدنى</th>
+<th class="py-4 px-6 font-body text-xs text-greige font-normal">الحالة</th>
+<th class="py-4 px-6 font-body text-xs text-greige font-normal">آخر تحديث</th>
+<th class="py-4 px-6 font-body text-xs text-greige font-normal text-center w-16">إجراء</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-clay/10">
+<!-- Row 1 -->
+<tr class="hover:bg-clay/5 transition-colors group">
+<td class="py-4 px-6">
+<div class="w-10 h-10 rounded overflow-hidden border border-clay/20">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLsXMmrPoZYY7PIz7zcC0mKwNRgOIG4wEB8UzLT5wA6aMcrab6Vc8mEl0KMVnOY-CHKWuiF5LrvrCF75Vj9bpJpeGODL3KZTMD1sHd5APr6SYStJ5JV4UzXp8vSQFOUuAx7ZH2Vm614OBvKL6fBd-busnv6XM_iShMfFcUdU4HihWr88ANuQi-wVWcd4epyztlrX3xzEX6VExFRPyOQ5f8AVbvMGI3dKZ-D83x3qrljpQIBG3o12EGGZVw"/>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="font-body text-sm text-bone mb-1">كالاكاتا بيانكو (Calacatta Bianco)</div>
+<div class="font-mono text-xs text-greige">NIC-CB-12060</div>
+</td>
+<td class="py-4 px-6">
+<span class="text-sm text-greige">بورسلان لامع</span>
+</td>
+<td class="py-4 px-6">
+<div class="font-body text-sm text-bone">4,250 م²</div>
+<div class="text-xs text-greige">1,180 كرتون</div>
+</td>
+<td class="py-4 px-6 text-sm text-greige">1,000 م²</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2 py-1 rounded text-xs border border-bronze/30 text-bronze bg-bronze/5">متوفر</span>
+</td>
+<td class="py-4 px-6 text-sm text-greige">منذ ساعتين</td>
+<td class="py-4 px-6 text-center">
+<button class="text-greige hover:text-bronze transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-clay/5 transition-colors group">
+<td class="py-4 px-6">
+<div class="w-10 h-10 rounded overflow-hidden border border-clay/20">
+<img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg"/>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="font-body text-sm text-bone mb-1">ديزرت ستون (Desert Stone)</div>
+<div class="font-mono text-xs text-greige">NIC-DS-6060</div>
+</td>
+<td class="py-4 px-6">
+<span class="text-sm text-greige">سيراميك مطفي</span>
+</td>
+<td class="py-4 px-6">
+<div class="font-body text-sm text-bone">450 م²</div>
+<div class="text-xs text-greige">125 كرتون</div>
+</td>
+<td class="py-4 px-6 text-sm text-greige">500 م²</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2 py-1 rounded text-xs border border-clay/50 text-clay bg-clay/10">قارب على النفاد</span>
+</td>
+<td class="py-4 px-6 text-sm text-greige">اليوم 09:15 ص</td>
+<td class="py-4 px-6 text-center">
+<button class="text-greige hover:text-bronze transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-clay/5 transition-colors group">
+<td class="py-4 px-6">
+<div class="w-10 h-10 rounded overflow-hidden border border-clay/20 bg-basalt flex items-center justify-center">
+<span class="material-symbols-outlined text-greige/30">image</span>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="font-body text-sm text-bone mb-1">طين أحمر إسباني (خام)</div>
+<div class="font-mono text-xs text-greige">RAW-RC-ESP-01</div>
+</td>
+<td class="py-4 px-6">
+<span class="text-sm text-greige">مواد خام</span>
+</td>
+<td class="py-4 px-6">
+<div class="font-body text-sm text-bone">12,500 طن</div>
+<div class="text-xs text-greige">-</div>
+</td>
+<td class="py-4 px-6 text-sm text-greige">5,000 طن</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2 py-1 rounded text-xs border border-bronze/30 text-bronze bg-bronze/5">متوفر</span>
+</td>
+<td class="py-4 px-6 text-sm text-greige">أمس 14:30</td>
+<td class="py-4 px-6 text-center">
+<button class="text-greige hover:text-bronze transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-clay/5 transition-colors group">
+<td class="py-4 px-6">
+<div class="w-10 h-10 rounded overflow-hidden border border-clay/20">
+<img class="w-full h-full object-cover" data-alt="Dark dramatic close up of dark grey volcanic basalt texture ceramic tile, high end architectural finish, studio lighting, 8k" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCiIsHyQ7b8WcBE2up5iW12GQdS52u8KWS6bGvFMsCRFcAdaXdTVMH136p6kGGzkV6gc2Ws3uhsaMGWKfhMbmrQlIHEXCO7U6kcPz_Qq-uNa61YdrYMqPlwiSOP9k-B3Vx9Wa9COqK--rwsvOVonS34qJwoZSTgY9II3xsi6bOoebjqm3i4x8dd1DoB2fbUqfIS18OFNLB4l3AExD2VaCDOFy_0irDeGjFWc5nuTQiBfIe3zXDZGlelMI_YhNmyMFCSNHb7RC9jcJI"/>
+</div>
+</td>
+<td class="py-4 px-6">
+<div class="font-body text-sm text-bone mb-1">بازلت أسود (Nero Basalt)</div>
+<div class="font-mono text-xs text-greige">NIC-NB-120120</div>
+</td>
+<td class="py-4 px-6">
+<span class="text-sm text-greige">بورسلان خارجي</span>
+</td>
+<td class="py-4 px-6">
+<div class="font-body text-sm text-bone">0 م²</div>
+<div class="text-xs text-greige">0 كرتون</div>
+</td>
+<td class="py-4 px-6 text-sm text-greige">800 م²</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center px-2 py-1 rounded text-xs border border-greige/30 text-greige bg-greige/5">نافد</span>
+</td>
+<td class="py-4 px-6 text-sm text-greige">منذ 3 أيام</td>
+<td class="py-4 px-6 text-center">
+<button class="text-greige hover:text-bronze transition-colors opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-sm">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- Pagination -->
+<div class="px-6 py-4 border-t border-clay/10 bg-basalt/30 flex items-center justify-between">
+<span class="text-xs text-greige">عرض 1 إلى 4 من 1,248 صنف</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-clay/20 text-greige hover:text-bronze hover:border-bronze transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-bronze text-bronze bg-bronze/10 font-body text-sm">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-clay/20 text-greige hover:text-bronze hover:border-bronze transition-colors font-body text-sm">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-clay/20 text-greige hover:text-bronze hover:border-bronze transition-colors font-body text-sm">3</button>
+<span class="w-8 h-8 flex items-center justify-center text-greige text-sm">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-clay/20 text-greige hover:text-bronze hover:border-bronze transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer (Shared Component) -->
+<footer class="absolute bottom-4 left-8 flex gap-6 items-center rtl z-10">
+<p class="font-label text-xs uppercase tracking-widest text-[#C9BEAD]">© ٢٠٢٤ شركة الصناعات الوطنية - القسم الحرفي</p>
+<div class="flex gap-4">
+<a class="font-label text-xs uppercase tracking-widest text-[#C9BEAD] hover:text-[#B07C3A] transition-opacity duration-200" href="#">الدعم الفني</a>
+<a class="font-label text-xs uppercase tracking-widest text-[#C9BEAD] hover:text-[#B07C3A] transition-opacity duration-200" href="#">سياسة الخصوصية</a>
+</div>
+</footer>
+</main>
+</body></html>

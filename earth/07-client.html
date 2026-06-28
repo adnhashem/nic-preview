@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>نظرة عامة - شركة الكويت الوطنية لصناعة السيراميك</title>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&amp;family=Tajawal:wght@300;400;500;700&amp;family=Cormorant+Garamond:wght@300;400;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        basalt: "#1C1B19",
+                        bone: "#EFEAE0",
+                        bronze: "#B07C3A",
+                        clay: "#A9794F",
+                        greige: "#C9BEAD",
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem", // 4px
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        headline: ["Aref Ruqaa", "serif"],
+                        display: ["Cormorant Garamond", "serif"],
+                        body: ["Tajawal", "sans-serif"],
+                        label: ["Tajawal", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #1C1B19;
+            color: #EFEAE0;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(239, 234, 224, 0.02);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        /* Custom Scrollbar for a premium feel */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1C1B19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(176, 124, 58, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(176, 124, 58, 0.6);
+        }
+    </style>
+</head>
+<body class="font-body text-bone bg-basalt min-h-screen flex flex-col md:flex-row antialiased overflow-x-hidden">
+<!-- SideNavBar (from JSON) -->
+<nav class="hidden md:flex fixed right-0 top-0 h-full flex-col pt-20 px-4 rtl bg-[#1C1B19] text-[#B07C3A] font-body text-sm text-[#EFEAE0] w-64 border-l border-[#B07C3A]/10 z-50 transition-all duration-300 ease-in-out">
+<div class="font-display text-bone text-lg mb-8 tracking-[0.2em] font-light text-center w-full">NIC</div>
+<!-- User Profile Area -->
+<div class="flex items-center gap-3 mb-12 px-4">
+<div class="w-10 h-10 rounded-full border border-bronze/30 overflow-hidden flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="A cinematic, low-light portrait of a distinguished professional Middle Eastern man wearing traditional Kuwaiti attire (dishdasha and gutra). He has a calm, confident expression. The background is a dark, abstract texture with subtle, warm bronze side lighting casting elegant shadows, emphasizing a premium, artisanal aesthetic. High-end editorial style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDersl5AP33mpPMQtJqEOi5ulnF-PQb28Ko5Tnan12zqpFQIEb2_w98fguaMztwTN-g3qDHUbW1gATuWlJrQ56j1sb3bC8Odwz1-jnv1MB8tj6v83_odGNxS4nu6kXg-OH8MoNprUWHa8QV6lY0dPGdVTZCDqJ96UEAPgT99lVqoungaQqgOv61gnqo1ttIGzKzLObZqpp4oxPLd8saj2DzWHQnptDL_KD5me-pOti7rf2j2w1j72GOsW7rc_B2c6OG3jyeyj8tDUw"/>
+</div>
+<div class="flex flex-col">
+<span class="font-headline text-bone tracking-wide text-base">ناصر الحِميد</span>
+<span class="text-clay text-xs">عميل مميز</span>
+</div>
+</div>
+<ul class="flex flex-col gap-2 w-full">
+<!-- Active Tab -->
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-[#B07C3A]/10 text-[#B07C3A] border-r-2 border-[#B07C3A] font-medium transition-all duration-300" href="#">
+<span class="material-symbols-outlined text-[20px]">dashboard</span>
+<span>نظرة عامة</span>
+</a>
+</li>
+<!-- Inactive Tabs -->
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#C9BEAD] hover:bg-[#1C1B19]/50 hover:text-[#B07C3A] hover:bg-[#B07C3A]/5 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">auto_awesome</span>
+<span>تقديرات الذكاء الاصطناعي</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#C9BEAD] hover:bg-[#1C1B19]/50 hover:text-[#B07C3A] hover:bg-[#B07C3A]/5 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">request_quote</span>
+<span>طلبات العروض</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#C9BEAD] hover:bg-[#1C1B19]/50 hover:text-[#B07C3A] hover:bg-[#B07C3A]/5 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">texture</span>
+<span>طلبات العينات</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#C9BEAD] hover:bg-[#1C1B19]/50 hover:text-[#B07C3A] hover:bg-[#B07C3A]/5 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">bookmark</span>
+<span>العناصر المحفوظة</span>
+</a>
+</li>
+<li class="mt-auto mb-4">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-[#C9BEAD] hover:bg-[#1C1B19]/50 hover:text-[#B07C3A] hover:bg-[#B07C3A]/5 transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined text-[20px]">settings</span>
+<span>الإعدادات</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- TopNavBar (Mobile Only) -->
+<header class="md:hidden sticky top-0 z-50 bg-[#1C1B19] border-b border-[#B07C3A]/20 w-full flex justify-between items-center px-6 py-4 flex-row-reverse">
+<div class="font-display text-2xl font-light tracking-[0.2em] text-[#EFEAE0]">NIC</div>
+<div class="flex gap-4">
+<button class="text-[#EFEAE0]/70 hover:text-[#B07C3A] transition-colors duration-300 scale-95 hover:scale-100">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="text-[#EFEAE0]/70 hover:text-[#B07C3A] transition-colors duration-300 scale-95 hover:scale-100">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex-1 md:mr-64 w-full min-h-screen relative flex flex-col">
+<!-- Ambient lighting overlay (subtle radial gradient) -->
+<div class="absolute top-0 left-0 w-full h-[500px] bg-[radial-gradient(ellipse_at_top_left,_var(--tw-gradient-stops))] from-bronze/5 via-basalt/0 to-transparent pointer-events-none z-0"></div>
+<div class="flex-1 p-6 md:p-12 relative z-10 max-w-7xl mx-auto w-full">
+<!-- Page Header -->
+<header class="mb-12 flex justify-between items-end border-b border-bronze/10 pb-6">
+<div>
+<h1 class="font-headline text-4xl md:text-5xl text-bone mb-2 drop-shadow-md">أهلاً، ناصر الحِميد</h1>
+<p class="font-body text-greige text-sm md:text-base font-light tracking-wide">مرحباً بك في مساحتك الخاصة، حيث تولد المشاريع من الطين والنار.</p>
+</div>
+<div class="hidden md:flex items-center gap-4">
+<button class="text-greige hover:text-bronze transition-colors duration-300 p-2 rounded-full border border-transparent hover:border-bronze/20">
+<span class="material-symbols-outlined text-[24px]">notifications</span>
+</button>
+<button class="flex items-center gap-2 text-xs font-medium text-bone bg-bronze/10 border border-bronze/30 px-4 py-2 rounded-lg hover:bg-bronze hover:text-basalt transition-all duration-300 uppercase tracking-wider">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                        مشروع جديد
+                    </button>
+</div>
+</header>
+<!-- Overview Bento Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+<!-- Stat Card 1 -->
+<div class="glass-panel border border-bronze/20 rounded-lg p-6 relative overflow-hidden group hover:border-bronze/50 transition-colors duration-500">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-bronze/5 rounded-full blur-2xl group-hover:bg-bronze/10 transition-colors duration-500 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-basalt rounded-lg border border-bronze/10 shadow-sm">
+<span class="material-symbols-outlined text-bronze text-[24px]">bookmark</span>
+</div>
+<span class="font-display text-4xl text-bone font-light leading-none">3</span>
+</div>
+<h3 class="font-headline text-lg text-bone mb-1">تقديرات محفوظة</h3>
+<p class="text-xs text-greige font-light">تنتظر المراجعة النهائية</p>
+</div>
+<!-- Stat Card 2 -->
+<div class="glass-panel border border-bronze/20 rounded-lg p-6 relative overflow-hidden group hover:border-bronze/50 transition-colors duration-500">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-bronze/5 rounded-full blur-2xl group-hover:bg-bronze/10 transition-colors duration-500 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-basalt rounded-lg border border-bronze/10 shadow-sm">
+<span class="material-symbols-outlined text-bronze text-[24px]">request_quote</span>
+</div>
+<span class="font-display text-4xl text-bone font-light leading-none">1</span>
+</div>
+<h3 class="font-headline text-lg text-bone mb-1">عروض أسعار نشطة</h3>
+<p class="text-xs text-greige font-light">قيد المعالجة من قبل فريقنا</p>
+</div>
+<!-- Stat Card 3 -->
+<div class="glass-panel border border-bronze/20 rounded-lg p-6 relative overflow-hidden group hover:border-bronze/50 transition-colors duration-500">
+<div class="absolute -right-6 -top-6 w-24 h-24 bg-bronze/5 rounded-full blur-2xl group-hover:bg-bronze/10 transition-colors duration-500 pointer-events-none"></div>
+<div class="flex justify-between items-start mb-4">
+<div class="p-2 bg-basalt rounded-lg border border-bronze/10 shadow-sm">
+<span class="material-symbols-outlined text-bronze text-[24px]">local_shipping</span>
+</div>
+<span class="font-display text-4xl text-bone font-light leading-none">2</span>
+</div>
+<h3 class="font-headline text-lg text-bone mb-1">عيّنات قيد الشحن</h3>
+<p class="text-xs text-greige font-light">ستصلك قريباً لاختبار الملمس</p>
+</div>
+</div>
+<!-- Main Content Area: Two Column Layout on Desktop -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+<!-- Left Column (Wider): Tables & Lists -->
+<div class="lg:col-span-2 flex flex-col gap-8">
+<!-- Saved AI Estimations Table -->
+<section class="flex flex-col gap-4">
+<div class="flex justify-between items-end border-b border-bronze/10 pb-2">
+<h2 class="font-headline text-2xl text-bone">تقديرات الذكاء الاصطناعي المحفوظة</h2>
+<a class="text-xs text-bronze hover:text-bone transition-colors duration-300 flex items-center gap-1" href="#">
+                                عرض الكل <span class="material-symbols-outlined text-[14px]">arrow_back</span>
+</a>
+</div>
+<div class="glass-panel border border-bronze/10 rounded-lg overflow-x-auto">
+<table class="w-full text-sm text-right">
+<thead class="text-xs text-greige bg-basalt/50 border-b border-bronze/10 uppercase font-light tracking-wide">
+<tr>
+<th class="px-6 py-4 font-normal" scope="col">اسم المشروع</th>
+<th class="px-6 py-4 font-normal" scope="col">التاريخ</th>
+<th class="px-6 py-4 font-normal" scope="col">المساحة (م٢)</th>
+<th class="px-6 py-4 font-normal" scope="col">التكلفة التقريبية</th>
+<th class="px-6 py-4 font-normal" scope="col">الحالة</th>
+<th class="px-6 py-4 font-normal text-center" scope="col">إجراء</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-bronze/5">
+<tr class="hover:bg-bronze/5 transition-colors duration-200">
+<td class="px-6 py-4 font-medium text-bone flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-bronze/50 inline-block"></span>
+                                            فيلا الياسمين
+                                        </td>
+<td class="px-6 py-4 text-greige">١٢ أكتوبر ٢٠٢٣</td>
+<td class="px-6 py-4 text-greige">٤٥٠</td>
+<td class="px-6 py-4 font-display tracking-wider text-bone">د.ك ١,٢٥٠</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-clay/10 text-clay border border-clay/20">
+                                                مسودة
+                                            </span>
+</td>
+<td class="px-6 py-4 text-center">
+<button class="text-greige hover:text-bronze transition-colors duration-300">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-bronze/5 transition-colors duration-200">
+<td class="px-6 py-4 font-medium text-bone flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-bronze/50 inline-block"></span>
+                                            مشروع السالمية
+                                        </td>
+<td class="px-6 py-4 text-greige">٠٥ أكتوبر ٢٠٢٣</td>
+<td class="px-6 py-4 text-greige">١,٢٠٠</td>
+<td class="px-6 py-4 font-display tracking-wider text-bone">د.ك ٣,٤٠٠</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-green-900/20 text-emerald-400 border border-emerald-900/30">
+                                                مكتمل
+                                            </span>
+</td>
+<td class="px-6 py-4 text-center">
+<button class="text-greige hover:text-bronze transition-colors duration-300">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-bronze/5 transition-colors duration-200">
+<td class="px-6 py-4 font-medium text-bone flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-bronze/50 inline-block"></span>
+                                            تجديد المطبخ
+                                        </td>
+<td class="px-6 py-4 text-greige">٢٨ سبتمبر ٢٠٢٣</td>
+<td class="px-6 py-4 text-greige">٤٥</td>
+<td class="px-6 py-4 font-display tracking-wider text-bone">د.ك ٢٨٠</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-clay/10 text-clay border border-clay/20">
+                                                مسودة
+                                            </span>
+</td>
+<td class="px-6 py-4 text-center">
+<button class="text-greige hover:text-bronze transition-colors duration-300">
+<span class="material-symbols-outlined text-[18px]">more_vert</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Quote Requests List -->
+<section class="flex flex-col gap-4">
+<div class="flex justify-between items-end border-b border-bronze/10 pb-2">
+<h2 class="font-headline text-2xl text-bone">طلبات عروض الأسعار</h2>
+</div>
+<div class="flex flex-col gap-3">
+<!-- List Item 1 -->
+<div class="glass-panel border border-bronze/10 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:border-bronze/30 transition-colors duration-300 group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-basalt rounded-lg border border-bronze/10 flex items-center justify-center flex-shrink-0 group-hover:bg-bronze/5 transition-colors duration-300">
+<span class="material-symbols-outlined text-bronze text-[20px]">description</span>
+</div>
+<div>
+<h4 class="font-medium text-bone text-sm">عرض سعر - رخام كالكاتا</h4>
+<p class="text-xs text-greige mt-1">رقم الطلب: #REQ-8892 • منذ يومين</p>
+</div>
+</div>
+<div class="flex items-center justify-between w-full sm:w-auto gap-4 mt-2 sm:mt-0">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-bronze/10 text-bronze border border-bronze/20">
+                                        قيد المراجعة
+                                    </span>
+<button class="text-xs text-bone hover:text-bronze border-b border-transparent hover:border-bronze transition-all duration-300">
+                                        التفاصيل
+                                    </button>
+</div>
+</div>
+<!-- List Item 2 -->
+<div class="glass-panel border border-bronze/10 rounded-lg p-4 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 hover:border-bronze/30 transition-colors duration-300 group">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 bg-basalt rounded-lg border border-bronze/10 flex items-center justify-center flex-shrink-0 group-hover:bg-bronze/5 transition-colors duration-300">
+<span class="material-symbols-outlined text-bronze text-[20px]">description</span>
+</div>
+<div>
+<h4 class="font-medium text-bone text-sm">عرض سعر - بورسلين حجري</h4>
+<p class="text-xs text-greige mt-1">رقم الطلب: #REQ-8845 • منذ أسبوع</p>
+</div>
+</div>
+<div class="flex items-center justify-between w-full sm:w-auto gap-4 mt-2 sm:mt-0">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-[#1C1B19] text-greige border border-greige/20">
+                                        تم الرد
+                                    </span>
+<button class="text-xs text-bone hover:text-bronze border-b border-transparent hover:border-bronze transition-all duration-300">
+                                        التفاصيل
+                                    </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column (Narrower): Saved Items Grid -->
+<div class="lg:col-span-1">
+<section class="flex flex-col gap-4 h-full">
+<div class="flex justify-between items-end border-b border-bronze/10 pb-2">
+<h2 class="font-headline text-2xl text-bone">المحفوظات</h2>
+<a class="text-xs text-bronze hover:text-bone transition-colors duration-300 flex items-center gap-1" href="#">
+                                الكل <span class="material-symbols-outlined text-[14px]">arrow_back</span>
+</a>
+</div>
+<!-- Masonry-style or stacked grid for products -->
+<div class="grid grid-cols-2 lg:grid-cols-1 gap-4">
+<!-- Product Item 1 -->
+<div class="group relative rounded-lg overflow-hidden border border-bronze/10 hover:border-bronze/40 transition-all duration-500 cursor-pointer">
+<div class="aspect-square lg:aspect-[4/3] w-full relative">
+<div class="absolute inset-0 bg-basalt/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+<img alt="Calacatta Bianco Tile" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AP1WRLsXMmrPoZYY7PIz7zcC0mKwNRgOIG4wEB8UzLT5wA6aMcrab6Vc8mEl0KMVnOY-CHKWuiF5LrvrCF75Vj9bpJpeGODL3KZTMD1sHd5APr6SYStJ5JV4UzXp8vSQFOUuAx7ZH2Vm614OBvKL6fBd-busnv6XM_iShMfFcUdU4HihWr88ANuQi-wVWcd4epyztlrX3xzEX6VExFRPyOQ5f8AVbvMGI3dKZ-D83x3qrljpQIBG3o12EGGZVw"/>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-basalt via-basalt/80 to-transparent z-20 translate-y-2 group-hover:translate-y-0 opacity-90 group-hover:opacity-100 transition-all duration-300">
+<h4 class="font-display text-lg text-bone">Calacatta Bianco</h4>
+<p class="text-xs text-greige font-light">مجموعة الرخام الكلاسيكي</p>
+</div>
+<button class="absolute top-3 left-3 z-20 w-8 h-8 rounded-full bg-basalt/50 backdrop-blur-sm flex items-center justify-center text-bronze border border-bronze/20 hover:bg-bronze hover:text-basalt transition-colors duration-300">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+</div>
+<!-- Product Item 2 -->
+<div class="group relative rounded-lg overflow-hidden border border-bronze/10 hover:border-bronze/40 transition-all duration-500 cursor-pointer">
+<div class="aspect-square lg:aspect-[4/3] w-full relative">
+<div class="absolute inset-0 bg-basalt/20 group-hover:bg-transparent transition-colors duration-500 z-10"></div>
+<img alt="Textured Stone Tile" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AP1WRLuimzOJRes4a8gH2uOWKiDDinGtfjcqE0u1ln_WYYDGKPkWSpNFSOGUFP8IEIbIAHB8AAxTEK1uTG0dhPxMx32Iixa44jXm_Y-j6ala0F14jvF8_P4fmRDostYWWMFf700nEi2O-f9hy0tUUO6yj4zHotwKr6FmoPs3uYcO7A3NnvLegIEamF5w-EefRFvK_XtTS0SfGsYwkNHP1ymWbHRv7WDRAavp9LFKN8pJ3gIbR_jhYx_hu_iCrnM"/>
+</div>
+<div class="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-basalt via-basalt/80 to-transparent z-20 translate-y-2 group-hover:translate-y-0 opacity-90 group-hover:opacity-100 transition-all duration-300">
+<h4 class="font-display text-lg text-bone">Desert Stone</h4>
+<p class="text-xs text-greige font-light">الملمس الطبيعي</p>
+</div>
+<button class="absolute top-3 left-3 z-20 w-8 h-8 rounded-full bg-basalt/50 backdrop-blur-sm flex items-center justify-center text-bronze border border-bronze/20 hover:bg-bronze hover:text-basalt transition-colors duration-300">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">bookmark</span>
+</button>
+</div>
+<!-- Placeholder for 'Add More' or empty state feeling -->
+<div class="lg:hidden group rounded-lg border border-dashed border-bronze/20 hover:border-bronze/50 bg-basalt flex flex-col items-center justify-center aspect-square gap-2 transition-colors duration-300 cursor-pointer">
+<span class="material-symbols-outlined text-greige group-hover:text-bronze text-[24px] transition-colors duration-300">explore</span>
+<span class="text-xs text-greige font-light">تصفح المزيد</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+</div>
+<!-- Footer (from JSON) -->
+<footer class="w-full py-6 px-12 flex flex-col md:flex-row justify-between items-center rtl bg-[#1C1B19] border-t border-[#B07C3A]/10 mt-auto z-10 relative">
+<p class="font-body text-xs text-[#C9BEAD] mb-4 md:mb-0">© ٢٠٢٤ شركة الكويت الوطنية لصناعة السيراميك. جميع الحقوق محفوظة.</p>
+<ul class="flex gap-6">
+<li><a class="font-body text-xs text-[#C9BEAD] hover:text-[#EFEAE0] transition-opacity opacity-80 hover:opacity-100" href="#">الشروط والأحكام</a></li>
+<li><a class="font-body text-xs text-[#C9BEAD] hover:text-[#EFEAE0] transition-opacity opacity-80 hover:opacity-100" href="#">سياسة الخصوصية</a></li>
+<li><a class="font-body text-xs text-[#C9BEAD] hover:text-[#EFEAE0] transition-opacity opacity-80 hover:opacity-100" href="#">اتصل بنا</a></li>
+</ul>
+</footer>
+</main>
+</body></html>

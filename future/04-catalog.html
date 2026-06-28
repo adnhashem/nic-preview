@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NIC Future Surface - الكتالوج</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700;800;900&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        graphite: "#101214",
+                        panel: "#16191C",
+                        bone: "#ECEEEF",
+                        silver: "#9FB0BC",
+                        cool: "#5FA8B8",
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem", // 8px
+                        "sm": "0.25rem",
+                        "md": "0.375rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "3xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "arabic": ["'IBM Plex Sans Arabic'", "sans-serif"],
+                        "headline": ["'Space Grotesk'", "sans-serif"],
+                        "mono": ["'Space Mono'", "monospace"],
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'IBM Plex Sans Arabic', sans-serif;
+            background-color: #101214; /* graphite */
+            color: #ECEEEF; /* bone */
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Custom scrollbar for tech look */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #101214; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #16191C; 
+            border: 1px solid rgba(159, 176, 188, 0.18);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5FA8B8; 
+        }
+
+        /* Glassmorphism/Glow effects */
+        .glass-panel {
+            background: rgba(22, 25, 28, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(159, 176, 188, 0.18);
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+        }
+        .product-card:hover {
+            box-shadow: 0 0 20px rgba(95, 168, 184, 0.15);
+            border-color: rgba(95, 168, 184, 0.4);
+            transform: translateY(-2px);
+        }
+        .product-overlay {
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .product-card:hover .product-overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-graphite text-bone min-h-screen flex flex-col rtl">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#101214] border-b border-[#9FB0BC]/18 flat no shadows">
+<div class="flex justify-between items-center w-full px-8 h-20 rtl">
+<!-- Brand -->
+<div class="flex items-center gap-8">
+<a class="font-['Space_Grotesk'] text-2xl font-bold tracking-[0.2em] text-[#ECEEEF] uppercase" href="#">NIC</a>
+<!-- Navigation Links -->
+<div class="hidden md:flex items-center gap-6">
+<a class="text-[#9FB0BC] hover:text-[#ECEEEF] transition-colors font-['IBM_Plex_Sans_Arabic'] text-sm tracking-tight hover:bg-[#5FA8B8]/10 hover:text-[#5FA8B8] transition-all px-3 py-2 rounded" href="#">الرخام</a>
+<a class="text-[#9FB0BC] hover:text-[#ECEEEF] transition-colors font-['IBM_Plex_Sans_Arabic'] text-sm tracking-tight hover:bg-[#5FA8B8]/10 hover:text-[#5FA8B8] transition-all px-3 py-2 rounded" href="#">الأحجار</a>
+<a class="text-[#9FB0BC] hover:text-[#ECEEEF] transition-colors font-['IBM_Plex_Sans_Arabic'] text-sm tracking-tight hover:bg-[#5FA8B8]/10 hover:text-[#5FA8B8] transition-all px-3 py-2 rounded" href="#">الأسمنت</a>
+<a class="text-[#9FB0BC] hover:text-[#ECEEEF] transition-colors font-['IBM_Plex_Sans_Arabic'] text-sm tracking-tight hover:bg-[#5FA8B8]/10 hover:text-[#5FA8B8] transition-all px-3 py-2 rounded" href="#">الأخشاب</a>
+<!-- Active State for current section intent if applicable, though this is catalog, maybe porcelain is active? We'll leave inactive as default unless specified -->
+<a class="text-[#5FA8B8] font-bold border-b-2 border-[#5FA8B8] pb-1 font-['IBM_Plex_Sans_Arabic'] text-sm tracking-tight px-3 py-2" href="#">البورسلان</a>
+</div>
+</div>
+<!-- Search & Actions -->
+<div class="flex items-center gap-6">
+<!-- Search Bar -->
+<div class="relative hidden sm:block">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-silver text-sm">search</span>
+<input class="bg-panel border border-silver/18 text-bone font-arabic text-sm rounded-md pl-4 pr-10 py-1.5 focus:outline-none focus:border-cool focus:ring-1 focus:ring-cool w-64 transition-all" placeholder="بحث في الكتالوج..." type="text"/>
+</div>
+<div class="flex items-center gap-4 text-[#5FA8B8]">
+<button class="hover:bg-[#5FA8B8]/10 p-2 rounded transition-all Active: scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined text-xl">account_circle</span>
+</button>
+<button class="hover:bg-[#5FA8B8]/10 p-2 rounded transition-all Active: scale-95 duration-150 ease-in-out">
+<span class="material-symbols-outlined text-xl">language</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Layout Content -->
+<!-- Note: Standard SideNavBar from JSON is skipped per layout requirements asking for a specific filtering panel on the right -->
+<div class="flex flex-1 pt-20 h-full">
+<!-- Filter Sidebar (Right) -->
+<aside class="w-72 bg-panel border-l border-silver/18 h-[calc(100vh-5rem)] sticky top-20 overflow-y-auto hidden lg:block shrink-0 p-6 flex flex-col gap-8">
+<div class="flex items-center gap-3 border-b border-silver/18 pb-4">
+<span class="material-symbols-outlined text-cool">tune</span>
+<h2 class="text-bone font-arabic font-semibold text-lg">تصفية النتائج</h2>
+</div>
+<!-- Filter Categories -->
+<!-- Type -->
+<div class="flex flex-col gap-3">
+<h3 class="text-silver font-arabic text-sm tracking-wide">النوع</h3>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded-sm bg-graphite border-silver/30 text-cool focus:ring-cool focus:ring-offset-graphite w-4 h-4" type="checkbox"/>
+<span class="text-bone text-sm group-hover:text-cool transition-colors">رخام</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded-sm bg-graphite border-silver/30 text-cool focus:ring-cool focus:ring-offset-graphite w-4 h-4" type="checkbox"/>
+<span class="text-bone text-sm group-hover:text-cool transition-colors">أحجار</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded-sm bg-graphite border-silver/30 text-cool focus:ring-cool focus:ring-offset-graphite w-4 h-4" type="checkbox"/>
+<span class="text-bone text-sm group-hover:text-cool transition-colors">أسمنت</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded-sm bg-graphite border-silver/30 text-cool focus:ring-cool focus:ring-offset-graphite w-4 h-4" type="checkbox"/>
+<span class="text-bone text-sm group-hover:text-cool transition-colors">أخشاب</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input checked="" class="form-checkbox rounded-sm bg-graphite border-silver/30 text-cool focus:ring-cool focus:ring-offset-graphite w-4 h-4" type="checkbox"/>
+<span class="text-bone text-sm group-hover:text-cool transition-colors">بورسلان</span>
+</label>
+</div>
+</div>
+<!-- Color -->
+<div class="flex flex-col gap-3">
+<h3 class="text-silver font-arabic text-sm tracking-wide">اللون</h3>
+<div class="flex flex-wrap gap-2">
+<button class="w-6 h-6 rounded-full bg-[#E5E5E5] border border-silver/30 hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-cool focus:ring-offset-2 focus:ring-offset-panel"></button>
+<button class="w-6 h-6 rounded-full bg-[#1A1A1A] border border-silver/30 hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-cool focus:ring-offset-2 focus:ring-offset-panel"></button>
+<button class="w-6 h-6 rounded-full bg-[#8B7355] border border-silver/30 hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-cool focus:ring-offset-2 focus:ring-offset-panel"></button>
+<button class="w-6 h-6 rounded-full bg-[#708090] border border-silver/30 hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-cool focus:ring-offset-2 focus:ring-offset-panel"></button>
+<button class="w-6 h-6 rounded-full bg-[#D2B48C] border border-silver/30 hover:scale-110 transition-transform focus:outline-none focus:ring-2 focus:ring-cool focus:ring-offset-2 focus:ring-offset-panel"></button>
+</div>
+</div>
+<!-- Size -->
+<div class="flex flex-col gap-3">
+<h3 class="text-silver font-arabic text-sm tracking-wide">المقاس (سم)</h3>
+<div class="grid grid-cols-2 gap-2">
+<button class="bg-graphite border border-silver/18 text-bone text-xs font-mono py-1.5 rounded hover:border-cool hover:text-cool transition-colors">60x60</button>
+<button class="bg-graphite border border-cool text-cool text-xs font-mono py-1.5 rounded bg-cool/10 transition-colors">60x120</button>
+<button class="bg-graphite border border-silver/18 text-bone text-xs font-mono py-1.5 rounded hover:border-cool hover:text-cool transition-colors">80x80</button>
+<button class="bg-graphite border border-silver/18 text-bone text-xs font-mono py-1.5 rounded hover:border-cool hover:text-cool transition-colors">120x120</button>
+<button class="bg-graphite border border-silver/18 text-bone text-xs font-mono py-1.5 rounded hover:border-cool hover:text-cool transition-colors">120x240</button>
+<button class="bg-graphite border border-silver/18 text-bone text-xs font-mono py-1.5 rounded hover:border-cool hover:text-cool transition-colors">160x320</button>
+</div>
+</div>
+<!-- Quality Class -->
+<div class="flex flex-col gap-3">
+<h3 class="text-silver font-arabic text-sm tracking-wide">التصنيف</h3>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded-sm bg-graphite border-silver/30 text-cool focus:ring-cool focus:ring-offset-graphite w-4 h-4" type="checkbox"/>
+<span class="text-bone text-sm font-mono group-hover:text-cool transition-colors">Class A</span>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="form-checkbox rounded-sm bg-graphite border-silver/30 text-cool focus:ring-cool focus:ring-offset-graphite w-4 h-4" type="checkbox"/>
+<span class="text-bone text-sm font-mono group-hover:text-cool transition-colors">Class B</span>
+</label>
+</div>
+</div>
+<!-- Apply/Reset -->
+<div class="mt-auto pt-6 border-t border-silver/18 flex gap-3">
+<button class="flex-1 bg-cool/10 border border-cool text-cool hover:bg-cool hover:text-graphite font-arabic text-sm py-2 rounded transition-all font-medium">تطبيق</button>
+<button class="px-4 border border-silver/18 text-silver hover:text-bone hover:border-bone font-arabic text-sm rounded transition-all">إعادة ضبط</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col min-h-[calc(100vh-5rem)]">
+<!-- Page Header -->
+<div class="px-8 py-8 border-b border-silver/18">
+<div class="flex items-end justify-between">
+<div>
+<h1 class="text-3xl font-arabic font-bold text-bone mb-2">الكتالوج</h1>
+<p class="text-silver font-arabic text-sm">استكشف مستقبل السطوح المعمارية. دقة لا متناهية وتصاميم هندسية.</p>
+</div>
+<!-- Sorting -->
+<div class="flex items-center gap-3">
+<span class="text-silver text-sm font-arabic">ترتيب حسب:</span>
+<select class="bg-panel border border-silver/18 text-bone text-sm font-arabic rounded focus:ring-cool focus:border-cool py-1.5 pl-8 pr-3 outline-none">
+<option>الأحدث</option>
+<option>المقاس: الأكبر</option>
+<option>التصنيف (A-Z)</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Product Grid -->
+<div class="p-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<div class="product-card bg-panel border border-silver/18 rounded overflow-hidden relative group">
+<div class="relative aspect-[4/5] w-full overflow-hidden bg-graphite">
+<div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="A highly detailed close-up of a luxurious dark gray porcelain tile surface featuring intricate, subtle metallic veins. High-key dramatic lighting highlights the pristine, polished texture and ultra-modern architectural finish, evoking a tech-luxe aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBmAAuFJ1FDdIm8lwSVWBEdlwEMUpcM7ADwiZDrbYuVupkTJ0vt5YEqR0eBsTSho68zg4TqfAhJjenagnO731zO4Ki4LxcEnss6GqTqJKkx1ulnvh_0zfwcBlniLDunQCmtpYRG0nPnDDF-P7U9_bWt18BW0rWbIzcKgFZ1QG5Ngln8vage0k_hXwQMJ4fL_FCZJjZp5SpuTo0EEcDQz8Z47ovIroNeTpQWyWdPKQUtONfwJQ9sqC6b1XMdCNOkMg5CUIyW4YAJZjI')"></div>
+<!-- Overlay Actions -->
+<div class="product-overlay absolute inset-0 bg-graphite/60 backdrop-blur-sm flex flex-col justify-center items-center gap-4 p-6">
+<button class="w-full bg-cool/10 border border-cool text-cool hover:bg-cool hover:text-graphite py-2.5 rounded text-sm font-arabic font-medium transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">science</span>
+                                طلب عيّنة
+                            </button>
+<button class="w-full bg-transparent border border-silver/50 text-bone hover:border-bone py-2.5 rounded text-sm font-arabic transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">psychology</span>
+                                أضف لتقدير الـAI
+                            </button>
+</div>
+</div>
+<div class="p-4 border-t border-silver/18">
+<h3 class="text-bone font-arabic font-semibold text-lg truncate">كوزميك جرافيت</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="text-silver font-mono text-xs tracking-wider">NIC-PR-001</span>
+<span class="text-cool font-mono text-xs bg-cool/10 px-2 py-0.5 rounded border border-cool/20">60x120 cm</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="product-card bg-panel border border-silver/18 rounded overflow-hidden relative group">
+<div class="relative aspect-[4/5] w-full overflow-hidden bg-graphite">
+<div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="A hyper-realistic top-down view of a stark white architectural ceramic slab with geometric, precise silver and pale blue inlays. The lighting is clinical and bright, emphasizing an advanced, pristine, tech-inspired interior surface design." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBrGaohmvN9VvBiUhchoB-OUemZfgPsiAWZQr0OFdtGw1lqlYG_qZ7TYiFx1DYO7Q_0yjOQJPQBXf5G5fmtWrjz3QtmT1ofOw38oMA7SvCHWY8Wm85slLAp539dRA1TQLQf7zxqbu-PKPsKhSDNLuwe35RPQpqVpHqdXO1ix63sPKUVyDmnEUzRWSYOzybXhh7q8eX-ehqqCTiZMgxO4NsmgdbpPhPHWCgDtXhuQw0FiJfIpcTv4LMLAL0aEoJ3KC7VzonP72GlN6I')"></div>
+<div class="product-overlay absolute inset-0 bg-graphite/60 backdrop-blur-sm flex flex-col justify-center items-center gap-4 p-6">
+<button class="w-full bg-cool/10 border border-cool text-cool hover:bg-cool hover:text-graphite py-2.5 rounded text-sm font-arabic font-medium transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">science</span>
+                                طلب عيّنة
+                            </button>
+<button class="w-full bg-transparent border border-silver/50 text-bone hover:border-bone py-2.5 rounded text-sm font-arabic transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">psychology</span>
+                                أضف لتقدير الـAI
+                            </button>
+</div>
+</div>
+<div class="p-4 border-t border-silver/18">
+<h3 class="text-bone font-arabic font-semibold text-lg truncate">ستيلار وايت</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="text-silver font-mono text-xs tracking-wider">NIC-PR-042</span>
+<span class="text-cool font-mono text-xs bg-cool/10 px-2 py-0.5 rounded border border-cool/20">120x240 cm</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="product-card bg-panel border border-silver/18 rounded overflow-hidden relative group">
+<div class="relative aspect-[4/5] w-full overflow-hidden bg-graphite">
+<div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="Detailed macro photography of a deep teal and charcoal engineered stone surface. The texture is matte with occasional sleek, reflective flecks. Ambient cool lighting creates a luxurious, moody, and highly sophisticated technological laboratory aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCrcwr8If28fSehBXyLZuYE5juqDwJ-mpeDpbmJnAFE5WNQnuy6_skALbUEmEySlrOl9aMXluCpjdpZ4dhupGyJ3STqufj_ZsB0BRtvHoHAvbvzzcI_9dThAIUJr4OZJMGXjMhvo5yZMiZnXTaReb7YpSxd6XPlzhD6vl-t19aXzUXkIOQ5_wA8x34u-ouUgF0b4QNs3oXCiDfs07UfGtKVs51d4ByGVfyY0qPQ24qjL5cHT6fZ9dfzAqkl385QaA9smLB27TQpm88')"></div>
+<div class="product-overlay absolute inset-0 bg-graphite/60 backdrop-blur-sm flex flex-col justify-center items-center gap-4 p-6">
+<button class="w-full bg-cool/10 border border-cool text-cool hover:bg-cool hover:text-graphite py-2.5 rounded text-sm font-arabic font-medium transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">science</span>
+                                طلب عيّنة
+                            </button>
+<button class="w-full bg-transparent border border-silver/50 text-bone hover:border-bone py-2.5 rounded text-sm font-arabic transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">psychology</span>
+                                أضف لتقدير الـAI
+                            </button>
+</div>
+</div>
+<div class="p-4 border-t border-silver/18">
+<h3 class="text-bone font-arabic font-semibold text-lg truncate">أوبسيديان تيل</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="text-silver font-mono text-xs tracking-wider">NIC-ST-118</span>
+<span class="text-cool font-mono text-xs bg-cool/10 px-2 py-0.5 rounded border border-cool/20">80x80 cm</span>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="product-card bg-panel border border-silver/18 rounded overflow-hidden relative group">
+<div class="relative aspect-[4/5] w-full overflow-hidden bg-graphite">
+<div class="bg-cover bg-center w-full h-full transition-transform duration-700 group-hover:scale-105" data-alt="A rendering of an ultra-modern concrete-look surface panel with visible pores and a perfectly engineered matte finish. Soft directional lighting casts micro-shadows, emphasizing the raw yet refined brutalist tech-luxe design language in a dark setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBXqVJZgYFruLq-hQDlInUrbAizoBWgJVgOlGoBoTxQMszAQvuFSwsbD5vMpZC-_En5nKOWmR6Iw3pB7xF1GpdsvbpN_1P18UwYcIb9oQx9EwZy8IglmvvIEb80jhVZboyVZWY4__MCpiMb7BaWMIbIS-pnl6KbnManzLymreO71TGQgP7E6ENDX8q6FE-2bK4kO3Xse1Dcji3R6UTcs2d7CxrCfWs80jH14pPwo0LCqzmk3XILznbs7XRZyGdRaB61qBvWqbtiaCw')"></div>
+<div class="product-overlay absolute inset-0 bg-graphite/60 backdrop-blur-sm flex flex-col justify-center items-center gap-4 p-6">
+<button class="w-full bg-cool/10 border border-cool text-cool hover:bg-cool hover:text-graphite py-2.5 rounded text-sm font-arabic font-medium transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">science</span>
+                                طلب عيّنة
+                            </button>
+<button class="w-full bg-transparent border border-silver/50 text-bone hover:border-bone py-2.5 rounded text-sm font-arabic transition-all flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">psychology</span>
+                                أضف لتقدير الـAI
+                            </button>
+</div>
+</div>
+<div class="p-4 border-t border-silver/18">
+<h3 class="text-bone font-arabic font-semibold text-lg truncate">نيو-كونكريت</h3>
+<div class="flex justify-between items-center mt-2">
+<span class="text-silver font-mono text-xs tracking-wider">NIC-CM-004</span>
+<span class="text-cool font-mono text-xs bg-cool/10 px-2 py-0.5 rounded border border-cool/20">160x320 cm</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-auto py-8 border-t border-silver/18 flex justify-center items-center gap-2">
+<button class="w-8 h-8 rounded border border-silver/18 flex items-center justify-center text-silver hover:text-bone hover:border-bone transition-all">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+<button class="w-8 h-8 rounded border border-cool bg-cool/10 text-cool font-mono text-sm flex items-center justify-center transition-all">01</button>
+<button class="w-8 h-8 rounded border border-silver/18 text-silver hover:text-bone hover:border-bone font-mono text-sm flex items-center justify-center transition-all">02</button>
+<button class="w-8 h-8 rounded border border-silver/18 text-silver hover:text-bone hover:border-bone font-mono text-sm flex items-center justify-center transition-all">03</button>
+<span class="text-silver font-mono text-sm px-1">...</span>
+<button class="w-8 h-8 rounded border border-silver/18 text-silver hover:text-bone hover:border-bone font-mono text-sm flex items-center justify-center transition-all">12</button>
+<button class="w-8 h-8 rounded border border-silver/18 flex items-center justify-center text-silver hover:text-bone hover:border-bone transition-all">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+</div>
+<!-- Footer from JSON -->
+<footer class="w-full py-12 bg-[#101214] border-t border-[#9FB0BC]/18 flat mt-auto">
+<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-3 gap-8 rtl">
+<!-- Brand & Copyright -->
+<div class="flex flex-col gap-4">
+<div class="font-['Space_Grotesk'] text-xl font-bold text-[#ECEEEF] tracking-widest">NIC</div>
+<p class="font-['IBM_Plex_Sans_Arabic'] text-xs text-[#9FB0BC] opacity-80 hover:opacity-100 transition-opacity">© 2024 شركة الكويت للصناعات الهندسية. جميع الحقوق محفوظة لـ NIC.</p>
+</div>
+<!-- Links -->
+<div class="flex flex-col gap-3">
+<a class="font-['IBM_Plex_Sans_Arabic'] text-xs text-[#9FB0BC] hover:text-[#5FA8B8] transition-colors w-fit" href="#">عن الشركة</a>
+<a class="font-['IBM_Plex_Sans_Arabic'] text-xs text-[#9FB0BC] hover:text-[#5FA8B8] transition-colors w-fit" href="#">المشاريع المعمارية</a>
+<a class="font-['IBM_Plex_Sans_Arabic'] text-xs text-[#9FB0BC] hover:text-[#5FA8B8] transition-colors w-fit" href="#">كتالوج AI</a>
+<a class="font-['IBM_Plex_Sans_Arabic'] text-xs text-[#9FB0BC] hover:text-[#5FA8B8] transition-colors w-fit" href="#">الشروط والأحكام</a>
+</div>
+<!-- Additional decorative / functional empty col for grid balance -->
+<div></div>
+</div>
+</footer>
+</main>
+</div>
+</body></html>

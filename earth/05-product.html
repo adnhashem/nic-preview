@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NIC - تفاصيل المنتج</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&amp;family=Cormorant+Garamond:wght@400;600;700&amp;family=Tajawal:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        basalt: '#1C1B19',
+                        bone: '#EFEAE0',
+                        bronze: '#B07C3A',
+                        clay: '#A9794F',
+                        greige: '#C9BEAD',
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "sm": "0.125rem",
+                        "md": "0.25rem",
+                        "lg": "0.25rem",
+                        "xl": "0.25rem",
+                        "2xl": "0.25rem",
+                        "3xl": "0.25rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        headline: ["'Aref Ruqaa'", "serif"],
+                        display: ["'Cormorant Garamond'", "serif"],
+                        body: ["'Tajawal'", "sans-serif"],
+                        label: ["'Tajawal'", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #1C1B19;
+            color: #EFEAE0;
+            font-family: 'Tajawal', sans-serif;
+        }
+        .font-headline { font-family: 'Aref Ruqaa', serif; }
+        .font-display { font-family: 'Cormorant Garamond', serif; letter-spacing: 0.2em; }
+        
+        /* Subtle texture overlay for cinematic feel */
+        .texture-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            pointer-events: none; z-index: 9999;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="bg-basalt text-bone antialiased selection:bg-bronze selection:text-basalt">
+<div class="texture-overlay"></div>
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#1C1B19]/90 backdrop-blur-md border-b border-[#B07C3A]/20 shadow-none flex flex-row-reverse justify-between items-center px-8 py-4">
+<!-- Brand -->
+<div class="font-display text-2xl tracking-[0.2em] text-[#EFEAE0]">
+            NIC
+        </div>
+<!-- Navigation Links (Web) -->
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-headline text-lg tracking-wide text-[#C9BEAD] hover:text-[#EFEAE0] transition-colors hover:bg-[#B07C3A]/5 px-4 py-2 rounded" href="#">تواصل معنا</a>
+<a class="font-headline text-lg tracking-wide text-[#C9BEAD] hover:text-[#EFEAE0] transition-colors hover:bg-[#B07C3A]/5 px-4 py-2 rounded" href="#">من نحن</a>
+<a class="font-headline text-lg tracking-wide text-[#C9BEAD] hover:text-[#EFEAE0] transition-colors hover:bg-[#B07C3A]/5 px-4 py-2 rounded" href="#">المشاريع</a>
+<a class="font-headline text-lg tracking-wide text-[#C9BEAD] hover:text-[#EFEAE0] transition-colors hover:bg-[#B07C3A]/5 px-4 py-2 rounded" href="#">حاسبة التكلفة الذكية</a>
+<a class="font-headline text-lg tracking-wide text-[#B07C3A] border-b border-[#B07C3A] pb-1 hover:bg-[#B07C3A]/5 px-4 py-2 rounded active:scale-95 duration-200" href="#">المجموعات</a>
+</div>
+<!-- Actions -->
+<div class="flex gap-4 items-center">
+<button class="text-[#B07C3A] hover:bg-[#B07C3A]/5 p-2 rounded transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="text-[#B07C3A] hover:bg-[#B07C3A]/5 p-2 rounded transition-all duration-300 active:scale-95">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-bronze p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-28 pb-20 px-6 md:px-12 max-w-screen-2xl mx-auto">
+<!-- Breadcrumb -->
+<div class="flex items-center gap-2 text-sm text-greige mb-12 font-body">
+<a class="hover:text-bone transition-colors" href="#">المجموعات</a>
+<span class="material-symbols-outlined text-[16px] text-bronze/50">chevron_left</span>
+<a class="hover:text-bone transition-colors" href="#">حجر</a>
+<span class="material-symbols-outlined text-[16px] text-bronze/50">chevron_left</span>
+<span class="text-bone">كالاكاتا بيانكو</span>
+</div>
+<!-- Product Hero Section (Two Columns) -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 mb-24">
+<!-- Right Column: Visuals -->
+<div class="flex flex-col gap-6">
+<!-- Main Image/Scene Area -->
+<div class="relative aspect-[4/5] bg-black/40 rounded border border-white/5 overflow-hidden group">
+<img alt="Ambientazione" class="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-700" src="https://lh3.googleusercontent.com/aida/AP1WRLv1Lzs42OI1vpScckyFfpXvxNoqUGREFQrVCmGQwh8Cm1JFu04rQZ8A-tgCGsypSwvma6M6B0mxrRbNPd4JCTeCSQHNb8g0UMCIUhEWbSY3RA1KiV-bs5SVku0Exsj1zLOSwW4bf8g74Uc9s3jx9I3aW1Ce2-h4_PXE6JWenKKljzL3qjRTnPNZMxT5HKAZwi4w1o_HWOo-XFQSBGcPMtwoVW_ltn-OtyHO0hynwhvmb6I7la__BdAeulk"/>
+<div class="absolute inset-0 bg-gradient-to-t from-basalt/80 to-transparent pointer-events-none"></div>
+<!-- View Toggles (Tile vs Room) -->
+<div class="absolute top-4 right-4 flex bg-basalt/80 backdrop-blur rounded border border-white/10 p-1">
+<button class="px-4 py-1.5 text-sm font-body text-bone bg-white/10 rounded-sm transition-colors">الغرفة</button>
+<button class="px-4 py-1.5 text-sm font-body text-greige hover:text-bone transition-colors">القطعة</button>
+</div>
+</div>
+<!-- Thumbnails -->
+<div class="grid grid-cols-4 gap-4">
+<button class="aspect-square bg-black/40 rounded border border-bronze/50 overflow-hidden opacity-100">
+<img class="w-full h-full object-cover" data-alt="A close-up shot of a single premium Calacatta Bianco ceramic tile. The tile features a pristine creamy white background heavily veined with subtle greys and hints of gold. Cinematic side lighting emphasizes its smooth, polished surface texture against a dark, moody background. Professional architectural product photography aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYNquLPRrghSsk__M3jbqUR86fdXWVSv5E6cvRLoMdSaLUiVsSeK8f7y0I_JkSSXkA_3BeSeYjjJ5Lr3aW2OjBicGeZk6ohMjeq1jWK4x_ToJkfzCbK32Rnz0CIroqyYmhh1Oy0w4vGv_wiEjD_9IV-sbWUv1iJjyKBnjriVArhMiiHC41gpkWF4UNiJ5fvE4ftwLAooc1_UTIqOGk6eAvqe2t_DvIB7lkO2n8jzYYfNcsa8Z2vyhChPXjh2uVIF1MH6XAhX7cHNI"/>
+</button>
+<button class="aspect-square bg-black/40 rounded border border-white/5 overflow-hidden opacity-60 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A detailed macro shot showing the edge profile and thickness of a high-end ceramic tile. The creamy white surface with subtle grey veining contrasts with the dark, raw ceramic body visible at the edge. Dramatic, moody lighting highlights the material qualities and perfect craftsmanship." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpqEyYBL_J0Fw3HnwC_oGTHZ5HoPwwZZPl0YTXRgzqvUzVuV9dMeC56QvRsXIHC6HxedomAPXDhokrZEMjJxKfdqcKX3Lq4ADZRYqgSsU9ADbPoTGCvoOlY5gR5e-6sC1wHKQrNztD6qhORo9iK2mAko1LPcDVI9nGoRR5U6nheBlx9qPVNqcV12vjrD5Q90B9_Pw3wAe6OqKfAkt5ZorJomMzaI14iFORCzP7RNezWSmTiUTjdt1os_ptmlEVLdrA4zUnIbmjjBc"/>
+</button>
+<button class="aspect-square bg-black/40 rounded border border-white/5 overflow-hidden opacity-60 hover:opacity-100 transition-opacity">
+<img class="w-full h-full object-cover" data-alt="A cinematic interior shot showing Calacatta Bianco tiles installed on a luxury bathroom floor. The polished surface reflects soft, warm light. The setting is minimal, elegant, and moody, relying on deep shadows and high contrast to emphasize the premium quality of the ceramic material." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvODk-yv2JXCWtpmmPr7OaoEb5JXBmHb102TwzU26pK77vW4qqeyetH0Rs2chRgmzGh-5T55wWH3-ONB62MPsCOTfA8eM72fV4BU1w_pnIio7hz8n12SvJ7vRAGE0U8Ej9cXcJLl2Gp3OiRpvrbtgRBJnTsn8SnGKExg1WNCHsPuAKqC0xXP4S1t-B3PmPI0beL-vez9vSAQ4Dglct6ywM8NTALNS0VkCJILgOPLvkOrwcF2KouUan7ce_-g4io5nO--mdVVwwNJ8"/>
+</button>
+</div>
+</div>
+<!-- Left Column: Info & Actions -->
+<div class="flex flex-col justify-center">
+<!-- Title & Identity -->
+<div class="mb-8 relative">
+<span class="text-bronze/60 text-sm font-body tracking-widest uppercase mb-2 block">مجموعة الرخام</span>
+<h1 class="font-headline text-5xl md:text-6xl text-bone leading-tight mb-6 relative z-10">كالاكاتا <br/>بيانكو</h1>
+<!-- Decorative Element -->
+<div class="absolute -top-4 -right-8 text-8xl text-white/5 font-display select-none pointer-events-none">NIC</div>
+</div>
+<p class="font-body text-lg text-greige leading-relaxed mb-12 max-w-md">
+                    مستوحى من أنقى مقالع إيطاليا، يجسد "كالاكاتا بيانكو" تزاوج الطين العريق والنار. عروق رمادية وذهبية تتنفس على سطح ناصع، لتمنح المساحات عمقاً سينمائياً وأناقة خالدة.
+                </p>
+<!-- Actions List -->
+<div class="flex flex-col gap-4 max-w-sm">
+<button class="w-full flex items-center justify-between border border-bronze text-bone hover:bg-bronze hover:text-basalt px-6 py-4 rounded transition-all duration-300 group">
+<span class="font-body font-medium">اطلب عينة</span>
+<span class="material-symbols-outlined text-bronze group-hover:text-basalt transition-colors">local_shipping</span>
+</button>
+<button class="w-full flex items-center justify-between border border-white/10 text-greige hover:border-bronze/50 hover:text-bone px-6 py-4 rounded transition-all duration-300 group">
+<span class="font-body font-medium">أضف لتقدير الـAI</span>
+<span class="material-symbols-outlined text-bronze/70 group-hover:text-bronze transition-colors">calculate</span>
+</button>
+<button class="w-full flex items-center justify-between border border-transparent text-greige hover:text-bone px-6 py-4 rounded transition-all duration-300 group hover:bg-white/5 mt-2">
+<span class="font-body text-sm">حمّل البيانات الفنية PDF</span>
+<span class="material-symbols-outlined text-sm">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Below Fold: Specs & Related -->
+<!-- Technical Specifications -->
+<section class="mb-24 max-w-4xl mx-auto">
+<h2 class="font-headline text-3xl text-bone mb-12 text-center relative inline-block left-1/2 -translate-x-1/2">
+                المواصفات الفنية
+                <div class="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-[1px] bg-bronze/50"></div>
+</h2>
+<div class="flex flex-col border-t border-white/10">
+<!-- Row 1 -->
+<div class="flex justify-between py-5 border-b border-white/10 hover:bg-white/5 transition-colors px-4">
+<span class="font-body text-greige">المقاس</span>
+<span class="font-body text-bone font-medium" dir="ltr">120x120 cm</span>
+</div>
+<!-- Row 2 -->
+<div class="flex justify-between py-5 border-b border-white/10 hover:bg-white/5 transition-colors px-4">
+<span class="font-body text-greige">السماكة</span>
+<span class="font-body text-bone font-medium" dir="ltr">9 mm</span>
+</div>
+<!-- Row 3 -->
+<div class="flex justify-between py-5 border-b border-white/10 hover:bg-white/5 transition-colors px-4">
+<span class="font-body text-greige">نوع السطح</span>
+<span class="font-body text-bone font-medium">مصقول (Polished)</span>
+</div>
+<!-- Row 4 -->
+<div class="flex justify-between py-5 border-b border-white/10 hover:bg-white/5 transition-colors px-4">
+<span class="font-body text-greige">مقاومة الانزلاق</span>
+<span class="font-body text-bone font-medium" dir="ltr">R9</span>
+</div>
+<!-- Row 5 -->
+<div class="flex justify-between py-5 border-b border-white/10 hover:bg-white/5 transition-colors px-4">
+<span class="font-body text-greige">فئة الجودة</span>
+<span class="font-body text-bone font-medium">النخب الأول</span>
+</div>
+<!-- Row 6 -->
+<div class="flex justify-between py-5 border-b border-white/10 hover:bg-white/5 transition-colors px-4">
+<span class="font-body text-greige">الاستخدام</span>
+<span class="font-body text-bone font-medium">داخلي (أرضيات وجدران)</span>
+</div>
+<!-- Row 7 -->
+<div class="flex justify-between py-5 border-b border-white/10 hover:bg-white/5 transition-colors px-4">
+<span class="font-body text-greige">فرق اللون</span>
+<span class="font-body text-bone font-medium" dir="ltr">V3 (متوسط)</span>
+</div>
+</div>
+</section>
+<!-- Related Products Grid -->
+<section class="border-t border-bronze/10 pt-20">
+<h2 class="font-headline text-3xl text-bone mb-12">منتجات مشابهة</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Tile 1 -->
+<a class="group block" href="#">
+<div class="aspect-square bg-black/40 rounded overflow-hidden mb-4 border border-white/5 relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105" data-alt="A single high-end ceramic tile with a dark grey, almost black, marble effect featuring striking white and gold veins. The lighting is dramatic and moody, emphasizing the polished surface against a pure black background. Luxury architectural materials aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHLL9QFtOm3_WCGHc9oscNqGR5W2kbfE3efS_m3oPCcskpjU2l0G_Qv3VnKTnDzE43XuBgHbx96CC8SEcHqvSdx57BYYeQB9uB4FwBnxSZ3Bc0JKGlb1HX7Sz4Me6ie377gh7Gjw3nYIMQME0xY-85f4GPpMf62Eh_PSiC9KOt0XErbImNbAvehsL7bGy4sxVpWD5iEUAQ7BZITSeMPZC35FwgzbeZFUM4fE4g4zIO-KHKjFlwIChBp9DQW90_Up0e3AKDAqRRxxo"/>
+<div class="absolute inset-0 bg-basalt/20 group-hover:bg-transparent transition-colors duration-500"></div>
+</div>
+<h3 class="font-headline text-xl text-bone group-hover:text-bronze transition-colors">نيرو ماركينا</h3>
+<p class="font-body text-sm text-greige mt-1">رخام داكن</p>
+</a>
+<!-- Tile 2 -->
+<a class="group block" href="#">
+<div class="aspect-square bg-black/40 rounded overflow-hidden mb-4 border border-white/5 relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105" data-alt="A single premium ceramic tile showcasing a warm beige, travertine-like stone texture. Soft, warm cinematic lighting enhances the subtle pits and earthy tones of the surface. Set against a dark background to highlight the material's rich, organic feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBefsRjat1DtW4F6EclvNsGlJSrdWaarNzPnDZlRxwtXIgnJAUUpATgEhpI2uWSN0hzbYjVz5gB18OnQDNWnT7vzNvtOoHTV8fW7NRGRmFuey4BDypbBYR4417bg0Eq_ciYkqljVH_lC3O9f8ikegY3Ru4GUAnqt2sRZicgsrEbMfxZBWy1k7GjK7VWoJKXfNV7iB0NZkpQrq6e8C8YlwMcn-1ZEpKW9vbQFPeRrY3cfVipQd6QgSyaWHHmRqWAJwVMt8dbrF-tCxw"/>
+<div class="absolute inset-0 bg-basalt/20 group-hover:bg-transparent transition-colors duration-500"></div>
+</div>
+<h3 class="font-headline text-xl text-bone group-hover:text-bronze transition-colors">ترافرتينو رومانو</h3>
+<p class="font-body text-sm text-greige mt-1">حجر طبيعي</p>
+</a>
+<!-- Tile 3 -->
+<a class="group block" href="#">
+<div class="aspect-square bg-black/40 rounded overflow-hidden mb-4 border border-white/5 relative">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-all duration-500 group-hover:scale-105" data-alt="A single luxury ceramic tile with a pure white marble effect, featuring delicate, wispy grey veining. Clean, crisp lighting highlights the flawless polished surface, contrasting beautifully with a dark, moody background. Elegant architectural aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdY4igeTUetchARyr_LyBBdwgNZD2DTnLx-FfCHDfFF9z0QWkpF_TYydV5nO8yheuDWYRtmjYZv8_aesNfeg9uVTWpFrMyehLtddIizAZjFRimHugWnAqA6bNoGTMGyAzMxgKIY-UjLjRfVDdD4H6ViemIPJNeDGZ8bL2UEu3OcTbFcBAcfBnAH4is1yBJQQyrKZoge_8iUYeyk_v3t39WBYEYPHbzirFe7s7dzK50h-1ya7ZmVDF4usW-ib2rx6-Qe4XRCcv_8ME"/>
+<div class="absolute inset-0 bg-basalt/20 group-hover:bg-transparent transition-colors duration-500"></div>
+</div>
+<h3 class="font-headline text-xl text-bone group-hover:text-bronze transition-colors">ستتواريو كلاسيك</h3>
+<p class="font-body text-sm text-greige mt-1">رخام فاتح</p>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 px-8 mt-auto bg-[#1C1B19] border-t border-[#B07C3A]/10 flat no shadows flex flex-col items-center gap-8 text-center">
+<div class="font-display text-xl text-[#EFEAE0] mb-4">
+            NIC
+        </div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-body text-sm text-[#C9BEAD] hover:text-[#EFEAE0] transition-colors opacity-80 hover:opacity-100" href="#">سياسة الخصوصية</a>
+<a class="font-body text-sm text-[#C9BEAD] hover:text-[#EFEAE0] transition-colors opacity-80 hover:opacity-100" href="#">الشروط والأحكام</a>
+<a class="font-body text-sm text-[#C9BEAD] hover:text-[#EFEAE0] transition-colors opacity-80 hover:opacity-100" href="#">الأسئلة الشائعة</a>
+<a class="font-body text-sm text-[#C9BEAD] hover:text-[#EFEAE0] transition-colors opacity-80 hover:opacity-100" href="#">فروعنا</a>
+</div>
+<div class="font-body text-sm text-[#C9BEAD] opacity-80">
+            © ٢٠٢٤ شركة الصناعات الوطنية - هوية الأرض. جميع الحقوق محفوظة.
+        </div>
+</footer>
+</body></html>

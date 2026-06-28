@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>الكتالوج - شركة الصناعات الوطنية (NIC)</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400;1,700&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;family=Tajawal:wght@200;300;400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        ivory: '#F6F1E7',
+                        ink: '#2A2420',
+                        burgundy: '#5B2433',
+                        gold: '#A9844C',
+                        mute: '#8A7D6B',
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", // 4px
+                    },
+                    fontFamily: {
+                        amiri: ['Amiri', 'serif'],
+                        tajawal: ['Tajawal', 'sans-serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F6F1E7;
+            color: #2A2420;
+            font-family: 'Tajawal', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6, .font-amiri {
+            font-family: 'Amiri', serif;
+        }
+        .font-playfair {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        /* Custom Scrollbar for side panel */
+        ::-webkit-scrollbar {
+            width: 4px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F6F1E7;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #A9844C;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5B2433;
+        }
+
+        /* Hover Reveal Overlay */
+        .product-card:hover .hover-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .hover-actions {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-ivory text-ink selection:bg-gold/30 antialiased">
+<!-- TopNavBar -->
+<header class="bg-[#F6F1E7] dark:bg-[#2A2420] border-b border-[#A9844C]/30 docked full-width top-0 z-50 sticky transition-all duration-300">
+<div class="flex flex-row-reverse justify-between items-center w-full px-12 h-20 max-w-full mx-auto">
+<!-- Logo -->
+<div class="flex-shrink-0">
+<a class="font-['Playfair_Display'] text-2xl font-bold text-[#2A2420] dark:text-[#F6F1E7] tracking-wider" href="#">
+                    NIC
+                </a>
+</div>
+<!-- Navigation Links -->
+<nav class="hidden md:flex gap-8 items-center font-['Amiri'] text-lg text-[#2A2420]">
+<a class="text-[#8A7D6B] hover:text-[#5B2433] transition-colors duration-300" href="#">الرئيسية</a>
+<a class="text-[#5B2433] border-b-2 border-[#5B2433] pb-1 opacity-80 transition-opacity" href="#">المجموعات</a>
+<a class="text-[#8A7D6B] hover:text-[#5B2433] transition-colors duration-300" href="#">عن الإرث</a>
+<a class="text-[#8A7D6B] hover:text-[#5B2433] transition-colors duration-300" href="#">المشاريع</a>
+<a class="text-[#8A7D6B] hover:text-[#5B2433] transition-colors duration-300" href="#">تواصل معنا</a>
+</nav>
+<!-- Trailing Icons -->
+<div class="flex items-center gap-4 text-[#5B2433] dark:text-[#A9844C]">
+<button class="hover:text-[#5B2433] transition-colors duration-300 p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+<button class="hover:text-[#5B2433] transition-colors duration-300 p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Header & Search -->
+<section class="py-16 px-6 md:px-12 text-center max-w-4xl mx-auto">
+<h1 class="text-5xl md:text-6xl font-bold text-burgundy mb-6 tracking-wide">الكتالوج</h1>
+<p class="text-mute mb-8 text-lg">تصفح مجموعاتنا الفاخرة من السيراميك الكويتي العريق، حيث تلتقي الأصالة المعمارية بالابتكار الخالد.</p>
+<div class="relative max-w-2xl mx-auto">
+<span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 text-gold/60">search</span>
+<input class="w-full bg-transparent border border-gold/30 rounded-DEFAULT py-3 pr-12 pl-4 text-ink focus:border-burgundy focus:ring-1 focus:ring-burgundy outline-none transition-all placeholder:text-mute/60 font-tajawal" placeholder="ابحث في الكتالوج (الرمز، الاسم، أو النمط)..." type="text"/>
+</div>
+</section>
+<!-- Main Content Wrapper -->
+<main class="max-w-[1600px] mx-auto px-6 md:px-12 pb-24 flex flex-col lg:flex-row gap-12">
+<!-- Right Sidebar (Filters) -->
+<aside class="w-full lg:w-72 flex-shrink-0 lg:sticky lg:top-28 h-fit max-h-[calc(100vh-8rem)] overflow-y-auto pl-6 border-l border-gold/20">
+<div class="mb-8">
+<h3 class="text-xl font-bold text-burgundy font-amiri mb-4 flex items-center justify-between">
+                    التصنيفات
+                    <span class="material-symbols-outlined text-sm text-gold">filter_list</span>
+</h3>
+<ul class="space-y-3 font-tajawal text-ink/80">
+<li class="flex items-center gap-3 group cursor-pointer">
+<div class="w-4 h-4 border border-gold/50 rounded-sm group-hover:border-burgundy flex items-center justify-center"></div>
+<span class="group-hover:text-burgundy transition-colors">رخام كلاسيكي</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer">
+<div class="w-4 h-4 border border-burgundy bg-burgundy/10 rounded-sm flex items-center justify-center">
+<span class="material-symbols-outlined text-[12px] text-burgundy">check</span>
+</div>
+<span class="text-burgundy font-bold">حجر طبيعي</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer">
+<div class="w-4 h-4 border border-gold/50 rounded-sm group-hover:border-burgundy flex items-center justify-center"></div>
+<span class="group-hover:text-burgundy transition-colors">أسمنتي حديث</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer">
+<div class="w-4 h-4 border border-gold/50 rounded-sm group-hover:border-burgundy flex items-center justify-center"></div>
+<span class="group-hover:text-burgundy transition-colors">خشبي دافئ</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer">
+<div class="w-4 h-4 border border-gold/50 rounded-sm group-hover:border-burgundy flex items-center justify-center"></div>
+<span class="group-hover:text-burgundy transition-colors">بورسلين عالي التحمل</span>
+</li>
+</ul>
+</div>
+<div class="w-full h-px bg-gold/20 my-6"></div>
+<div class="mb-8">
+<h3 class="text-xl font-bold text-burgundy font-amiri mb-4">الأبعاد (سم)</h3>
+<div class="grid grid-cols-2 gap-2 font-tajawal text-sm">
+<button class="border border-gold/30 rounded-DEFAULT py-2 text-ink hover:border-burgundy hover:text-burgundy transition-colors">30x60</button>
+<button class="border border-burgundy bg-burgundy/5 rounded-DEFAULT py-2 text-burgundy font-bold transition-colors">60x60</button>
+<button class="border border-gold/30 rounded-DEFAULT py-2 text-ink hover:border-burgundy hover:text-burgundy transition-colors">60x120</button>
+<button class="border border-gold/30 rounded-DEFAULT py-2 text-ink hover:border-burgundy hover:text-burgundy transition-colors">120x120</button>
+</div>
+</div>
+<div class="w-full h-px bg-gold/20 my-6"></div>
+<div class="mb-8">
+<h3 class="text-xl font-bold text-burgundy font-amiri mb-4">الاستخدام</h3>
+<ul class="space-y-3 font-tajawal text-ink/80">
+<li class="flex items-center gap-3 group cursor-pointer">
+<div class="w-4 h-4 border border-gold/50 rounded-sm group-hover:border-burgundy flex items-center justify-center"></div>
+<span class="group-hover:text-burgundy transition-colors">أرضيات داخلية</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer">
+<div class="w-4 h-4 border border-gold/50 rounded-sm group-hover:border-burgundy flex items-center justify-center"></div>
+<span class="group-hover:text-burgundy transition-colors">جدران وحوائط</span>
+</li>
+<li class="flex items-center gap-3 group cursor-pointer">
+<div class="w-4 h-4 border border-gold/50 rounded-sm group-hover:border-burgundy flex items-center justify-center"></div>
+<span class="group-hover:text-burgundy transition-colors">خارجي (مقاوم للانزلاق)</span>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Left Product Grid -->
+<div class="flex-1">
+<!-- Grid Top Bar -->
+<div class="flex justify-between items-center mb-6 text-sm text-mute font-tajawal">
+<span>عرض 1-12 من أصل 145 مجموعة</span>
+<div class="flex items-center gap-2 border border-gold/20 rounded-DEFAULT px-3 py-1">
+<span class="material-symbols-outlined text-[16px]">sort</span>
+<select class="bg-transparent border-none outline-none focus:ring-0 cursor-pointer">
+<option>الأحدث</option>
+<option>الأكثر شعبية</option>
+<option>الاسم (أ-ي)</option>
+</select>
+</div>
+</div>
+<!-- Products -->
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
+<!-- Product Card 1 -->
+<div class="product-card group relative bg-white border border-gold/20 rounded-DEFAULT overflow-hidden shadow-sm hover:shadow-md hover:border-gold/50 transition-all duration-300 flex flex-col h-full">
+<div class="relative aspect-square overflow-hidden bg-ivory p-4">
+<img alt="Ceramic Tile - Statuario Marble" class="w-full h-full object-cover rounded-sm group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg" style="object-position: 0% 0%;"/>
+<!-- Hover Actions Overlay -->
+<div class="hover-actions absolute inset-0 bg-ink/40 flex flex-col items-center justify-center gap-3 p-4 backdrop-blur-[2px]">
+<button class="w-full bg-ivory text-burgundy border border-burgundy hover:bg-burgundy hover:text-ivory font-tajawal py-2 text-sm rounded-DEFAULT transition-colors font-bold tracking-wide">
+                                اطلب عينة
+                            </button>
+<button class="w-full bg-transparent text-ivory border border-ivory/50 hover:border-ivory hover:bg-ivory/10 font-tajawal py-2 text-sm rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">view_in_ar</span>
+                                أضف لتقدير الـAI
+                            </button>
+</div>
+</div>
+<div class="p-4 bg-white flex-1 flex flex-col justify-between border-t border-gold/10 relative z-10">
+<div>
+<span class="text-xs text-mute font-tajawal mb-1 block">رخام كلاسيكي</span>
+<h4 class="font-amiri font-bold text-lg text-ink mb-1 group-hover:text-burgundy transition-colors">ستتواريو كلاسيك</h4>
+<p class="text-sm font-tajawal text-mute/80" dir="ltr">CAL-W-60120 | 60x120 cm</p>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="product-card group relative bg-white border border-gold/20 rounded-DEFAULT overflow-hidden shadow-sm hover:shadow-md hover:border-gold/50 transition-all duration-300 flex flex-col h-full">
+<div class="relative aspect-square overflow-hidden bg-ivory p-4">
+<img alt="Ceramic Tile - Desert Stone" class="w-full h-full object-cover rounded-sm group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg" style="object-position: 100% 0%;"/>
+<div class="hover-actions absolute inset-0 bg-ink/40 flex flex-col items-center justify-center gap-3 p-4 backdrop-blur-[2px]">
+<button class="w-full bg-ivory text-burgundy border border-burgundy hover:bg-burgundy hover:text-ivory font-tajawal py-2 text-sm rounded-DEFAULT transition-colors font-bold tracking-wide">
+                                اطلب عينة
+                            </button>
+<button class="w-full bg-transparent text-ivory border border-ivory/50 hover:border-ivory hover:bg-ivory/10 font-tajawal py-2 text-sm rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">view_in_ar</span>
+                                أضف لتقدير الـAI
+                            </button>
+</div>
+</div>
+<div class="p-4 bg-white flex-1 flex flex-col justify-between border-t border-gold/10 relative z-10">
+<div>
+<span class="text-xs text-mute font-tajawal mb-1 block">حجر طبيعي</span>
+<h4 class="font-amiri font-bold text-lg text-ink mb-1 group-hover:text-burgundy transition-colors">حجر الصحراء الدافئ</h4>
+<p class="text-sm font-tajawal text-mute/80" dir="ltr">STN-D-6060 | 60x60 cm</p>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="product-card group relative bg-white border border-gold/20 rounded-DEFAULT overflow-hidden shadow-sm hover:shadow-md hover:border-gold/50 transition-all duration-300 flex flex-col h-full">
+<div class="relative aspect-square overflow-hidden bg-ivory p-4">
+<img alt="Ceramic Tile - Cement Grey" class="w-full h-full object-cover rounded-sm group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg" style="object-position: 0% 100%;"/>
+<div class="hover-actions absolute inset-0 bg-ink/40 flex flex-col items-center justify-center gap-3 p-4 backdrop-blur-[2px]">
+<button class="w-full bg-ivory text-burgundy border border-burgundy hover:bg-burgundy hover:text-ivory font-tajawal py-2 text-sm rounded-DEFAULT transition-colors font-bold tracking-wide">
+                                اطلب عينة
+                            </button>
+<button class="w-full bg-transparent text-ivory border border-ivory/50 hover:border-ivory hover:bg-ivory/10 font-tajawal py-2 text-sm rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">view_in_ar</span>
+                                أضف لتقدير الـAI
+                            </button>
+</div>
+</div>
+<div class="p-4 bg-white flex-1 flex flex-col justify-between border-t border-gold/10 relative z-10">
+<div>
+<span class="text-xs text-mute font-tajawal mb-1 block">أسمنتي حديث</span>
+<h4 class="font-amiri font-bold text-lg text-ink mb-1 group-hover:text-burgundy transition-colors">كونكريت رمادي حضري</h4>
+<p class="text-sm font-tajawal text-mute/80" dir="ltr">CMT-G-120120 | 120x120 cm</p>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="product-card group relative bg-white border border-gold/20 rounded-DEFAULT overflow-hidden shadow-sm hover:shadow-md hover:border-gold/50 transition-all duration-300 flex flex-col h-full">
+<div class="relative aspect-square overflow-hidden bg-ivory p-4">
+<img alt="Ceramic Tile - Oak Wood" class="w-full h-full object-cover rounded-sm group-hover:scale-105 transition-transform duration-700 ease-out" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg" style="object-position: 100% 100%;"/>
+<div class="hover-actions absolute inset-0 bg-ink/40 flex flex-col items-center justify-center gap-3 p-4 backdrop-blur-[2px]">
+<button class="w-full bg-ivory text-burgundy border border-burgundy hover:bg-burgundy hover:text-ivory font-tajawal py-2 text-sm rounded-DEFAULT transition-colors font-bold tracking-wide">
+                                اطلب عينة
+                            </button>
+<button class="w-full bg-transparent text-ivory border border-ivory/50 hover:border-ivory hover:bg-ivory/10 font-tajawal py-2 text-sm rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">view_in_ar</span>
+                                أضف لتقدير الـAI
+                            </button>
+</div>
+</div>
+<div class="p-4 bg-white flex-1 flex flex-col justify-between border-t border-gold/10 relative z-10">
+<div>
+<span class="text-xs text-mute font-tajawal mb-1 block">خشبي دافئ</span>
+<h4 class="font-amiri font-bold text-lg text-ink mb-1 group-hover:text-burgundy transition-colors">سنديان ملكي</h4>
+<p class="text-sm font-tajawal text-mute/80" dir="ltr">WOD-O-20120 | 20x120 cm</p>
+</div>
+</div>
+</div>
+<!-- Product Card 5 (Repeated for visual fill) -->
+<div class="product-card group relative bg-white border border-gold/20 rounded-DEFAULT overflow-hidden shadow-sm hover:shadow-md hover:border-gold/50 transition-all duration-300 flex flex-col h-full">
+<div class="relative aspect-square overflow-hidden bg-ivory p-4">
+<img alt="Ceramic Tile - Statuario Dark" class="w-full h-full object-cover rounded-sm group-hover:scale-105 transition-transform duration-700 ease-out grayscale brightness-75 contrast-125" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg" style="object-position: 0% 0%;"/>
+<div class="hover-actions absolute inset-0 bg-ink/40 flex flex-col items-center justify-center gap-3 p-4 backdrop-blur-[2px]">
+<button class="w-full bg-ivory text-burgundy border border-burgundy hover:bg-burgundy hover:text-ivory font-tajawal py-2 text-sm rounded-DEFAULT transition-colors font-bold tracking-wide">
+                                اطلب عينة
+                            </button>
+<button class="w-full bg-transparent text-ivory border border-ivory/50 hover:border-ivory hover:bg-ivory/10 font-tajawal py-2 text-sm rounded-DEFAULT transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">view_in_ar</span>
+                                أضف لتقدير الـAI
+                            </button>
+</div>
+</div>
+<div class="p-4 bg-white flex-1 flex flex-col justify-between border-t border-gold/10 relative z-10">
+<div>
+<span class="text-xs text-mute font-tajawal mb-1 block">رخام كلاسيكي</span>
+<h4 class="font-amiri font-bold text-lg text-ink mb-1 group-hover:text-burgundy transition-colors">نيرو ماركينا داكن</h4>
+<p class="text-sm font-tajawal text-mute/80" dir="ltr">CAL-B-60120 | 60x120 cm</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-16 flex justify-center items-center gap-2 font-tajawal">
+<button class="w-10 h-10 border border-gold/20 rounded-DEFAULT text-mute hover:border-burgundy hover:text-burgundy transition-colors flex items-center justify-center" disabled="">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+<button class="w-10 h-10 bg-burgundy/10 border border-burgundy rounded-DEFAULT text-burgundy font-bold transition-colors flex items-center justify-center">1</button>
+<button class="w-10 h-10 border border-gold/20 rounded-DEFAULT text-ink hover:border-burgundy hover:text-burgundy transition-colors flex items-center justify-center">2</button>
+<button class="w-10 h-10 border border-gold/20 rounded-DEFAULT text-ink hover:border-burgundy hover:text-burgundy transition-colors flex items-center justify-center">3</button>
+<span class="text-mute px-2">...</span>
+<button class="w-10 h-10 border border-gold/20 rounded-DEFAULT text-ink hover:border-burgundy hover:text-burgundy transition-colors flex items-center justify-center">12</button>
+<button class="w-10 h-10 border border-gold/20 rounded-DEFAULT text-ink hover:border-burgundy hover:text-burgundy transition-colors flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">chevron_left</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-[#2A2420] dark:bg-[#1A1614] border-t-2 border-[#A9844C] full-width bottom-0">
+<div class="flex flex-col items-center py-12 px-8 gap-6 w-full max-w-7xl mx-auto">
+<div class="font-['Playfair_Display'] text-xl text-[#A9844C] mb-4 tracking-widest">
+                NIC
+            </div>
+<nav class="flex flex-wrap justify-center gap-6 font-['Tajawal'] text-sm text-[#F6F1E7]">
+<a class="text-[#8A7D6B] hover:text-[#F6F1E7] transition-all" href="#">سياسة الخصوصية</a>
+<a class="text-[#8A7D6B] hover:text-[#F6F1E7] transition-all" href="#">شروط الخدمة</a>
+<a class="text-[#A9844C] underline hover:text-[#F6F1E7] transition-all" href="#">كتالوج PDF</a>
+<a class="text-[#8A7D6B] hover:text-[#F6F1E7] transition-all" href="#">المكتب الرئيسي</a>
+</nav>
+<div class="w-16 h-px bg-[#A9844C]/30 my-2"></div>
+<p class="font-['Tajawal'] text-sm text-[#8A7D6B] text-center">
+                © ٢٠٢٤ شركة الصناعات الوطنية (NIC) - هوية الإرث. جميع الحقوق محفوظة.
+            </p>
+</div>
+</footer>
+</body></html>

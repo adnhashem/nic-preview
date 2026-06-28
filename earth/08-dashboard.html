@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NIC - لوحة القيادة</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&amp;family=Tajawal:wght@300;400;500;700&amp;family=Cormorant+Garamond:wght@400;600&amp;family=Public+Sans:wght@400;600;700&amp;family=Inter:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        basalt: "#1C1B19",
+                        basaltDark: "#16140F",
+                        bone: "#EFEAE0",
+                        bronze: "#B07C3A",
+                        clay: "#A9794F",
+                        greige: "#C9BEAD",
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "sm": "0.125rem",
+                        "md": "0.25rem",
+                        "lg": "0.25rem",
+                        "xl": "0.25rem",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        aref: ["Aref Ruqaa", "serif"],
+                        tajawal: ["Tajawal", "sans-serif"],
+                        cormorant: ["Cormorant Garamond", "serif"],
+                        headline: ["Public Sans", "sans-serif"],
+                        display: ["Public Sans", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                        label: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #1C1B19;
+            color: #EFEAE0;
+        }
+        h1, h2, h3, h4, h5, h6, .font-aref {
+            font-family: 'Aref Ruqaa', serif;
+        }
+        .nic-logo {
+            font-family: 'Cormorant Garamond', serif;
+            letter-spacing: 0.2em;
+        }
+        
+        /* Custom Scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(28, 27, 25, 1);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(176, 124, 58, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(176, 124, 58, 0.6);
+        }
+    </style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-basalt text-bone font-tajawal antialiased overflow-x-hidden">
+<!-- TopNavBar -->
+<nav class="h-20 fixed top-0 left-0 right-64 border-b border-clay/10 bg-basalt/95 backdrop-blur-md z-40 flex justify-between items-center px-8 w-[calc(100%-16rem)] rtl">
+<div class="flex items-center gap-8">
+<h1 class="font-aref text-2xl text-bone tracking-wide">لوحة القيادة</h1>
+<div class="hidden md:flex items-center gap-6">
+<button class="text-bronze font-bold border-b border-bronze pb-1 cursor-pointer transition-all">اليوم</button>
+<button class="text-greige hover:text-bone hover:bg-bronze/5 rounded-sm px-2 py-1 cursor-pointer transition-all">الأسبوع</button>
+<button class="text-greige hover:text-bone hover:bg-bronze/5 rounded-sm px-2 py-1 cursor-pointer transition-all">الشهر</button>
+<button class="text-greige hover:text-bone hover:bg-bronze/5 rounded-sm px-2 py-1 cursor-pointer transition-all">السنة</button>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button aria-label="Notifications" class="text-bronze hover:bg-bronze/10 p-2 rounded-sm transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">notifications</span>
+</button>
+<button aria-label="Search" class="text-bronze hover:bg-bronze/10 p-2 rounded-sm transition-all hidden">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">search</span>
+</button>
+<button aria-label="Account" class="text-bronze hover:bg-bronze/10 p-2 rounded-sm transition-all">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">account_circle</span>
+</button>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="h-screen w-64 fixed right-0 top-0 border-l border-clay/20 bg-basalt shadow-2xl z-50 flex flex-col rtl">
+<div class="p-8 border-b border-clay/10 mb-4 flex flex-col items-center">
+<div class="nic-logo text-3xl text-bronze mb-2 tracking-[0.2em]">NIC</div>
+<div class="font-aref text-clay/70 text-sm tracking-widest">إدارة الأرض</div>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-4 overflow-y-auto pb-8">
+<a class="flex items-center gap-3 px-4 py-3 bg-bronze/10 text-bronze border-r-2 border-bronze rounded-sm transition-all duration-300 ease-in-out group" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 1;">dashboard</span>
+<span class="font-medium">لوحة القيادة</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-bone/70 hover:text-bone hover:bg-bone/5 rounded-sm transition-all duration-300 ease-in-out border-r-2 border-transparent group" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">payments</span>
+<span>المبيعات</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-bone/70 hover:text-bone hover:bg-bone/5 rounded-sm transition-all duration-300 ease-in-out border-r-2 border-transparent group" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">group</span>
+<span>الزوّار</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-bone/70 hover:text-bone hover:bg-bone/5 rounded-sm transition-all duration-300 ease-in-out border-r-2 border-transparent group" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">category</span>
+<span> المنتجات</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-bone/70 hover:text-bone hover:bg-bone/5 rounded-sm transition-all duration-300 ease-in-out border-r-2 border-transparent group" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">inventory_2</span>
+<span>المخزون</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-bone/70 hover:text-bone hover:bg-bone/5 rounded-sm transition-all duration-300 ease-in-out border-r-2 border-transparent group" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">person</span>
+<span>العملاء</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-bone/70 hover:text-bone hover:bg-bone/5 rounded-sm transition-all duration-300 ease-in-out border-r-2 border-transparent group" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">analytics</span>
+<span>التقارير</span>
+</a>
+</nav>
+<div class="mt-auto px-4 pb-6 pt-4 border-t border-clay/10">
+<a class="flex items-center gap-3 px-4 py-3 text-bone/70 hover:text-bone hover:bg-bone/5 rounded-sm transition-all duration-300 ease-in-out" href="#">
+<span class="material-symbols-outlined text-lg" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span>الإعدادات</span>
+</a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-12 pr-8 pl-8 mr-64 min-h-screen">
+<!-- 1) KPI Card row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+<!-- KPI 1 -->
+<div class="bg-basaltDark border border-clay/10 p-6 rounded-md relative overflow-hidden group hover:border-bronze/30 transition-colors duration-500">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-bronze/5 rounded-full blur-xl group-hover:bg-bronze/10 transition-all duration-700"></div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-greige text-sm font-medium">الزوّار</h3>
+<span class="material-symbols-outlined text-bronze/60 text-xl" style="font-variation-settings: 'FILL' 0;">group</span>
+</div>
+<div class="flex items-end gap-3">
+<div class="font-aref text-3xl text-bone">12,450</div>
+<div class="flex items-center text-bronze text-sm mb-1 gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+4.2%</span>
+</div>
+</div>
+</div>
+<!-- KPI 2 -->
+<div class="bg-basaltDark border border-clay/10 p-6 rounded-md relative overflow-hidden group hover:border-bronze/30 transition-colors duration-500">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-bronze/5 rounded-full blur-xl group-hover:bg-bronze/10 transition-all duration-700"></div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-greige text-sm font-medium">متوسط قيمة المبيعات</h3>
+<span class="material-symbols-outlined text-bronze/60 text-xl" style="font-variation-settings: 'FILL' 0;">payments</span>
+</div>
+<div class="flex items-end gap-3">
+<div class="font-aref text-3xl text-bone">2,850</div>
+<span class="text-greige text-sm mb-1">د.ك</span>
+<div class="flex items-center text-bronze text-sm mb-1 gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+1.8%</span>
+</div>
+</div>
+</div>
+<!-- KPI 3 -->
+<div class="bg-basaltDark border border-clay/10 p-6 rounded-md relative overflow-hidden group hover:border-bronze/30 transition-colors duration-500">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-bronze/5 rounded-full blur-xl group-hover:bg-bronze/10 transition-all duration-700"></div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-greige text-sm font-medium">إجمالي الطلبات</h3>
+<span class="material-symbols-outlined text-bronze/60 text-xl" style="font-variation-settings: 'FILL' 0;">shopping_cart</span>
+</div>
+<div class="flex items-end gap-3">
+<div class="font-aref text-3xl text-bone">342</div>
+<div class="flex items-center text-clay/80 text-sm mb-1 gap-1">
+<span class="material-symbols-outlined text-sm">trending_down</span>
+<span>-0.5%</span>
+</div>
+</div>
+</div>
+<!-- KPI 4 -->
+<div class="bg-basaltDark border border-clay/10 p-6 rounded-md relative overflow-hidden group hover:border-bronze/30 transition-colors duration-500">
+<div class="absolute -right-4 -top-4 w-24 h-24 bg-bronze/5 rounded-full blur-xl group-hover:bg-bronze/10 transition-all duration-700"></div>
+<div class="flex justify-between items-start mb-4">
+<h3 class="text-greige text-sm font-medium">معدل التحويل</h3>
+<span class="material-symbols-outlined text-bronze/60 text-xl" style="font-variation-settings: 'FILL' 0;">monitoring</span>
+</div>
+<div class="flex items-end gap-3">
+<div class="font-aref text-3xl text-bone">2.7%</div>
+<div class="flex items-center text-bronze text-sm mb-1 gap-1">
+<span class="material-symbols-outlined text-sm">trending_up</span>
+<span>+0.3%</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Bento Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+<!-- 2) Large Line Chart (Spans 2 columns) -->
+<div class="bg-basaltDark border border-clay/10 p-6 rounded-md lg:col-span-2 flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-aref text-xl text-bone tracking-wide">المبيعات والزوّار بمرور الوقت</h2>
+<div class="flex gap-4 items-center">
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-bronze"></div>
+<span class="text-xs text-greige">المبيعات</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-clay"></div>
+<span class="text-xs text-greige">الزوّار</span>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full h-64 relative">
+<canvas id="salesChart"></canvas>
+</div>
+</div>
+<!-- 3) Visitors by Country -->
+<div class="bg-basaltDark border border-clay/10 p-6 rounded-md flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-aref text-xl text-bone tracking-wide">الزوّار حسب الدولة</h2>
+<span class="material-symbols-outlined text-clay/50 text-xl" style="font-variation-settings: 'FILL' 0;">public</span>
+</div>
+<div class="flex flex-col gap-5 flex-1 justify-center">
+<!-- Country 1 -->
+<div class="w-full">
+<div class="flex justify-between text-sm mb-2">
+<span class="text-bone font-medium">الكويت</span>
+<span class="text-bronze font-aref">65%</span>
+</div>
+<div class="w-full h-1 bg-basalt rounded-full overflow-hidden">
+<div class="h-full bg-bronze rounded-full" style="width: 65%"></div>
+</div>
+</div>
+<!-- Country 2 -->
+<div class="w-full">
+<div class="flex justify-between text-sm mb-2">
+<span class="text-greige">السعودية</span>
+<span class="text-clay/80 font-aref">15%</span>
+</div>
+<div class="w-full h-1 bg-basalt rounded-full overflow-hidden">
+<div class="h-full bg-clay/80 rounded-full" style="width: 15%"></div>
+</div>
+</div>
+<!-- Country 3 -->
+<div class="w-full">
+<div class="flex justify-between text-sm mb-2">
+<span class="text-greige">الإمارات</span>
+<span class="text-clay/60 font-aref">10%</span>
+</div>
+<div class="w-full h-1 bg-basalt rounded-full overflow-hidden">
+<div class="h-full bg-clay/60 rounded-full" style="width: 10%"></div>
+</div>
+</div>
+<!-- Country 4 -->
+<div class="w-full">
+<div class="flex justify-between text-sm mb-2">
+<span class="text-greige/70">قطر</span>
+<span class="text-clay/40 font-aref">6%</span>
+</div>
+<div class="w-full h-1 bg-basalt rounded-full overflow-hidden">
+<div class="h-full bg-clay/40 rounded-full" style="width: 6%"></div>
+</div>
+</div>
+<!-- Country 5 -->
+<div class="w-full">
+<div class="flex justify-between text-sm mb-2">
+<span class="text-greige/50">أخرى</span>
+<span class="text-clay/30 font-aref">4%</span>
+</div>
+<div class="w-full h-1 bg-basalt rounded-full overflow-hidden">
+<div class="h-full bg-clay/30 rounded-full" style="width: 4%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- 4) Top Selling Products (Spans 2 columns) -->
+<div class="bg-basaltDark border border-clay/10 p-0 rounded-md lg:col-span-2 overflow-hidden flex flex-col">
+<div class="p-6 border-b border-clay/10 flex justify-between items-center">
+<h2 class="font-aref text-xl text-bone tracking-wide">المنتجات الأكثر مبيعاً</h2>
+<button class="text-xs text-bronze hover:text-bone transition-colors border border-bronze/30 hover:border-bronze px-3 py-1.5 rounded-sm">عرض الكل</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="text-xs text-greige border-b border-clay/5 bg-basalt/50">
+<th class="py-4 px-6 font-medium">المنتج</th>
+<th class="py-4 px-6 font-medium">الفئة</th>
+<th class="py-4 px-6 font-medium">السعر</th>
+<th class="py-4 px-6 font-medium">الكمية المباعة</th>
+<th class="py-4 px-6 font-medium">العائد</th>
+</tr>
+</thead>
+<tbody class="text-sm">
+<tr class="border-b border-clay/5 hover:bg-bronze/5 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-sm overflow-hidden border border-clay/20 bg-basalt">
+<img alt="Calacatta Bianco Tile" class="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLsXMmrPoZYY7PIz7zcC0mKwNRgOIG4wEB8UzLT5wA6aMcrab6Vc8mEl0KMVnOY-CHKWuiF5LrvrCF75Vj9bpJpeGODL3KZTMD1sHd5APr6SYStJ5JV4UzXp8vSQFOUuAx7ZH2Vm614OBvKL6fBd-busnv6XM_iShMfFcUdU4HihWr88ANuQi-wVWcd4epyztlrX3xzEX6VExFRPyOQ5f8AVbvMGI3dKZ-D83x3qrljpQIBG3o12EGGZVw"/>
+</div>
+<div>
+<div class="text-bone font-medium">Calacatta Bianco</div>
+<div class="text-xs text-greige/70 font-cormorant tracking-widest mt-0.5">MARBLE EFFECT</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-greige">سيراميك أرضيات</td>
+<td class="py-4 px-6 font-aref text-bone">18.5 د.ك</td>
+<td class="py-4 px-6 text-bone">1,245 <span class="text-xs text-greige/50 ml-1">م²</span></td>
+<td class="py-4 px-6 font-aref text-bronze">23,032 د.ك</td>
+</tr>
+<tr class="border-b border-clay/5 hover:bg-bronze/5 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-sm overflow-hidden border border-clay/20 bg-basalt relative">
+<!-- Using IMAGE_21 but focusing on one part via object-position for demonstration, though it's a collage -->
+<img alt="Desert Stone Tile" class="w-full h-full object-cover object-top grayscale-[20%] group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg"/>
+</div>
+<div>
+<div class="text-bone font-medium">Desert Stone</div>
+<div class="text-xs text-greige/70 font-cormorant tracking-widest mt-0.5">NATURAL TEXTURE</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-greige">حجر خارجي</td>
+<td class="py-4 px-6 font-aref text-bone">14.0 د.ك</td>
+<td class="py-4 px-6 text-bone">890 <span class="text-xs text-greige/50 ml-1">م²</span></td>
+<td class="py-4 px-6 font-aref text-bronze">12,460 د.ك</td>
+</tr>
+<tr class="hover:bg-bronze/5 transition-colors group">
+<td class="py-4 px-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-sm overflow-hidden border border-clay/20 bg-basalt">
+<img alt="Urban Cement Tile" class="w-full h-full object-cover object-bottom grayscale-[20%] group-hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg"/>
+</div>
+<div>
+<div class="text-bone font-medium">Urban Cement</div>
+<div class="text-xs text-greige/70 font-cormorant tracking-widest mt-0.5">CONCRETE LOOK</div>
+</div>
+</div>
+</td>
+<td class="py-4 px-6 text-greige">سيراميك جدران</td>
+<td class="py-4 px-6 font-aref text-bone">12.5 د.ك</td>
+<td class="py-4 px-6 text-bone">750 <span class="text-xs text-greige/50 ml-1">م²</span></td>
+<td class="py-4 px-6 font-aref text-bronze">9,375 د.ك</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- 6) Inventory & Alerts -->
+<div class="bg-basaltDark border border-clay/10 p-6 rounded-md flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-aref text-xl text-bone tracking-wide">حالة المخزون</h2>
+<div class="flex items-center gap-2 px-3 py-1 bg-red-900/20 border border-red-900/30 rounded-sm text-red-400">
+<span class="material-symbols-outlined text-sm">warning</span>
+<span class="text-xs font-medium">111 منخفض</span>
+</div>
+</div>
+<div class="flex-1 flex flex-col items-center justify-center relative py-4">
+<!-- Custom Ring Chart CSS implementation -->
+<div class="relative w-48 h-48 rounded-full flex items-center justify-center" style="background: conic-gradient(#B07C3A 0% 75%, #A9794F 75% 92%, #1C1B19 92% 100%);">
+<div class="absolute inset-2 bg-basaltDark rounded-full flex flex-col items-center justify-center">
+<span class="text-greige text-xs mb-1">إجمالي القطع</span>
+<span class="font-aref text-3xl text-bone">14,892</span>
+</div>
+</div>
+<div class="w-full mt-8 flex justify-center gap-6">
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-sm bg-bronze"></div>
+<span class="text-sm text-bone">متوفر <span class="text-greige/70 text-xs mr-1">(75%)</span></span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-sm bg-clay"></div>
+<span class="text-sm text-bone">محجوز <span class="text-greige/70 text-xs mr-1">(17%)</span></span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-3 h-3 rounded-sm bg-basalt border border-clay/30"></div>
+<span class="text-sm text-bone">نفد <span class="text-greige/70 text-xs mr-1">(8%)</span></span>
+</div>
+</div>
+</div>
+</div>
+<!-- 5) Purchase Regions Bar Chart (taking full width below if needed, or inline) -->
+<!-- We'll fit it nicely in a new row -->
+</div>
+<div class="grid grid-cols-1 mt-6">
+<div class="bg-basaltDark border border-clay/10 p-6 rounded-md flex flex-col">
+<div class="flex justify-between items-center mb-6">
+<h2 class="font-aref text-xl text-bone tracking-wide">مناطق الشراء الرئيسية</h2>
+<span class="material-symbols-outlined text-clay/50 text-xl" style="font-variation-settings: 'FILL' 0;">map</span>
+</div>
+<div class="w-full h-48 relative">
+<canvas id="regionsChart"></canvas>
+</div>
+</div>
+</div>
+</main>
+<script>
+        // Chart.js Configuration for Dark "Earth" Theme
+        Chart.defaults.color = '#C9BEAD';
+        Chart.defaults.font.family = 'Tajawal';
+        
+        // 2) Large Line Chart
+        const ctxSales = document.getElementById('salesChart').getContext('2d');
+        
+        // Create gradients
+        const gradientBronze = ctxSales.createLinearGradient(0, 0, 0, 400);
+        gradientBronze.addColorStop(0, 'rgba(176, 124, 58, 0.4)');
+        gradientBronze.addColorStop(1, 'rgba(176, 124, 58, 0)');
+        
+        const gradientClay = ctxSales.createLinearGradient(0, 0, 0, 400);
+        gradientClay.addColorStop(0, 'rgba(169, 121, 79, 0.2)');
+        gradientClay.addColorStop(1, 'rgba(169, 121, 79, 0)');
+
+        new Chart(ctxSales, {
+            type: 'line',
+            data: {
+                labels: ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس'],
+                datasets: [
+                    {
+                        label: 'المبيعات (د.ك)',
+                        data: [12000, 19000, 15000, 25000, 22000, 30000, 28000, 35000],
+                        borderColor: '#B07C3A',
+                        backgroundColor: gradientBronze,
+                        borderWidth: 2,
+                        pointBackgroundColor: '#16140F',
+                        pointBorderColor: '#B07C3A',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        fill: true,
+                        tension: 0.4
+                    },
+                    {
+                        label: 'الزوّار',
+                        data: [8000, 12000, 10000, 18000, 15000, 22000, 20000, 26000],
+                        borderColor: '#A9794F',
+                        backgroundColor: gradientClay,
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        pointBackgroundColor: '#16140F',
+                        pointBorderColor: '#A9794F',
+                        pointBorderWidth: 2,
+                        pointRadius: 4,
+                        pointHoverRadius: 6,
+                        fill: true,
+                        tension: 0.4,
+                        yAxisID: 'y1'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(28, 27, 25, 0.9)',
+                        titleColor: '#EFEAE0',
+                        bodyColor: '#C9BEAD',
+                        borderColor: 'rgba(169, 121, 79, 0.2)',
+                        borderWidth: 1,
+                        padding: 10,
+                        titleFont: { family: 'Tajawal', size: 14 },
+                        bodyFont: { family: 'Tajawal', size: 13 },
+                        rtl: true
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            color: 'rgba(169, 121, 79, 0.05)',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            font: { family: 'Tajawal' }
+                        }
+                    },
+                    y: {
+                        type: 'linear',
+                        display: true,
+                        position: 'right',
+                        grid: {
+                            color: 'rgba(169, 121, 79, 0.05)',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return value / 1000 + 'k';
+                            }
+                        }
+                    },
+                    y1: {
+                        type: 'linear',
+                        display: false,
+                        position: 'left',
+                        grid: {
+                            drawOnChartArea: false,
+                        },
+                    }
+                }
+            }
+        });
+
+        // 5) Regions Bar Chart
+        const ctxRegions = document.getElementById('regionsChart').getContext('2d');
+        new Chart(ctxRegions, {
+            type: 'bar',
+            data: {
+                labels: ['العاصمة', 'حولي', 'الفروانية', 'الأحمدي', 'مبارك الكبير', 'الجهراء'],
+                datasets: [{
+                    label: 'عدد الطلبات',
+                    data: [125, 85, 64, 42, 28, 15],
+                    backgroundColor: [
+                        '#B07C3A',
+                        '#A9794F',
+                        'rgba(169, 121, 79, 0.7)',
+                        'rgba(169, 121, 79, 0.5)',
+                        'rgba(169, 121, 79, 0.3)',
+                        'rgba(169, 121, 79, 0.15)'
+                    ],
+                    borderRadius: 2,
+                    borderWidth: 0,
+                    barThickness: 30
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(28, 27, 25, 0.9)',
+                        titleColor: '#EFEAE0',
+                        bodyColor: '#B07C3A',
+                        borderColor: 'rgba(169, 121, 79, 0.2)',
+                        borderWidth: 1,
+                        padding: 10,
+                        rtl: true
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false,
+                            drawBorder: false
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: 'rgba(169, 121, 79, 0.05)',
+                            drawBorder: false
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+</body></html>

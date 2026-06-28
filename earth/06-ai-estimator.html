@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NIC - أداة التقدير الذكية</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&amp;family=Cormorant+Garamond:wght@400;500;600;700&amp;family=Tajawal:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        basalt: "#1C1B19",
+                        bone: "#EFEAE0",
+                        bronze: "#B07C3A",
+                        clay: "#A9794F",
+                        greige: "#C9BEAD",
+                    },
+                    borderRadius: {
+                        "DEFAULT": "4px",
+                        "lg": "4px",
+                        "xl": "4px",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        headline: ["'Aref Ruqaa'", "serif"],
+                        display: ["'Cormorant Garamond'", "serif"],
+                        body: ["'Tajawal'", "sans-serif"],
+                        label: ["'Tajawal'", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.basalt');
+            color: theme('colors.bone');
+            font-family: theme('fontFamily.body');
+        }
+        
+        .glass-panel {
+            background: rgba(169, 121, 79, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(169, 121, 79, 0.1);
+        }
+
+        .bronze-gradient-text {
+            background: linear-gradient(to right, #B07C3A, #C9BEAD);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1C1B19;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #A9794F;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B07C3A;
+        }
+
+        /* Form Controls Override */
+        input[type="text"], input[type="number"], select {
+            background-color: rgba(169, 121, 79, 0.05) !important;
+            border-color: rgba(169, 121, 79, 0.2) !important;
+            color: #EFEAE0 !important;
+        }
+        input:focus, select:focus {
+            border-color: #B07C3A !important;
+            box-shadow: 0 0 0 1px #B07C3A !important;
+        }
+        
+        /* Subtle motion for interactive elements */
+        .interactive-element {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .interactive-element:hover {
+            transform: translateY(-2px);
+            border-color: rgba(176, 124, 58, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-[#1C1B19] font-headline text-bone text-lg leading-relaxed docked full-width top-0 border-b border-[#A9794F]/20 transition-all duration-500 ease-in-out sticky z-50">
+<div class="flex justify-between items-center w-full px-8 py-6 max-w-full mx-auto rtl">
+<!-- Navigation Links -->
+<ul class="hidden md:flex items-center gap-8">
+<li><a class="text-[#EFEAE0] hover:text-[#B07C3A] transition-colors" href="#">المجموعات</a></li>
+<li><a class="text-[#EFEAE0] hover:text-[#B07C3A] transition-colors" href="#">عن الهوية</a></li>
+<li><a class="text-[#EFEAE0] hover:text-[#B07C3A] transition-colors" href="#">الحرفيين</a></li>
+<li><a class="text-[#EFEAE0] hover:text-[#B07C3A] transition-colors" href="#">المصنع</a></li>
+<li><a class="text-[#B07C3A] border-b border-[#B07C3A] pb-1 font-bold" href="#">أداة التقدير</a></li> <!-- Manually set active -->
+</ul>
+<!-- Brand Logo -->
+<a class="font-display text-2xl tracking-[0.2em] text-[#B07C3A] font-bold" href="#">NIC</a>
+<!-- Actions -->
+<div class="flex items-center gap-6">
+<a class="text-[#EFEAE0] hover:text-[#B07C3A] transition-colors" href="#">تسجيل الدخول</a>
+<div class="flex items-center gap-4">
+<button aria-label="shopping_bag" class="text-[#EFEAE0] hover:bg-[#A9794F]/10 hover:text-[#B07C3A] p-2 rounded transition-all duration-500 ease-in-out">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+<button aria-label="search" class="text-[#EFEAE0] hover:bg-[#A9794F]/10 hover:text-[#B07C3A] p-2 rounded transition-all duration-500 ease-in-out">
+<span class="material-symbols-outlined">search</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-6 py-16 flex flex-col gap-16">
+<!-- Hero Section -->
+<header class="text-center space-y-6 max-w-3xl mx-auto">
+<h1 class="font-headline text-5xl md:text-6xl bronze-gradient-text leading-tight">قدّر تكلفة مشروعك بالذكاء الاصطناعي</h1>
+<p class="font-body text-greige text-lg md:text-xl leading-relaxed">ارفع مخطط البيت ودع الذكاء الاصطناعي يقرأ المساحات ويحسب الكميات والتكلفة بدقة حرفية.</p>
+</header>
+<!-- Tool Container -->
+<section class="glass-panel p-8 md:p-12 rounded relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute top-0 right-0 w-64 h-64 bg-bronze/5 rounded-full blur-3xl -z-10 transform translate-x-1/2 -translate-y-1/2"></div>
+<!-- Tabs -->
+<div class="flex justify-center border-b border-clay/20 mb-12" role="tablist">
+<button aria-selected="true" class="px-8 py-4 font-headline text-xl text-bronze border-b-2 border-bronze transition-colors focus:outline-none" id="tab-upload" role="tab">ارفع مخطط (PDF)</button>
+<button aria-selected="false" class="px-8 py-4 font-headline text-xl text-greige hover:text-bone transition-colors focus:outline-none" id="tab-manual" role="tab">أدخل الأبعاد يدوياً</button>
+</div>
+<!-- Tab Content: Upload -->
+<div aria-labelledby="tab-upload" class="space-y-12 animate-fade-in" id="content-upload" role="tabpanel">
+<!-- Upload Area -->
+<div class="border-2 border-dashed border-clay/30 rounded-lg p-16 flex flex-col items-center justify-center text-center cursor-pointer interactive-element group relative overflow-hidden">
+<div class="absolute inset-0 bg-clay/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<span class="material-symbols-outlined text-6xl text-bronze mb-6 group-hover:scale-110 transition-transform duration-500" style="font-variation-settings: 'wght' 200;">architecture</span>
+<h3 class="font-headline text-2xl text-bone mb-2">اسحب وأفلت المخطط هنا</h3>
+<p class="font-body text-greige mb-8">صيغ مدعومة: PDF, JPG, PNG (الحد الأقصى 20MB)</p>
+<button class="bg-transparent border border-bronze text-bronze px-8 py-3 rounded font-body hover:bg-bronze hover:text-basalt transition-colors">استعراض الملفات</button>
+</div>
+<!-- Steps -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="flex flex-col items-center text-center space-y-4">
+<div class="w-12 h-12 rounded-full border border-clay/30 flex items-center justify-center text-bronze font-display text-xl">١</div>
+<h4 class="font-headline text-lg text-bone">ارفع المخطط</h4>
+<p class="font-body text-sm text-greige">قم برفع مخططك المعماري بوضوح</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-4 relative">
+<!-- Connector line for desktop -->
+<div class="hidden md:block absolute top-6 right-[50%] w-full h-[1px] bg-clay/20 -z-10"></div>
+<div class="w-12 h-12 rounded-full border border-clay/30 flex items-center justify-center text-bronze font-display text-xl">٢</div>
+<h4 class="font-headline text-lg text-bone">يقرأ النظام المساحات</h4>
+<p class="font-body text-sm text-greige">يحلل الذكاء الاصطناعي الغرف والأبعاد</p>
+</div>
+<div class="flex flex-col items-center text-center space-y-4 relative">
+<!-- Connector line for desktop -->
+<div class="hidden md:block absolute top-6 right-[50%] w-full h-[1px] bg-clay/20 -z-10"></div>
+<div class="w-12 h-12 rounded-full border border-bronze bg-bronze/10 flex items-center justify-center text-bronze font-display text-xl">٣</div>
+<h4 class="font-headline text-lg text-bone">احصل على التكلفة</h4>
+<p class="font-body text-sm text-greige">تقدير دقيق للكميات والأسعار</p>
+</div>
+</div>
+</div>
+<!-- Tab Content: Manual (Hidden by default for simplicity in this static mockup, but styled for layout) -->
+<div aria-labelledby="tab-manual" class="hidden space-y-8" id="content-manual" role="tabpanel">
+<div class="space-y-6">
+<!-- Room Row -->
+<div class="glass-panel p-6 rounded flex flex-col md:flex-row gap-6 items-end">
+<div class="w-full md:w-1/4">
+<label class="block font-body text-sm text-greige mb-2">نوع الغرفة</label>
+<select class="w-full rounded border-none px-4 py-3 focus:ring-1 focus:ring-bronze font-body text-bone">
+<option>مطبخ</option>
+<option>معيشة</option>
+<option>حمّام</option>
+<option>نوم</option>
+<option>خارجي</option>
+</select>
+</div>
+<div class="w-full md:w-1/4">
+<label class="block font-body text-sm text-greige mb-2">الطول (م)</label>
+<input class="w-full rounded border-none px-4 py-3 focus:ring-1 focus:ring-bronze font-body" placeholder="0.0" type="number"/>
+</div>
+<div class="w-full md:w-1/4">
+<label class="block font-body text-sm text-greige mb-2">العرض (م)</label>
+<input class="w-full rounded border-none px-4 py-3 focus:ring-1 focus:ring-bronze font-body" placeholder="0.0" type="number"/>
+</div>
+<div class="w-full md:w-1/4">
+<label class="block font-body text-sm text-greige mb-2">ارتفاع الجدار (م)</label>
+<input class="w-full rounded border-none px-4 py-3 focus:ring-1 focus:ring-bronze font-body" placeholder="0.0" type="number"/>
+</div>
+</div>
+<!-- Room Row 2 -->
+<div class="glass-panel p-6 rounded flex flex-col md:flex-row gap-6 items-end">
+<div class="w-full md:w-1/4">
+<label class="block font-body text-sm text-greige mb-2">نوع الغرفة</label>
+<select class="w-full rounded border-none px-4 py-3 focus:ring-1 focus:ring-bronze font-body text-bone">
+<option selected="">نوم</option>
+<option>مطبخ</option>
+<option>معيشة</option>
+<option>حمّام</option>
+<option>خارجي</option>
+</select>
+</div>
+<div class="w-full md:w-1/4">
+<label class="block font-body text-sm text-greige mb-2">الطول (م)</label>
+<input class="w-full rounded border-none px-4 py-3 focus:ring-1 focus:ring-bronze font-body" type="number" value="4.0"/>
+</div>
+<div class="w-full md:w-1/4">
+<label class="block font-body text-sm text-greige mb-2">العرض (م)</label>
+<input class="w-full rounded border-none px-4 py-3 focus:ring-1 focus:ring-bronze font-body" type="number" value="5.0"/>
+</div>
+<div class="w-full md:w-1/4">
+<label class="block font-body text-sm text-greige mb-2">ارتفاع الجدار (م)</label>
+<input class="w-full rounded border-none px-4 py-3 opacity-50 cursor-not-allowed font-body text-sm" disabled="" placeholder="غير مطلوب (أرضية فقط)" type="number"/>
+</div>
+</div>
+<p class="font-body text-xs text-clay italic flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">info</span>
+                        ملاحظة ذكية: غرف النوم تتطلب حساب مساحة الأرضية فقط عادةً، بينما المطابخ والحمامات تتطلب جدران وأرضيات.
+                    </p>
+<div class="flex justify-between items-center pt-6 border-t border-clay/10">
+<button class="flex items-center gap-2 text-bronze hover:text-bone transition-colors font-body">
+<span class="material-symbols-outlined text-sm">add</span>
+                            أضف غرفة
+                        </button>
+<button class="bg-bronze text-basalt px-8 py-3 rounded font-bold hover:bg-bone transition-colors shadow-lg shadow-bronze/20">احسب التكلفة</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Results Section (Initially visible for mockup purposes, usually revealed after calculation) -->
+<section class="space-y-12 animate-fade-in-up" style="animation-delay: 0.2s;">
+<div class="flex items-center gap-4 mb-8">
+<div class="h-px bg-clay/30 flex-grow"></div>
+<h2 class="font-headline text-3xl text-bone">نتيجة التقدير</h2>
+<div class="h-px bg-clay/30 flex-grow"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Summary Card -->
+<div class="glass-panel p-8 rounded flex flex-col justify-between border-bronze/30 lg:col-span-1 relative overflow-hidden group">
+<div class="absolute -right-16 -top-16 w-48 h-48 bg-bronze/5 rounded-full blur-2xl transition-transform group-hover:scale-150 duration-700"></div>
+<div>
+<h3 class="font-body text-greige mb-2">التكلفة التقريبية</h3>
+<div class="font-display text-5xl text-bronze font-bold mb-4 flex items-baseline gap-2">
+                            ٢,٤٥٠ <span class="text-xl font-body text-bone font-normal">د.ك</span>
+</div>
+<p class="font-body text-xs text-clay/70">* هذه التكلفة تقديرية بناءً على المدخلات، وقد تختلف التكلفة النهائية بعد المعاينة الفعلية.</p>
+</div>
+<div class="mt-12 space-y-4">
+<button class="w-full bg-bronze text-basalt px-6 py-4 rounded font-bold hover:bg-bone transition-colors flex justify-center items-center gap-2">
+                            اطلب عرض سعر <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+<button class="w-full border border-clay/30 text-bone px-6 py-4 rounded font-body hover:border-bronze hover:text-bronze transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-sm">bookmark</span> احفظ التقدير
+                        </button>
+</div>
+</div>
+<!-- Details & Preview -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Table -->
+<div class="glass-panel rounded overflow-hidden">
+<table class="w-full text-right font-body">
+<thead class="bg-basalt/50 border-b border-clay/20">
+<tr>
+<th class="py-4 px-6 font-normal text-greige">الغرفة</th>
+<th class="py-4 px-6 font-normal text-greige">المساحة م²</th>
+<th class="py-4 px-6 font-normal text-greige">المنتج المقترح</th>
+<th class="py-4 px-6 font-normal text-greige">الكمية (صندوق)</th>
+<th class="py-4 px-6 font-normal text-greige">التكلفة الجزئية</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-clay/10">
+<tr class="hover:bg-white/5 transition-colors">
+<td class="py-4 px-6 text-bone">مطبخ (أرضية)</td>
+<td class="py-4 px-6 text-bone">٢٤</td>
+<td class="py-4 px-6 text-bronze">Basalt Gray 60x60</td>
+<td class="py-4 px-6 text-bone">١٧</td>
+<td class="py-4 px-6 text-bone">٢٨٠ د.ك</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="py-4 px-6 text-bone">مطبخ (جدران)</td>
+<td class="py-4 px-6 text-bone">١٨</td>
+<td class="py-4 px-6 text-bronze">Bone White Sub</td>
+<td class="py-4 px-6 text-bone">١٣</td>
+<td class="py-4 px-6 text-bone">١٩٥ د.ك</td>
+</tr>
+<tr class="hover:bg-white/5 transition-colors">
+<td class="py-4 px-6 text-bone">صالة معيشة</td>
+<td class="py-4 px-6 text-bone">٤٥</td>
+<td class="py-4 px-6 text-bronze">Desert Sand 120x60</td>
+<td class="py-4 px-6 text-bone">٣٢</td>
+<td class="py-4 px-6 text-bone">٨٥٠ د.ك</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Schematic Visual -->
+<div class="glass-panel p-6 rounded">
+<h4 class="font-headline text-lg text-bone mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-bronze">grid_on</span> توزيع المقاسات المقترح
+                        </h4>
+<div class="w-full h-48 rounded border border-clay/20 relative overflow-hidden" data-alt="A highly sophisticated, abstract architectural blueprint visualization showing a schematic floor plan grid overlaid with subtle, glowing bronze geometric patterns indicating tile distribution. The background is a very dark, rich basalt color with cinematic, soft lighting. The aesthetic is modern, clean, and luxurious, resembling a high-end structural engineering or interior design software interface. No text, purely abstract layout lines." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDigZx8HALEs5heeuSvHfGhAoLvGTn3AHkog6-AgtrLPW004LHPnihH7XPYiPFJFadBsuichZdfA6zLPVVPoZZoUW3b0ShOTGXoYWFbWC36v2Ce0w7R_0wXZbJfXDG-YvreI_oIEP6JyPTlF7fNh_Fdd9LOhf-inrgJlTgTUQ78UxXjSDfTDWg5I5gfYAGbpgxtE4BPE5mNtxRr9qzNE22enxRGL9ye9AnNAbe7we2_W5hKjI8VH2fhFemlDHRF9LcCEiS96-vEK5Q')">
+<!-- Overlay gradient to ensure it blends with dark theme -->
+<div class="absolute inset-0 bg-gradient-to-t from-basalt via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#1C1B19] font-body text-[#C9BEAD] text-sm full-width bottom-0 border-t border-[#A9794F]/10 opacity-80 hover:opacity-100 transition-opacity mt-auto">
+<div class="w-full px-8 py-12 flex flex-col items-center gap-6 rtl mx-auto max-w-7xl">
+<!-- Brand Logo -->
+<div class="font-display text-xl tracking-widest text-[#B07C3A] font-bold mb-2">NIC</div>
+<!-- Links -->
+<ul class="flex flex-wrap justify-center gap-6 mb-4">
+<li><a class="text-[#C9BEAD] hover:text-[#B07C3A] transition-colors" href="#">سياسة الخصوصية</a></li>
+<li><a class="text-[#C9BEAD] hover:text-[#B07C3A] transition-colors" href="#">الشروط والأحكام</a></li>
+<li><a class="text-[#C9BEAD] hover:text-[#B07C3A] transition-colors" href="#">اتصل بنا</a></li>
+<li><a class="text-[#C9BEAD] hover:text-[#B07C3A] transition-colors" href="#">الفروع</a></li>
+</ul>
+<!-- Copyright -->
+<div class="text-center">© ٢٠٢٤ هوية الأرض. جميع الحقوق محفوظة لعلامة NIC.</div>
+</div>
+</footer>
+<script>
+        // Simple tab switching logic for demonstration
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabUpload = document.getElementById('tab-upload');
+            const tabManual = document.getElementById('tab-manual');
+            const contentUpload = document.getElementById('content-upload');
+            const contentManual = document.getElementById('content-manual');
+
+            function switchTab(activeTab, inactiveTab, activeContent, inactiveContent) {
+                // Style Active Tab
+                activeTab.classList.remove('text-greige', 'hover:text-bone');
+                activeTab.classList.add('text-bronze', 'border-b-2', 'border-bronze');
+                activeTab.setAttribute('aria-selected', 'true');
+                
+                // Style Inactive Tab
+                inactiveTab.classList.remove('text-bronze', 'border-b-2', 'border-bronze');
+                inactiveTab.classList.add('text-greige', 'hover:text-bone');
+                inactiveTab.setAttribute('aria-selected', 'false');
+
+                // Toggle Content
+                activeContent.classList.remove('hidden');
+                activeContent.classList.add('animate-fade-in');
+                inactiveContent.classList.add('hidden');
+                inactiveContent.classList.remove('animate-fade-in');
+            }
+
+            tabUpload.addEventListener('click', () => {
+                switchTab(tabUpload, tabManual, contentUpload, contentManual);
+            });
+
+            tabManual.addEventListener('click', () => {
+                switchTab(tabManual, tabUpload, contentManual, contentUpload);
+            });
+        });
+    </script>
+</body></html>
