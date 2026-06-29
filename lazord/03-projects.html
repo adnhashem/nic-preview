@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>المشاريع المرجعية - NI Ceramics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Eb+Garamond:wght@400;500;600;700;800&amp;family=Tajawal:wght@300;400;500;700&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "tertiary-dim": "#1f5e93",
+                        "primary-fixed-dim": "#d7dee7",
+                        "primary-dim": "#1a5a97",
+                        "outline-variant": "#b9c4d2",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#e9edf2",
+                        "secondary-container": "#f0e6cb",
+                        "on-secondary-container": "#2b5586",
+                        "on-primary": "#faf8f2",
+                        "on-tertiary-fixed": "#34506c",
+                        "error": "#b23a2e",
+                        "surface-dim": "#e6ebf1",
+                        "secondary-fixed-dim": "#e3d09f",
+                        "tertiary-fixed-dim": "#f0e6cb",
+                        "background": "#f6f4ee", // Adjusted to Alabaster per prompt
+                        "surface-bright": "#f6f4ee",
+                        "surface": "#f6f4ee", // Adjusted to Alabaster
+                        "tertiary-container": "#f7efd9",
+                        "tertiary-fixed": "#f7efd9",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#0a1726",
+                        "outline": "#a8853a",
+                        "on-primary-fixed": "#2a4258",
+                        "surface-container-low": "#faf8f2",
+                        "secondary-fixed": "#f0e6cb",
+                        "secondary": "#3a6a96",
+                        "on-tertiary-fixed-variant": "#5a6e88",
+                        "error-container": "#e8a48f",
+                        "on-secondary-fixed": "#2a4258",
+                        "primary-container": "#e6ebf1",
+                        "secondary-dim": "#235a8a",
+                        "surface-container": "#e7d6a8", // Sand
+                        "on-tertiary-container": "#2f5b86",
+                        "on-primary-fixed-variant": "#1f5891",
+                        "inverse-on-surface": "#94a2b5",
+                        "on-surface-variant": "#5a6e88",
+                        "on-secondary-fixed-variant": "#2f5b86",
+                        "error-dim": "#4a140a",
+                        "surface-variant": "#e9edf2",
+                        "inverse-primary": "#faf8f2",
+                        "primary": "#00508f",
+                        "surface-container-high": "#eef0ec",
+                        "on-surface": "#13283f", // Ink
+                        "tertiary": "#3a6a96",
+                        "primary-fixed": "#e6ebf1",
+                        "on-primary-container": "#2b5586",
+                        "surface-tint": "#00508f",
+                        "on-error-container": "#6e2418",
+                        "on-error": "#ffffff",
+                        "on-background": "#13283f", // Ink
+                        "on-secondary": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "4px", // Adjusted to 4px per prompt
+                        "lg": "4px",
+                        "xl": "4px",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["Eb Garamond", "serif"],
+                        "display": ["Eb Garamond", "serif"],
+                        "body": ["Tajawal", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {}
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f6f4ee;
+            color: #13283f;
+        }
+        .text-ink { color: #13283f; }
+        .bg-alabaster { background-color: #f6f4ee; }
+        .bg-sand { background-color: #e7d6a8; }
+        .border-stone-light { border-color: #a8853a; }
+        .hover-lift { transition: transform 0.5s ease; }
+        .hover-lift:hover { transform: translateY(-4px); }
+        .image-zoom { transition: transform 0.8s ease; }
+        .group:hover .image-zoom { transform: scale(1.05); }
+    </style>
+</head>
+<body class="font-body antialiased min-h-screen flex flex-col selection:bg-surface-container selection:text-on-surface">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-sm transition-all duration-700 ease-in-out">
+<div class="flex flex-row-reverse justify-between items-center px-12 py-6 w-full max-w-[1600px] mx-auto">
+<!-- Brand -->
+<a class="font-display text-2xl font-light tracking-tighter text-on-surface" href="#">
+                NI Ceramics
+            </a>
+<!-- Navigation Links -->
+<div class="hidden md:flex flex-row-reverse items-center space-x-8 space-x-reverse">
+<a class="text-on-surface-variant font-body hover:text-on-surface transition-colors duration-500" href="#">
+                    Collections
+                </a>
+<a class="text-on-surface-variant font-body hover:text-on-surface transition-colors duration-500" href="#">
+                    AI Estimator
+                </a>
+<!-- Active Nav Item based on intent -->
+<a class="text-on-surface border-b border-on-surface pb-1 hover:text-on-surface transition-colors duration-500" href="#">
+                    Projects
+                </a>
+<a class="text-on-surface-variant font-body hover:text-on-surface transition-colors duration-500" href="#">
+                    About Us
+                </a>
+<a class="text-on-surface-variant font-body hover:text-on-surface transition-colors duration-500" href="#">
+                    Contact
+                </a>
+</div>
+<!-- Trailing Actions -->
+<div class="flex flex-row-reverse items-center space-x-4 space-x-reverse text-primary dark:text-primary-fixed font-display text-lg uppercase tracking-widest">
+<button aria-label="language" class="hover:text-on-surface transition-colors duration-500">
+<span class="material-symbols-outlined">language</span>
+</button>
+<button aria-label="person" class="hover:text-on-surface transition-colors duration-500">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-grow pt-32 pb-24">
+<!-- Header Section -->
+<section class="max-w-[1200px] mx-auto px-6 md:px-12 mb-20 text-center">
+<h1 class="font-display text-5xl md:text-7xl font-light text-on-surface mb-6 tracking-tight">
+                مشاريع تتحدث عن نفسها
+            </h1>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed">
+                حيث يلتقي الضوء بالمساحة. نستعرض هنا مجموعة منتقاة من المساحات التي تعكس رؤيتنا في دمج الخزف الفاخر مع العمارة الحديثة.
+            </p>
+</section>
+<!-- Filter Bar -->
+<section class="max-w-[1200px] mx-auto px-6 md:px-12 mb-16">
+<div class="flex flex-wrap justify-center gap-8 md:gap-12">
+<button class="font-body text-lg text-on-surface border-b-2 border-on-surface pb-1 transition-all duration-300">الكل</button>
+<button class="font-body text-lg text-on-surface-variant hover:text-on-surface hover:border-b hover:border-on-surface-variant pb-1 transition-all duration-300">سكني</button>
+<button class="font-body text-lg text-on-surface-variant hover:text-on-surface hover:border-b hover:border-on-surface-variant pb-1 transition-all duration-300">تجاري</button>
+<button class="font-body text-lg text-on-surface-variant hover:text-on-surface hover:border-b hover:border-on-surface-variant pb-1 transition-all duration-300">ضيافة</button>
+<button class="font-body text-lg text-on-surface-variant hover:text-on-surface hover:border-b hover:border-on-surface-variant pb-1 transition-all duration-300">مؤسسي</button>
+</div>
+</section>
+<!-- Featured Case Study -->
+<section class="max-w-[1400px] mx-auto px-6 md:px-12 mb-32">
+<div class="group relative block overflow-hidden rounded bg-surface-container aspect-video md:aspect-[21/9]">
+<img alt="Featured Project" class="absolute inset-0 w-full h-full object-cover image-zoom" src="https://lh3.googleusercontent.com/aida/AP1WRLsY8up9__Lnaz033KlWDBHPivL060Tq7Nb-T8acfYW0KFEolhYyuXBlxTcG6hRCUDucOaSHivSu7feFWeRmvlx87a4Jp5Pki0jVzq0RPDyDCn0xVtdN_I_lUpW5LCgIcxUeJNi4rXLGg6O4MIAMEnHTXGJYMrTX-5C-MCWnhg-ayOCE8gZ51WZ52kJUzweGh46YKg_Zm1SF3do9Dr8KqoieAzKA7NEq6iHv4cE3NW1SY5DY1SEHfWjGTE0"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+<div class="absolute bottom-0 left-0 right-0 p-8 md:p-16 text-white text-right">
+<span class="font-body text-sm tracking-widest uppercase mb-3 block opacity-80">سكني فاخر • البدع</span>
+<h2 class="font-display text-4xl md:text-6xl font-light mb-4">فيلا النور، البدع</h2>
+<p class="font-body text-lg md:text-xl max-w-3xl opacity-90 mb-8">
+                        استخدام تشكيلة 'ترافرتين' لخلق مساحات متصلة بصرياً، تعزز من دخول الضوء الطبيعي وتعكس هدوء البيئة المحيطة.
+                    </p>
+<a class="inline-flex items-center text-white border-b border-white/50 hover:border-white pb-1 transition-all duration-300 font-body text-lg" href="#">
+<span>قراءة القصة</span>
+<span class="material-symbols-outlined ml-2 mr-2 text-sm">arrow_left</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Projects Grid -->
+<section class="max-w-[1400px] mx-auto px-6 md:px-12 mb-32">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+<!-- Card 1 -->
+<a class="group block hover-lift" href="#">
+<div class="aspect-[4/5] overflow-hidden rounded bg-surface-container mb-6 relative">
+<img class="w-full h-full object-cover image-zoom" data-alt="A high-end modern residential living room bathed in natural sunlight. Minimalist architecture with large floor-to-ceiling windows showing a desert landscape. The floor is covered in large-format, seamless light alabaster ceramic tiles. The interior features minimal, warm beige furniture and a sculptural chandelier. The mood is serene, luxurious, and quiet." src="https://lh3.googleusercontent.com/aida/AP1WRLsY8up9__Lnaz033KlWDBHPivL060Tq7Nb-T8acfYW0KFEolhYyuXBlxTcG6hRCUDucOaSHivSu7feFWeRmvlx87a4Jp5Pki0jVzq0RPDyDCn0xVtdN_I_lUpW5LCgIcxUeJNi4rXLGg6O4MIAMEnHTXGJYMrTX-5C-MCWnhg-ayOCE8gZ51WZ52kJUzweGh46YKg_Zm1SF3do9Dr8KqoieAzKA7NEq6iHv4cE3NW1SY5DY1SEHfWjGTE0"/>
+</div>
+<div class="text-right">
+<span class="font-body text-xs text-on-surface-variant tracking-wider uppercase mb-2 block">تجاري • مدينة الكويت</span>
+<h3 class="font-display text-2xl text-on-surface mb-2 font-medium">برج الحمراء المكتبي</h3>
+<p class="font-body text-on-surface-variant text-sm">استخدام: تشكيلة 'ماركوينا' و 'كلكتا'</p>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="group block hover-lift" href="#">
+<div class="aspect-[4/5] overflow-hidden rounded bg-surface-container mb-6 relative">
+<img class="w-full h-full object-cover image-zoom" data-alt="An expansive modern museum gallery space. Warm, directional lighting highlights textured stone-like ceramic walls. The floor is a pristine, reflective light beige ceramic. Minimalist benches sit in the center. The aesthetic is architectural, silent, and contemplative, emphasizing the interplay of light and textured surfaces." src="https://lh3.googleusercontent.com/aida/AP1WRLu0W6Lx5DOydRhsS19OBhtKlY5SkkAvfh0Kde_G9hr0ka_pz6BE-bmDWx4Rp3B0Q-pqTXxoj5EyOeT-fhbnC8K530w7NIhkv6o9Twp5EmvTkSI3Ji9eb2wknk1-wdkp6_P820NIfhnZ816ijXbK7H2L9N_terhbGxPY3s3y7IsHVCuY2opFiFza3QbDpfRV828mcrGzga7k83dJcEGpfMce1nVNHKzOWmUVrhJsTPWI1HDVKxI9Iu0wvg"/>
+</div>
+<div class="text-right">
+<span class="font-body text-xs text-on-surface-variant tracking-wider uppercase mb-2 block">ضيافة • السالمية</span>
+<h3 class="font-display text-2xl text-on-surface mb-2 font-medium">فندق سيمفوني ستايل</h3>
+<p class="font-body text-on-surface-variant text-sm">استخدام: تشكيلة 'أونيكس' المضيئة</p>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="group block hover-lift" href="#">
+<div class="aspect-[4/5] overflow-hidden rounded bg-surface-container mb-6 relative">
+<img class="w-full h-full object-cover image-zoom" data-alt="A luxurious outdoor courtyard of a modern Kuwaiti villa. The space features minimal landscaping, a calm reflective pool, and expansive use of sandy-toned exterior ceramic cladding and paving. The lighting suggests late afternoon sun, casting long, soft shadows. The atmosphere is private, sophisticated, and culturally rooted yet modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkVRHe5Mrig82jVsGP1mNfVKEpD2__ix8RKvNVHUtGcwoZwsPsvzwrm9nJOeh_LtrBtmQT9_-NUNv3cU595x2e9B93lciaNu3C_Z-wp06t1-vVoZwdW6YcmAbtgk60kJ-hOKNNljXBFnPfeoF6HuAxD8IQ3LarsBt2DcyYOjPf5l7FmTvAgN8yfmUkToC5RYh8qWAQ4R8YCKnT8a0KFwqtW6HPhvzcSwE_0rXra3HtMJbg-qB_LW-XUnFnmJwFPLC3hGxmcybR_-s"/>
+</div>
+<div class="text-right">
+<span class="font-body text-xs text-on-surface-variant tracking-wider uppercase mb-2 block">سكني • الشويخ</span>
+<h3 class="font-display text-2xl text-on-surface mb-2 font-medium">ديوان الشويخ</h3>
+<p class="font-body text-on-surface-variant text-sm">استخدام: تشكيلة 'بازلت' الخارجية</p>
+</div>
+</a>
+<!-- Card 4 -->
+<a class="group block hover-lift" href="#">
+<div class="aspect-[4/5] overflow-hidden rounded bg-surface-container mb-6 relative">
+<img class="w-full h-full object-cover image-zoom" data-alt="A high-end corporate lobby reception area. A massive, monolithic desk made of light travertine-style ceramic stands prominently. The walls are clad in large vertical slabs of matching material. Natural light floods in from invisible windows. The aesthetic is extremely clean, monumental, and professional." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAs9qOiVHUPTuwmdhfE_99Q-3Z0XJcix1axC_a89aQRNt2tv-2kc8Axk8X-4Rf1pfh4XD3L2dRGETsJXV-fkWPBqSKt9xcp0CRAKv4L_C03AxUFcs1tJwQAQ6s37M9wvZhf8Y56Av8tDPxa6e74pmVEnJHb9ug_TFTrdNAMyRzDYwo10sPK29w1hYAeogKZEw6A8Ftz6Tnv8jZH-Yud4an75tJMiY2HlxbHL5_cC9fn-EbpktyICZhjQ2fSnRBwojve9Y_Uw9PouQQ"/>
+</div>
+<div class="text-right">
+<span class="font-body text-xs text-on-surface-variant tracking-wider uppercase mb-2 block">مؤسسي • العاصمة</span>
+<h3 class="font-display text-2xl text-on-surface mb-2 font-medium">المقر الرئيسي للبنك</h3>
+<p class="font-body text-on-surface-variant text-sm">استخدام: ألواح 'ترافرتينو' الكبيرة</p>
+</div>
+</a>
+<!-- Card 5 -->
+<a class="group block hover-lift" href="#">
+<div class="aspect-[4/5] overflow-hidden rounded bg-surface-container mb-6 relative">
+<img class="w-full h-full object-cover image-zoom" data-alt="A serene, luxury spa bathroom interior. The walls and floor are enveloped in large, seamless warm grey ceramic tiles resembling natural stone. Soft, diffused lighting creates a calming atmosphere. A minimalist freestanding tub sits as the focal point. The aesthetic is zen-like, pure, and relaxing." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCx9JImv3W5R0LneNaA03zHPyN68EkwOMjUVbUXj9yzcrN-9zgDsI6FNZMwe4om5nhiUq644qaFu333xFUsr1lze3njrNCUszcc8rKqEkU2kwh3SSegFxKntww6VBmA2rJuqWybm1vb1aUIqguPuzXk5WK94MRvgRBQqVCRxpQiC_Xqdf6ytGTOO8R-D_c0iZjkTGT_k-5UOF_FPAke-ZEOqbuCwIVKkB6fEE7-obbb_dhDkPHHR76l7VyB-cLszmFv-hML9cmXOJQ"/>
+</div>
+<div class="text-right">
+<span class="font-body text-xs text-on-surface-variant tracking-wider uppercase mb-2 block">ضيافة • الخيران</span>
+<h3 class="font-display text-2xl text-on-surface mb-2 font-medium">منتجع الخيران الصحي</h3>
+<p class="font-body text-on-surface-variant text-sm">استخدام: تشكيلة 'زين' المقاومة للرطوبة</p>
+</div>
+</a>
+<!-- Card 6 -->
+<a class="group block hover-lift" href="#">
+<div class="aspect-[4/5] overflow-hidden rounded bg-surface-container mb-6 relative">
+<img class="w-full h-full object-cover image-zoom" data-alt="A chic, minimalist boutique retail space. Display podiums made of deep, dark stone-like ceramic contrast sharply with the pristine light alabaster floors. Subtle track lighting highlights the ceramic surfaces. The environment feels like an exclusive art gallery." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDki2smng8iGygweJeLUwu2BcPHNkmJjihtut7CZoglb3_TXnenZig4Xt_Y2KU-_e4P-ZDtPcGfFJ_b8Hk65ESGm5gubybB-yuJ_UcU8oLTpelKq8sXVr_dXnQR63HPNp_R1pOYudmSGDyydE_asPVvPc3KdLAJFSiOCOYsEi4lYVWsIbX4tGCLxk2n48S75m2-bbldzaitQRwfZLKBqcwYQRJ-UdnrnZpefIqlAOjTDAAyRx1y1nvI6hDQeYFSViJucbsYWT0M0KI"/>
+</div>
+<div class="text-right">
+<span class="font-body text-xs text-on-surface-variant tracking-wider uppercase mb-2 block">تجاري • الأفنيوز</span>
+<h3 class="font-display text-2xl text-on-surface mb-2 font-medium">بوتيك أزياء فاخر</h3>
+<p class="font-body text-on-surface-variant text-sm">استخدام: تشكيلة 'تيرازو' المعاصرة</p>
+</div>
+</a>
+</div>
+<div class="mt-16 text-center">
+<button class="inline-flex items-center text-on-surface border-b border-on-surface/30 hover:border-on-surface pb-2 transition-all duration-300 font-body text-lg">
+<span>تحميل المزيد من المشاريع</span>
+</button>
+</div>
+</section>
+<!-- Statistics Bar -->
+<section class="border-y border-surface-container-high py-16 mb-32 bg-surface-container-low/50">
+<div class="max-w-[1200px] mx-auto px-6 md:px-12">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center divide-y md:divide-y-0 md:divide-x-reverse md:divide-x divide-surface-container-high">
+<div class="py-4">
+<span class="block font-display text-5xl md:text-6xl text-on-surface font-light mb-2">150+</span>
+<span class="font-body text-on-surface-variant text-sm tracking-widest uppercase">مشروع منجز</span>
+</div>
+<div class="py-4">
+<span class="block font-display text-5xl md:text-6xl text-on-surface font-light mb-2">12</span>
+<span class="font-body text-on-surface-variant text-sm tracking-widest uppercase">دولة حول العالم</span>
+</div>
+<div class="py-4">
+<span class="block font-display text-5xl md:text-6xl text-on-surface font-light mb-2">40+</span>
+<span class="font-body text-on-surface-variant text-sm tracking-widest uppercase">عام من التميز</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Call to Action -->
+<section class="max-w-[800px] mx-auto px-6 text-center mb-16">
+<h2 class="font-display text-4xl md:text-5xl font-light text-on-surface mb-6">هل لديك مشروع؟</h2>
+<p class="font-body text-xl text-on-surface-variant mb-10 font-light">
+                فريقنا من المعماريين وخبراء الخزف مستعد لتحويل رؤيتك إلى واقع ملموس.
+            </p>
+<a class="inline-block px-12 py-4 border border-on-surface text-on-surface hover:bg-on-surface hover:text-surface transition-colors duration-500 font-body text-lg rounded" href="#">
+                تواصل مع فريق المعماريين
+            </a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-12 bg-surface-container-low dark:bg-surface-dim flex flex-col items-center text-center space-y-8 opacity-90 hover:opacity-100 transition-opacity">
+<div class="font-display text-3xl font-light text-on-surface mb-8">
+            NI Ceramics
+        </div>
+<div class="flex flex-wrap justify-center gap-6 md:gap-8 font-body text-sm tracking-wide">
+<a class="text-on-surface-variant hover:underline decoration-stone transition-all" href="#">Collections</a>
+<a class="text-on-surface-variant hover:underline decoration-stone transition-all" href="#">AI Estimator</a>
+<!-- Active link in footer if needed, using primary color styling -->
+<a class="text-primary font-bold hover:underline decoration-stone transition-all" href="#">Projects</a>
+<a class="text-on-surface-variant hover:underline decoration-stone transition-all" href="#">About Us</a>
+<a class="text-on-surface-variant hover:underline decoration-stone transition-all" href="#">Contact</a>
+<a class="text-on-surface-variant hover:underline decoration-stone transition-all" href="#">LinkedIn</a>
+</div>
+<div class="text-primary dark:text-primary-fixed-dim font-body text-sm tracking-wide mt-12">
+            © 2024 NI Ceramics. Cobalt depth & golden craft — made in Kuwait.
+        </div>
+</footer>
+</body></html>

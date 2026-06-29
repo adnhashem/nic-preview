@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>من نحن - NI Ceramics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&amp;family=Tajawal:wght@300;400;500;700&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed-dim": "#e3d09f",
+                        "tertiary-fixed-dim": "#f0e6cb",
+                        "surface-bright": "#f6f4ee",
+                        "background": "#f6f4ee", 
+                        "tertiary-container": "#f7efd9",
+                        "surface": "#f6f4ee",
+                        "outline": "#a8853a",
+                        "on-primary-fixed": "#2a4258",
+                        "on-tertiary": "#ffffff",
+                        "inverse-surface": "#0a1726",
+                        "tertiary-fixed": "#f7efd9",
+                        "tertiary-dim": "#1f5e93",
+                        "primary-fixed-dim": "#d7dee7",
+                        "outline-variant": "#b9c4d2",
+                        "primary-dim": "#1a5a97",
+                        "surface-container-highest": "#e9edf2",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#f0e6cb",
+                        "on-primary": "#faf8f2",
+                        "on-secondary-container": "#2b5586",
+                        "surface-dim": "#e6ebf1",
+                        "on-tertiary-fixed": "#34506c",
+                        "error": "#b23a2e",
+                        "surface-container-high": "#eef0ec",
+                        "primary": "#13283f", 
+                        "primary-fixed": "#e6ebf1",
+                        "tertiary": "#3a6a96",
+                        "on-surface": "#13283f", 
+                        "on-primary-container": "#2b5586",
+                        "surface-tint": "#00508f",
+                        "on-error-container": "#6e2418",
+                        "on-error": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-background": "#13283f",
+                        "secondary-fixed": "#f0e6cb",
+                        "surface-container-low": "#faf8f2",
+                        "error-container": "#e8a48f",
+                        "on-tertiary-fixed-variant": "#5a6e88",
+                        "secondary": "#a8853a", 
+                        "primary-container": "#e6ebf1",
+                        "on-secondary-fixed": "#2a4258",
+                        "surface-container": "#e7d6a8", 
+                        "secondary-dim": "#235a8a",
+                        "on-primary-fixed-variant": "#1f5891",
+                        "inverse-on-surface": "#94a2b5",
+                        "on-tertiary-container": "#2f5b86",
+                        "surface-variant": "#e9edf2",
+                        "error-dim": "#4a140a",
+                        "on-surface-variant": "#5a6e88",
+                        "on-secondary-fixed-variant": "#2f5b86",
+                        "inverse-primary": "#faf8f2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {},
+                    "fontFamily": {
+                        "headline": ["EB Garamond", "serif"],
+                        "display": ["EB Garamond", "serif"],
+                        "body": ["Tajawal", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {}
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #f6f4ee;
+            color: #13283f;
+        }
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .slow-parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="font-body antialiased selection:bg-surface-container selection:text-primary">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-sm transition-all duration-700 ease-in-out" id="navbar">
+<div class="flex flex-row justify-between items-center px-6 md:px-12 py-6 w-full">
+<div class="flex items-center space-x-reverse space-x-6 md:space-x-8">
+<a class="font-display text-2xl font-light tracking-tighter text-on-surface" href="#">NI Ceramics</a>
+</div>
+<div class="hidden md:flex items-center space-x-reverse space-x-8">
+<a class="text-on-surface-variant font-body hover:text-on-surface transition-colors duration-500 font-display text-lg uppercase tracking-widest" href="#">المجموعات</a>
+<a class="text-on-surface-variant font-body hover:text-on-surface transition-colors duration-500 font-display text-lg uppercase tracking-widest" href="#">الذكاء الاصطناعي</a>
+<a class="text-on-surface-variant font-body hover:text-on-surface transition-colors duration-500 font-display text-lg uppercase tracking-widest" href="#">المشاريع</a>
+<a class="text-on-surface border-b border-on-surface pb-1 transition-colors duration-500 font-display text-lg uppercase tracking-widest" href="#">من نحن</a>
+<a class="text-on-surface-variant font-body hover:text-on-surface transition-colors duration-500 font-display text-lg uppercase tracking-widest" href="#">تواصل</a>
+</div>
+<div class="flex items-center space-x-reverse space-x-4 text-primary dark:text-primary-fixed">
+<button class="hover:text-on-surface transition-colors duration-500">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">language</span>
+</button>
+<button class="hover:text-on-surface transition-colors duration-500">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[70vh] flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 w-full h-full">
+<img class="w-full h-full object-cover object-center opacity-80" data-alt="A cinematic, wide-angle shot of a modern architectural ceramic factory interior in Kuwait. The lighting is soft and natural, coming from large clerestory windows, illuminating the vast, clean space. The palette is dominated by alabaster (#f6f4ee) walls and sand-colored (#e7d6a8) floors, creating a serene, high-end gallery feel despite the industrial setting. Slow, elegant mood." src="https://lh3.googleusercontent.com/aida/AP1WRLu0W6Lx5DOydRhsS19OBhtKlY5SkkAvfh0Kde_G9hr0ka_pz6BE-bmDWx4Rp3B0Q-pqTXxoj5EyOeT-fhbnC8K530w7NIhkv6o9Twp5EmvTkSI3Ji9eb2wknk1-wdkp6_P820NIfhnZ816ijXbK7H2L9N_terhbGxPY3s3y7IsHVCuY2opFiFza3QbDpfRV828mcrGzga7k83dJcEGpfMce1nVNHKzOWmUVrhJsTPWI1HDVKxI9Iu0wvg"/>
+<div class="absolute inset-0 bg-background/30 mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 text-center px-6 fade-in-up">
+<h1 class="font-headline text-5xl md:text-7xl lg:text-8xl font-light text-primary tracking-wide leading-tight drop-shadow-sm">
+                حِرفةٌ تصنعها النار،<br/>يخلّدها الضوء
+            </h1>
+</div>
+</header>
+<!-- Brand Story Section -->
+<section class="py-32 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto text-center fade-in-up">
+<div class="w-px h-24 bg-secondary mx-auto mb-12 opacity-50"></div>
+<h2 class="font-display text-3xl md:text-4xl text-primary mb-8 tracking-wide">تراث من الضوء والسطح</h2>
+<p class="font-body text-xl md:text-2xl text-on-surface-variant leading-relaxed max-w-4xl mx-auto font-light">
+            في قلب الكويت، حيث يلتقي الأفق الممتد بالتفاصيل المعمارية الدقيقة، تأسست NI Ceramics لتكون أكثر من مجرد مصنع. نحن نصوغ أسطحاً تتنفس مع تغير الضوء طوال اليوم. إرثنا مبني على دمج الحرفية التقليدية مع أحدث تقنيات التصنيع، لنقدم مواد تعكس الفخامة الهادئة وتؤسس لمساحات خالدة.
+        </p>
+</section>
+<!-- The Factory Section -->
+<section class="py-24 bg-surface-container relative overflow-hidden">
+<div class="absolute right-0 top-0 w-1/2 h-full opacity-10 pointer-events-none mix-blend-luminosity">
+<img class="w-full h-full object-cover" data-alt="Close-up macro photography of an unglazed ceramic tile with deep, organic textures resembling desert sand ripples. Warm side-lighting casts long, elegant shadows across the alabaster (#f6f4ee) and sand (#e7d6a8) colored surface, emphasizing the tactile quality and architectural depth. Minimalist, serene, and high-end aesthetic." src="https://lh3.googleusercontent.com/aida/AP1WRLuimzOJRes4a8gH2uOWKiDDinGtfjcqE0u1ln_WYYDGKPkWSpNFSOGUFP8IEIbIAHB8AAxTEK1uTG0dhPxMx32Iixa44jXm_Y-j6ala0F14jvF8_P4fmRDostYWWMFf700nEi2O-f9hy0tUUO6yj4zHotwKr6FmoPs3uYcO7A3NnvLegIEamF5w-EefRFvK_XtTS0SfGsYwkNHP1ymWbHRv7WDRAavp9LFKN8pJ3gIbR_jhYx_hu_iCrnM"/>
+</div>
+<div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="order-2 lg:order-1 fade-in-up">
+<img class="w-full h-[600px] object-cover rounded shadow-[20px_20px_60px_rgba(38,36,31,0.05)]" data-alt="A serene, architectural view of a massive modern ceramic kiln inside a pristine factory. The structure is painted in soft alabaster tones, with warm glowing light emitting from the machinery. The setting is impeccably clean, resembling a modern art museum rather than a typical industrial space. High-end, calm atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeRp4vr4Fq-9mBmtK76y0Er8pVYU6rOaNRo42lqP0kfYwjEzvn5AV_5QKEUiVSLWVkuZUAzSigSjrwjL62w14U7uc_zJKxaYhucMmXDZ_iLi9pugtIcjsj3RjA_UBWXdktZZnPJULdSi2j1l6MsQY-ngzv5uR4uWVpYuoobauMaxBBpcZAlp1ga-r2mCAcaZdWmJ8sbaofRLr4je0BiiqrtnhLmRQRmSXTK8kFiGWaBKEyCMPJK3Bm_e9Rn6WmktPpznNDWvRFBIk"/>
+</div>
+<div class="order-1 lg:order-2 fade-in-up delay-100">
+<h2 class="font-display text-4xl text-primary mb-12">صرح التصنيع المتقدم</h2>
+<div class="grid grid-cols-2 gap-x-8 gap-y-16">
+<div>
+<p class="font-display text-5xl text-primary mb-2">64k</p>
+<p class="font-body text-sm text-on-surface-variant tracking-wider uppercase">متر مربع من المساحة</p>
+</div>
+<div>
+<p class="font-display text-5xl text-primary mb-2">25+</p>
+<p class="font-body text-sm text-on-surface-variant tracking-wider uppercase">عاما من الخبرة</p>
+</div>
+<div>
+<p class="font-display text-5xl text-primary mb-2">120</p>
+<p class="font-body text-sm text-on-surface-variant tracking-wider uppercase">مجموعة حصرية</p>
+</div>
+<div>
+<p class="font-display text-5xl text-primary mb-2">15M</p>
+<p class="font-body text-sm text-on-surface-variant tracking-wider uppercase">طاقة إنتاجية سنوية (م٢)</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-dim w-full py-20 px-12 mt-24">
+<div class="flex flex-col items-center text-center space-y-8 max-w-4xl mx-auto">
+<h3 class="font-display text-3xl font-light text-on-surface mb-8 tracking-tighter">NI Ceramics</h3>
+<div class="flex flex-wrap justify-center gap-6 mb-8">
+<a class="text-on-surface-variant font-body text-sm tracking-wide hover:underline decoration-stone transition-all opacity-90 hover:opacity-100" href="#">المجموعات</a>
+<a class="text-on-surface-variant font-body text-sm tracking-wide hover:underline decoration-stone transition-all opacity-90 hover:opacity-100" href="#">الذكاء الاصطناعي</a>
+<a class="text-on-surface-variant font-body text-sm tracking-wide hover:underline decoration-stone transition-all opacity-90 hover:opacity-100" href="#">المشاريع</a>
+<a class="text-primary font-bold font-body text-sm tracking-wide hover:underline decoration-stone transition-all opacity-90 hover:opacity-100" href="#">من نحن</a>
+<a class="text-on-surface-variant font-body text-sm tracking-wide hover:underline decoration-stone transition-all opacity-90 hover:opacity-100" href="#">تواصل</a>
+<a class="text-on-surface-variant font-body text-sm tracking-wide hover:underline decoration-stone transition-all opacity-90 hover:opacity-100" href="#">LinkedIn</a>
+</div>
+<p class="font-headline italic text-lg text-secondary mb-4">"Cobalt depth & golden craft — made in Kuwait."</p>
+<p class="font-body text-xs text-on-surface-variant tracking-widest uppercase">EST. KUWAIT</p>
+<p class="font-body text-sm tracking-wide text-on-surface-variant mt-8">© 2024 NI Ceramics. Cobalt depth & golden craft — made in Kuwait.</p>
+</div>
+</footer>
+<script>
+        // Simple Intersection Observer for fade-in animations
+        document.addEventListener("DOMContentLoaded", () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
+
+            // Navbar scroll effect
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-background/90', 'shadow-sm');
+                    navbar.classList.remove('bg-transparent');
+                } else {
+                    navbar.classList.remove('bg-background/90', 'shadow-sm');
+                    navbar.classList.add('bg-transparent');
+                }
+            });
+        });
+    </script>
+</body></html>

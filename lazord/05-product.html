@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>كلكتا بيانكو | NI Ceramics</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@100..900&amp;family=El+Messiri:wght@400;500;600;700..700&amp;family=Tajawal:wght@200;300;400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container": "#f1f3ef",
+                    "error-container": "#e8a48f",
+                    "surface-bright": "#f6f4ee",
+                    "surface-dim": "#e6ebf1",
+                    "outline": "#a8853a",
+                    "secondary": "#3a6a96",
+                    "on-background": "#21384f",
+                    "surface": "#f6f4ee",
+                    "on-primary": "#faf8f2",
+                    "inverse-surface": "#0a1726",
+                    "surface-container-high": "#eef0ec",
+                    "on-error-container": "#6e2418",
+                    "tertiary-dim": "#1f5e93",
+                    "on-secondary-fixed-variant": "#2f5b86",
+                    "background": "#f6f4ee", // Adjusted to match prompt
+                    "on-error": "#ffffff",
+                    "primary-fixed": "#e6ebf1",
+                    "tertiary-container": "#f7efd9",
+                    "primary": "#13283f", // Adjusted to match prompt text color
+                    "error-dim": "#4a140a",
+                    "inverse-primary": "#faf8f2",
+                    "primary-fixed-dim": "#d7dee7",
+                    "on-secondary-fixed": "#2a4258",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#34506c",
+                    "error": "#b23a2e",
+                    "on-surface-variant": "#5a6e88",
+                    "surface-tint": "#00508f",
+                    "on-tertiary-container": "#2f5b86",
+                    "on-primary-fixed-variant": "#1f5891",
+                    "tertiary-fixed": "#f7efd9",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-low": "#faf8f2",
+                    "outline-variant": "#b9c4d2",
+                    "secondary-fixed-dim": "#e3d09f",
+                    "on-primary-container": "#2b5586",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary-fixed-dim": "#f0e6cb",
+                    "primary-container": "#e6ebf1",
+                    "primary-dim": "#1a5a97",
+                    "on-tertiary-fixed-variant": "#5a6e88",
+                    "secondary-fixed": "#f0e6cb",
+                    "on-primary-fixed": "#2a4258",
+                    "secondary-dim": "#235a8a",
+                    "tertiary": "#3a6a96",
+                    "surface-container-highest": "#e9edf2",
+                    "surface-variant": "#e9edf2",
+                    "on-surface": "#13283f", // Adjusted to match prompt
+                    "secondary-container": "#f0e6cb",
+                    "on-secondary-container": "#2b5586",
+                    "inverse-on-surface": "#94a2b5",
+                    "sand": "#e7d6a8",
+                    "alabaster": "#f6f4ee",
+                    "stone": "#b9c4d2"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem", // 4px as requested
+                    "lg": "0.25rem",
+                    "xl": "0.25rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                '18': '4.5rem',
+                '22': '5.5rem',
+                '30': '7.5rem',
+            },
+            "fontFamily": {
+                    "headline": ["Markazi Text", "serif"], // Added Markazi
+                    "display": ["EB Garamond", "serif"],
+                    "body": ["Tajawal", "sans-serif"],
+                    "label": ["Inter", "sans-serif"]
+            },
+            "boxShadow": {
+                'long-soft': '10px 10px 30px -10px rgba(97, 94, 88, 0.1), -5px -5px 20px -10px rgba(255, 255, 255, 0.8)',
+                'long-soft-hover': '15px 15px 40px -10px rgba(97, 94, 88, 0.15), -5px -5px 20px -10px rgba(255, 255, 255, 0.9)'
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.primary');
+            font-family: theme('fontFamily.body');
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 300,
+          'GRAD' 0,
+          'opsz' 24
+        }
+        
+        .fade-in {
+            animation: fadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Thin scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: theme('colors.surface-container-low'); 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: theme('colors.outline-variant'); 
+            border-radius: theme('borderRadius.DEFAULT');
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: theme('colors.outline'); 
+        }
+
+        .gallery-thumbnail {
+            transition: all 0.5s ease;
+        }
+        .gallery-thumbnail.active {
+            border-color: theme('colors.primary');
+            opacity: 1;
+        }
+        .gallery-thumbnail:not(.active) {
+            opacity: 0.6;
+        }
+        .gallery-thumbnail:not(.active):hover {
+            opacity: 0.8;
+        }
+        
+        /* Table styles */
+        .specs-table {
+            border-collapse: separate;
+            border-spacing: 0;
+            width: 100%;
+        }
+        .specs-table tr:not(:last-child) td {
+            border-bottom: 1px solid theme('colors.stone');
+        }
+        .specs-table td {
+            padding: 1.25rem 0;
+            vertical-align: top;
+        }
+        
+        /* Image positioning helpers */
+        .img-top-left {
+            object-position: 0 0;
+        }
+        .img-top-right {
+            object-position: 100% 0;
+        }
+        .img-bottom-left {
+            object-position: 0 100%;
+        }
+        .img-bottom-right {
+            object-position: 100% 100%;
+        }
+    </style>
+</head>
+<body class="selection:bg-sand selection:text-primary">
+<!-- TopNavBar (Rendered exactly from JSON) -->
+<nav class="fixed top-0 w-full z-50 bg-transparent backdrop-blur-sm transition-all duration-700 ease-in-out">
+<div class="flex flex-row justify-between items-center px-12 py-6 w-full">
+<div class="flex items-center gap-4">
+<a class="font-display text-2xl font-light tracking-tighter text-on-surface" href="#">NI Ceramics</a>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-on-surface border-b border-on-surface pb-1 font-body text-lg uppercase tracking-widest hover:text-on-surface transition-colors duration-500" href="#">Collections</a>
+<a class="text-on-surface-variant font-body text-lg uppercase tracking-widest hover:text-on-surface transition-colors duration-500" href="#">AI Estimator</a>
+<a class="text-on-surface-variant font-body text-lg uppercase tracking-widest hover:text-on-surface transition-colors duration-500" href="#">Projects</a>
+<a class="text-on-surface-variant font-body text-lg uppercase tracking-widest hover:text-on-surface transition-colors duration-500" href="#">About Us</a>
+<a class="text-on-surface-variant font-body text-lg uppercase tracking-widest hover:text-on-surface transition-colors duration-500" href="#">Contact</a>
+</div>
+<div class="flex items-center gap-4 text-primary dark:text-primary-fixed">
+<button class="hover:text-on-surface transition-colors duration-500"><span class="material-symbols-outlined">language</span></button>
+<button class="hover:text-on-surface transition-colors duration-500"><span class="material-symbols-outlined">person</span></button>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-32 pb-24 px-6 md:px-12 lg:px-24 max-w-[1600px] mx-auto min-h-screen flex flex-col gap-24">
+<!-- Breadcrumb -->
+<nav aria-label="Breadcrumb" class="fade-in">
+<ol class="flex items-center gap-2 text-sm text-outline font-body tracking-wide">
+<li><a class="hover:text-primary transition-colors" href="#">الكتالوج</a></li>
+<li><span class="material-symbols-outlined text-[1rem]">chevron_left</span></li>
+<li><a class="hover:text-primary transition-colors" href="#">رخام</a></li>
+<li><span class="material-symbols-outlined text-[1rem]">chevron_left</span></li>
+<li aria-current="page" class="text-primary">كلكتا بيانكو</li>
+</ol>
+</nav>
+<!-- Top Section: Hero Image & Info -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+<!-- Right Column: Visual Gallery (Takes up more space) -->
+<div class="lg:col-span-7 fade-in delay-100 flex flex-col gap-6">
+<!-- Tabs for View Type -->
+<div class="flex gap-8 border-b border-stone pb-2 mb-2">
+<button class="font-body text-sm tracking-widest text-primary border-b-2 border-primary pb-2 -mb-[10px] transition-all" id="tab-product">المنتج</button>
+<button class="font-body text-sm tracking-widest text-outline hover:text-primary transition-all" id="tab-ambient">مساحات العرض (Ambientazioni)</button>
+</div>
+<!-- Main Image Container -->
+<div class="relative w-full aspect-[4/5] bg-surface-container-low shadow-long-soft rounded overflow-hidden group">
+<!-- The prompt requested https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg top-left tile for the close up. 
+                         Since IMAGE_4 is a 2x2 grid collage, we will use object-position to zoom in on the top-left quadrant for the product shot, 
+                         and maybe full image for ambient. -->
+<img alt="كلكتا بيانكو" class="absolute inset-0 w-full h-full object-cover scale-[2] transform origin-top-left transition-transform duration-1000 ease-in-out" id="main-gallery-img" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg"/>
+</div>
+<!-- Thumbnails -->
+<div class="grid grid-cols-4 gap-4" id="thumbnail-container">
+<button class="gallery-thumbnail active relative aspect-square bg-surface-container-low rounded overflow-hidden border border-transparent" onclick="switchImage('product')">
+<img alt="Product detail view" class="absolute inset-0 w-full h-full object-cover scale-[2] origin-top-left" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg"/>
+</button>
+<button class="gallery-thumbnail relative aspect-square bg-surface-container-low rounded overflow-hidden border border-transparent" onclick="switchImage('ambient1')">
+<img alt="Desert villa room scene" class="absolute inset-0 w-full h-full object-cover" data-alt="A luxurious, sun-drenched desert villa living room. Minimalist architectural aesthetic. Floor and walls feature expansive pristine white marble ceramic tiles with subtle grey veining (Calacatta Bianco style). Soft, cinematic side-lighting creates long, elegant shadows across the surface. Curated sparse furniture in natural tones. A feeling of a quiet gallery, spacious and serene." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtgqggfSTa2ChhvyGU_eBw4vL-nDO_CdNOVCq7btfTH73wjvchf0dunlnQ4F3gjxMFyKoFz9ejeH1H9IEdonP9uK5pcAfrUv6GfGHrkKLqepfEEXDXAJJ8PbZwmVCV-CsG1aCQ2lscs7fzTprz57OuM34zC-ShkCxIxrX90YadA9DOQg7r-z9ALgz7qJpTDgyl9KSe1qpp9-36Rzdr1OaddX7wcj4rr7zQULoRIe6YX83prZxjb4UXALcxW8RmawxXlbaGVPwF5_w"/>
+</button>
+<button class="gallery-thumbnail relative aspect-square bg-surface-container-low rounded overflow-hidden border border-transparent" onclick="switchImage('ambient2')">
+<img alt="Luxury hotel bathroom scene" class="absolute inset-0 w-full h-full object-cover" data-alt="High-end luxury hotel bathroom interior. Floor to ceiling installation of white Calacatta marble style ceramic tiles. Minimalist aesthetic, architectural lines. Warm, low-key lighting highlighting the polished surface texture. A freestanding minimalist bathtub and thin, elegant fixtures. Serene, spa-like atmosphere, museum quality." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrZd0b-IB-gAI7XrDxUfBVNWmAkICVuxVuOraIGOUpPXgfhlnhZpXdvs6Cdw8A349Z_Sev7P2sTE8px588t-ztihV990iGJC2AYe0-uwEptlB8PYpGUB6L0gf5BijyaItkxui9iN4vPhbFFtDEbhdXFZlyvdr6Qtv5A8nP1X6RhnnkXZ1CrgjQljgaLbAIohzHGjVVHIO74VTPgwwbXqeukEA0sYU2iRf3at6JwgR6GKyR7587SmcuqkC0CID0n0Mkq8cDKcMeFjg"/>
+</button>
+<button class="gallery-thumbnail relative aspect-square bg-surface-container-low rounded overflow-hidden border border-transparent flex items-center justify-center bg-sand hover:bg-surface-dim transition-colors">
+<span class="material-symbols-outlined text-outline">add</span>
+</button>
+</div>
+</div>
+<!-- Left Column: Product Info -->
+<div class="lg:col-span-5 flex flex-col pt-8 fade-in delay-200">
+<div class="mb-12">
+<h1 class="font-headline text-6xl md:text-7xl lg:text-8xl text-primary mb-6 leading-none">كلكتا بيانكو</h1>
+<p class="font-body text-xl text-outline-variant tracking-widest uppercase mb-8">Calacatta Bianco</p>
+<div class="space-y-6 text-on-surface-variant font-body text-lg leading-relaxed max-w-md">
+<p>تجسيد النقاء المعماري. يعكس «كلكتا بيانكو» ترف الرخام الإيطالي الأصيل، بلمسة معاصرة تلتقط الضوء وتعيد توزيعه بهدوء في المساحات الواسعة.</p>
+<p>عروق رمادية دقيقة تنساب على خلفية ناصعة، مصممة لتكون اللوحة الخلفية المثالية للضوء الطبيعي، مستوحاة من هدوء المعارض الفنية.</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col gap-4 mt-auto">
+<button class="group flex items-center justify-between w-full py-4 border-b border-stone hover:border-primary transition-colors duration-500 text-right">
+<span class="font-body text-lg text-primary tracking-wide">اطلب عيّنة</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors duration-500 group-hover:-translate-x-2 transform ease-out">arrow_left_alt</span>
+</button>
+<button class="group flex items-center justify-between w-full py-4 border-b border-stone hover:border-primary transition-colors duration-500 text-right">
+<span class="font-body text-lg text-primary tracking-wide">أضف لتقدير الـAI</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors duration-500 group-hover:-translate-x-2 transform ease-out">analytics</span>
+</button>
+<button class="group flex items-center justify-between w-full py-4 border-b border-stone hover:border-primary transition-colors duration-500 text-right">
+<span class="font-body text-lg text-primary tracking-wide">حمّل البيانات الفنية PDF</span>
+<span class="material-symbols-outlined text-outline group-hover:text-primary transition-colors duration-500 group-hover:-translate-x-2 transform ease-out">download</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Middle Section: Technical Specs -->
+<section class="fade-in delay-300 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start">
+<div class="lg:col-span-4">
+<h2 class="font-headline text-4xl text-primary mb-4">المواصفات الفنية</h2>
+<p class="font-body text-on-surface-variant text-base">تفاصيل هندسية دقيقة لضمان أداء استثنائي وتوافق تام مع المعايير المعمارية العالمية.</p>
+</div>
+<div class="lg:col-span-8 bg-alabaster rounded p-8 md:p-12 shadow-long-soft border border-surface-dim">
+<table class="specs-table font-body text-base">
+<tbody>
+<tr>
+<td class="text-outline w-1/3">المقاس</td>
+<td class="text-primary font-medium w-2/3" dir="ltr">120x240 cm</td>
+</tr>
+<tr>
+<td class="text-outline">السماكة</td>
+<td class="text-primary font-medium" dir="ltr">9 mm</td>
+</tr>
+<tr>
+<td class="text-outline">نوع السطح</td>
+<td class="text-primary font-medium">مصقول / لامع</td>
+</tr>
+<tr>
+<td class="text-outline">مقاومة الانزلاق</td>
+<td class="text-primary font-medium" dir="ltr">R9</td>
+</tr>
+<tr>
+<td class="text-outline">فئة الجودة</td>
+<td class="text-primary font-medium" dir="ltr">Class A</td>
+</tr>
+<tr>
+<td class="text-outline">الاستخدام</td>
+<td class="text-primary font-medium">أرضيات وجدران (داخلي)</td>
+</tr>
+<tr>
+<td class="text-outline border-none">فرق اللون</td>
+<td class="text-primary font-medium border-none flex items-center gap-2">
+<span dir="ltr">V2</span>
+<span class="text-outline text-sm">- تنوع طفيف</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Bottom Section: Similar Products -->
+<section class="fade-in delay-400 pt-12 border-t border-stone">
+<div class="flex justify-between items-end mb-12">
+<h2 class="font-headline text-4xl text-primary">منتجات مشابهة</h2>
+<a class="font-body text-sm text-outline hover:text-primary tracking-widest border-b border-transparent hover:border-primary transition-all pb-1" href="#">عرض المجموعة كاملة</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Using different quadrants of IMAGE_4 for similar products -->
+<a class="group block" href="#">
+<div class="relative w-full aspect-[4/3] bg-surface-container-low rounded overflow-hidden mb-4 shadow-long-soft group-hover:shadow-long-soft-hover transition-shadow duration-500">
+<img alt="Similar Product 1" class="absolute inset-0 w-full h-full object-cover scale-[2] origin-top-right transform group-hover:scale-[2.05] transition-transform duration-1000 ease-in-out" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg"/>
+</div>
+<h3 class="font-headline text-2xl text-primary">بيجرا ديزيرت</h3>
+<p class="font-body text-sm text-outline tracking-widest uppercase">Pietra Desert</p>
+</a>
+<a class="group block" href="#">
+<div class="relative w-full aspect-[4/3] bg-surface-container-low rounded overflow-hidden mb-4 shadow-long-soft group-hover:shadow-long-soft-hover transition-shadow duration-500">
+<img alt="Similar Product 2" class="absolute inset-0 w-full h-full object-cover scale-[2] origin-bottom-left transform group-hover:scale-[2.05] transition-transform duration-1000 ease-in-out" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg"/>
+</div>
+<h3 class="font-headline text-2xl text-primary">سيمينتو أوربان</h3>
+<p class="font-body text-sm text-outline tracking-widest uppercase">Cemento Urban</p>
+</a>
+<a class="group block" href="#">
+<div class="relative w-full aspect-[4/3] bg-surface-container-low rounded overflow-hidden mb-4 shadow-long-soft group-hover:shadow-long-soft-hover transition-shadow duration-500">
+<img alt="Similar Product 3" class="absolute inset-0 w-full h-full object-cover scale-[2] origin-bottom-right transform group-hover:scale-[2.05] transition-transform duration-1000 ease-in-out" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg"/>
+</div>
+<h3 class="font-headline text-2xl text-primary">ليجنو ناتشرال</h3>
+<p class="font-body text-sm text-outline tracking-widest uppercase">Legno Natural</p>
+</a>
+</div>
+</section>
+</main>
+<!-- Footer (Rendered exactly from JSON) -->
+<footer class="bg-surface-container-low dark:bg-surface-dim w-full py-20 px-12 flat no shadows flex flex-col items-center text-center space-y-8 opacity-90 hover:opacity-100 transition-opacity">
+<div class="font-display text-3xl font-light text-on-surface mb-8">NI Ceramics</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-on-surface-variant font-body text-sm tracking-wide hover:underline decoration-stone transition-all" href="#">Collections</a>
+<a class="text-on-surface-variant font-body text-sm tracking-wide hover:underline decoration-stone transition-all" href="#">AI Estimator</a>
+<a class="text-on-surface-variant font-body text-sm tracking-wide hover:underline decoration-stone transition-all" href="#">Projects</a>
+<a class="text-on-surface-variant font-body text-sm tracking-wide hover:underline decoration-stone transition-all" href="#">About Us</a>
+<a class="text-on-surface-variant font-body text-sm tracking-wide hover:underline decoration-stone transition-all" href="#">Contact</a>
+<a class="text-on-surface-variant font-body text-sm tracking-wide hover:underline decoration-stone transition-all" href="#">LinkedIn</a>
+</div>
+<div class="text-primary dark:text-primary-fixed-dim font-body text-sm tracking-wide mt-8">
+            © 2024 NI Ceramics. Cobalt depth & golden craft — made in Kuwait.
+        </div>
+</footer>
+<!-- Simple Script for Gallery Interaction -->
+<script>
+        const mainImg = document.getElementById('main-gallery-img');
+        const thumbnails = document.querySelectorAll('.gallery-thumbnail');
+        const tabProduct = document.getElementById('tab-product');
+        const tabAmbient = document.getElementById('tab-ambient');
+        
+        // Product view image src (top left of collage)
+        const productImgSrc = 'https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg';
+        
+        // Using placeholder images configured in HTML for ambients
+        const ambientImages = {
+            'ambient1': document.querySelectorAll('.gallery-thumbnail')[1].querySelector('img').src,
+            'ambient2': document.querySelectorAll('.gallery-thumbnail')[2].querySelector('img').src
+        };
+
+        function switchImage(type) {
+            // Update active thumbnail
+            thumbnails.forEach(t => t.classList.remove('active'));
+            const targetThumb = Array.from(thumbnails).find(t => t.getAttribute('onclick') === `switchImage('${type}')`);
+            if(targetThumb) targetThumb.classList.add('active');
+
+            // Fade out
+            mainImg.style.opacity = 0;
+            
+            setTimeout(() => {
+                if(type === 'product') {
+                    mainImg.src = productImgSrc;
+                    mainImg.className = "absolute inset-0 w-full h-full object-cover scale-[2] origin-top-left transition-transform duration-1000 ease-in-out opacity-0 transition-opacity";
+                    updateTabs('product');
+                } else {
+                    mainImg.src = ambientImages[type];
+                    mainImg.className = "absolute inset-0 w-full h-full object-cover origin-center transition-transform duration-1000 ease-in-out opacity-0 transition-opacity";
+                    updateTabs('ambient');
+                }
+                
+                // Trigger reflow
+                void mainImg.offsetWidth;
+                
+                // Fade in
+                mainImg.style.opacity = 1;
+            }, 300);
+        }
+
+        function updateTabs(activeType) {
+            if(activeType === 'product') {
+                tabProduct.className = "font-body text-sm tracking-widest text-primary border-b-2 border-primary pb-2 -mb-[10px] transition-all";
+                tabAmbient.className = "font-body text-sm tracking-widest text-outline hover:text-primary transition-all pb-2";
+            } else {
+                tabAmbient.className = "font-body text-sm tracking-widest text-primary border-b-2 border-primary pb-2 -mb-[10px] transition-all";
+                tabProduct.className = "font-body text-sm tracking-widest text-outline hover:text-primary transition-all pb-2";
+            }
+        }
+
+        // Tab click listeners
+        tabProduct.addEventListener('click', () => switchImage('product'));
+        tabAmbient.addEventListener('click', () => switchImage('ambient1'));
+        
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Optionally observe elements that don't have fade-in by default
+        // document.querySelectorAll('.observe-me').forEach(el => observer.observe(el));
+    </script>
+</body></html>

@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Estimator - NI Ceramics</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&amp;family=Tajawal:wght@200;300;400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e9edf2",
+                        "tertiary": "#3a6a96",
+                        "surface-tint": "#00508f",
+                        "on-error": "#ffffff",
+                        "surface-bright": "#f6f4ee",
+                        "on-primary-container": "#2b5586",
+                        "tertiary-fixed": "#f7efd9",
+                        "on-tertiary-fixed-variant": "#5a6e88",
+                        "on-primary": "#faf8f2",
+                        "on-secondary-container": "#2b5586",
+                        "inverse-surface": "#0a1726",
+                        "error-container": "#e8a48f",
+                        "surface-variant": "#e9edf2",
+                        "on-error-container": "#6e2418",
+                        "inverse-primary": "#faf8f2",
+                        "on-secondary-fixed": "#2a4258",
+                        "outline-variant": "#b9c4d2",
+                        "secondary-dim": "#235a8a",
+                        "inverse-on-surface": "#94a2b5",
+                        "on-primary-fixed-variant": "#1f5891",
+                        "surface-container-high": "#eef0ec",
+                        "secondary-fixed": "#f0e6cb",
+                        "on-background": "#21384f",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#faf8f2",
+                        "surface-container": "#f1f3ef",
+                        "secondary-fixed-dim": "#e3d09f",
+                        "primary-dim": "#1a5a97",
+                        "on-tertiary-fixed": "#34506c",
+                        "tertiary-container": "#f7efd9",
+                        "primary": "#00508f",
+                        "error-dim": "#4a140a",
+                        "tertiary-fixed-dim": "#f0e6cb",
+                        "on-surface": "#21384f",
+                        "primary-fixed-dim": "#d7dee7",
+                        "on-surface-variant": "#5a6e88",
+                        "secondary": "#3a6a96",
+                        "tertiary-dim": "#1f5e93",
+                        "primary-container": "#e6ebf1",
+                        "on-secondary-fixed-variant": "#2f5b86",
+                        "surface": "#f6f4ee",
+                        "outline": "#a8853a",
+                        "error": "#b23a2e",
+                        "surface-dim": "#e6ebf1",
+                        "primary-fixed": "#e6ebf1",
+                        "on-tertiary-container": "#2f5b86",
+                        "background": "#f6f4ee",
+                        "secondary-container": "#f0e6cb",
+                        "on-primary-fixed": "#2a4258"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Eb Garamond"],
+                        "display": ["Eb Garamond"],
+                        "body": ["Tajawal"],
+                        "label": ["Inter"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Subtle Entrance Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Glassmorphism utility */
+        .glass {
+            background: rgba(253, 255, 218, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body antialiased min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container transition-colors duration-500 overflow-x-hidden">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-sm transition-all duration-300 border-b border-transparent shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
+<div class="flex flex-row justify-between items-center w-full px-8 md:px-12 py-6 max-w-screen-2xl mx-auto">
+<!-- Brand Logo -->
+<a class="font-headline text-2xl font-light tracking-tighter text-on-surface hover:opacity-70 transition-opacity duration-300" href="#">
+                NI Ceramics
+            </a>
+<!-- Navigation Links (Web) -->
+<nav class="hidden md:flex flex-row gap-10 items-center">
+<a class="text-on-surface-variant font-body hover:text-primary transition-colors duration-500 text-sm tracking-wide" href="#">Collections</a>
+<a class="text-primary font-semibold border-b border-primary/40 pb-1 text-sm tracking-wide hover:text-primary transition-colors duration-500 active opacity-100" href="#">AI Estimator</a>
+<a class="text-on-surface-variant font-body hover:text-primary transition-colors duration-500 text-sm tracking-wide" href="#">Projects</a>
+<a class="text-on-surface-variant font-body hover:text-primary transition-colors duration-500 text-sm tracking-wide" href="#">About Us</a>
+<a class="text-on-surface-variant font-body hover:text-primary transition-colors duration-500 text-sm tracking-wide" href="#">Contact</a>
+</nav>
+<!-- Trailing Icons -->
+<div class="flex flex-row gap-6 items-center">
+<button aria-label="shopping_cart" class="text-on-surface-variant hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="shopping_cart">shopping_cart</span>
+</button>
+<button aria-label="language" class="text-on-surface-variant hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface-variant hover:text-primary transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Canvas -->
+<main class="flex-grow pt-32 pb-24 relative">
+<!-- Abstract Background Texture Image (Using Image_3) -->
+<div class="absolute inset-0 z-0 opacity-10 pointer-events-none" data-alt="Cinematic close-up of a luxury ceramic tile surface with sophisticated texture. Soft side lighting from the 'Gulf sun' creating long, elegant shadows and emphasizing the depth of the surface. Minimalist, architectural, high-end atmosphere. Color palette: alabaster, sand, and stone. No text. 8k resolution." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLuimzOJRes4a8gH2uOWKiDDinGtfjcqE0u1ln_WYYDGKPkWSpNFSOGUFP8IEIbIAHB8AAxTEK1uTG0dhPxMx32Iixa44jXm_Y-j6ala0F14jvF8_P4fmRDostYWWMFf700nEi2O-f9hy0tUUO6yj4zHotwKr6FmoPs3uYcO7A3NnvLegIEamF5w-EefRFvK_XtTS0SfGsYwkNHP1ymWbHRv7WDRAavp9LFKN8pJ3gIbR_jhYx_hu_iCrnM'); background-size: cover; background-position: center;">
+</div>
+<div class="max-w-screen-xl mx-auto px-6 md:px-12 relative z-10">
+<!-- Hero Section -->
+<section class="text-center mb-20 fade-in-up">
+<h1 class="font-headline text-4xl md:text-6xl text-primary font-medium mb-6 tracking-tight leading-tight">
+                    قدّر تكلفة مشروعك بالذكاء الاصطناعي
+                </h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto font-light leading-relaxed">
+                    ارفع مخطط البيت ودع الذكاء الاصطناعي يقرأ المساحات ويحسب الكميات والتكلفة بلمسة فنية ودقة معمارية.
+                </p>
+</section>
+<!-- Tabs -->
+<div class="flex justify-center mb-16 fade-in-up delay-100">
+<div class="inline-flex rounded-lg bg-surface-container-high p-1 shadow-[inset_0_2px_4px_rgba(0,0,0,0.02)]">
+<button class="px-8 py-3 text-sm font-medium rounded text-on-primary bg-primary shadow-sm transition-all duration-300">
+                        ارفع مخطط (PDF)
+                    </button>
+<button class="px-8 py-3 text-sm font-medium rounded text-on-surface-variant hover:text-primary transition-all duration-300">
+                        أدخل الأبعاد يدوياً
+                    </button>
+</div>
+</div>
+<!-- Upload Area -->
+<section class="mb-24 fade-in-up delay-200">
+<div class="relative group cursor-pointer">
+<!-- Dashed Border Box -->
+<div class="absolute inset-0 border border-dashed border-outline-variant rounded-xl group-hover:border-primary transition-colors duration-500"></div>
+<div class="bg-surface/50 backdrop-blur-md rounded-xl p-16 text-center transition-all duration-500 group-hover:bg-surface-container-lowest shadow-[0_8px_30px_rgb(0,0,0,0.02)] group-hover:shadow-[0_12px_40px_rgb(0,0,0,0.04)]">
+<div class="w-20 h-20 mx-auto bg-surface-container-high rounded-full flex items-center justify-center mb-6 text-primary group-hover:scale-105 transition-transform duration-500">
+<span class="material-symbols-outlined text-4xl font-light" data-icon="upload_file">upload_file</span>
+</div>
+<h3 class="font-headline text-2xl text-on-surface mb-3">
+                            اسحب ملف PDF لمخطط البيت أو اختر من جهازك
+                        </h3>
+<p class="text-on-surface-variant text-sm font-light">
+                            يدعم صيغ PDF, JPG, PNG (الحد الأقصى 20 ميغابايت)
+                        </p>
+</div>
+</div>
+<!-- Steps -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-4xl mx-auto relative">
+<!-- Connecting line -->
+<div class="hidden md:block absolute top-6 right-1/6 left-1/6 h-px bg-outline-variant/30 -z-10"></div>
+<div class="text-center flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-headline text-xl mb-4 relative z-10 border border-surface-container-lowest">1</div>
+<h4 class="font-medium text-on-surface mb-2">ارفع المخطط</h4>
+<p class="text-xs text-on-surface-variant">قم برفع ملف التصميم المعماري بوضوح</p>
+</div>
+<div class="text-center flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest text-outline-variant flex items-center justify-center font-headline text-xl mb-4 relative z-10 border border-outline-variant/30">2</div>
+<h4 class="font-medium text-on-surface-variant mb-2">يقرأ النظام المساحات</h4>
+<p class="text-xs text-on-surface-variant/70">تحليل ذكي للأبعاد والتوزيع</p>
+</div>
+<div class="text-center flex flex-col items-center">
+<div class="w-12 h-12 rounded-full bg-surface-container-lowest text-outline-variant flex items-center justify-center font-headline text-xl mb-4 relative z-10 border border-outline-variant/30">3</div>
+<h4 class="font-medium text-on-surface-variant mb-2">احصل على التكلفة التقريبية</h4>
+<p class="text-xs text-on-surface-variant/70">تفصيل دقيق للكميات والأسعار</p>
+</div>
+</div>
+</section>
+<!-- Results Preview / Bento Grid Layout -->
+<section class="fade-in-up delay-300 border-t border-outline-variant/20 pt-20">
+<div class="flex items-center justify-between mb-12">
+<h2 class="font-headline text-3xl text-primary">نتائج التقدير (مثال)</h2>
+<div class="flex gap-4">
+<button class="px-6 py-2 text-sm text-primary border border-primary/20 rounded hover:bg-primary/5 transition-colors duration-300">
+                            احفظ التقدير
+                        </button>
+<button class="px-6 py-2 text-sm bg-primary text-on-primary rounded shadow-sm hover:bg-primary-dim transition-colors duration-300">
+                            اطلب عرض سعر
+                        </button>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Cost Card (Left side in RTL) -->
+<div class="lg:col-span-4 flex flex-col gap-8">
+<div class="bg-surface-container-low rounded-xl p-8 shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-white/40 flex flex-col justify-between h-full relative overflow-hidden">
+<!-- Subtle abstract decoration -->
+<div class="absolute -top-20 -right-20 w-64 h-64 bg-primary/5 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<h3 class="text-sm font-medium text-on-surface-variant mb-2 uppercase tracking-widest">التكلفة التقريبية</h3>
+<div class="flex items-baseline gap-2 mb-6">
+<span class="font-headline text-5xl text-primary font-medium">3,450</span>
+<span class="text-on-surface-variant">د.ك</span>
+</div>
+<div class="flex items-start gap-3 p-4 bg-surface-container-highest/50 rounded text-xs text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-base" data-icon="info">info</span>
+<p>هذه التكلفة تقديرية وقابلة للتعديل بناءً على اختيار المنتجات النهائية والتفاصيل الدقيقة للمشروع.</p>
+</div>
+</div>
+<!-- Contextual Image Thumbnail -->
+<div class="mt-8 rounded-lg overflow-hidden h-32 relative group">
+<div class="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors z-10 duration-500"></div>
+<div class="w-full h-full" data-alt="Luxury ceramic tile product photography, cinematic close-up of a premium 'Calacatta Bianco' marble-effect ceramic tile, soft architectural lighting, subtle grey veins on white alabaster background, 8k resolution, minimalist style, consistent with NI Ceramics brand." style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLsXMmrPoZYY7PIz7zcC0mKwNRgOIG4wEB8UzLT5wA6aMcrab6Vc8mEl0KMVnOY-CHKWuiF5LrvrCF75Vj9bpJpeGODL3KZTMD1sHd5APr6SYStJ5JV4UzXp8vSQFOUuAx7ZH2Vm614OBvKL6fBd-busnv6XM_iShMfFcUdU4HihWr88ANuQi-wVWcd4epyztlrX3xzEX6VExFRPyOQ5f8AVbvMGI3dKZ-D83x3qrljpQIBG3o12EGGZVw'); background-size: cover; background-position: center;"></div>
+</div>
+</div>
+</div>
+<!-- Main Data Area (Right side in RTL) -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Table Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-surface-container-high overflow-x-auto">
+<h3 class="font-headline text-xl text-on-surface mb-6 border-b border-outline-variant/20 pb-4">حساب الكميات</h3>
+<table class="w-full text-right text-sm">
+<thead>
+<tr class="text-on-surface-variant border-b border-outline-variant/20">
+<th class="py-4 px-2 font-medium">الغرفة / المنطقة</th>
+<th class="py-4 px-2 font-medium">المساحة (م²)</th>
+<th class="py-4 px-2 font-medium">المنتج المقترح</th>
+<th class="py-4 px-2 font-medium">الكمية (صندوق)</th>
+<th class="py-4 px-2 font-medium">المجموع الفرعي</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-outline-variant/10 group hover:bg-surface-container/30 transition-colors">
+<td class="py-4 px-2 font-medium text-on-surface">الصالة الرئيسية</td>
+<td class="py-4 px-2 text-on-surface-variant">45.5</td>
+<td class="py-4 px-2 text-primary font-medium">Calacatta Bianco 120x120</td>
+<td class="py-4 px-2 text-on-surface-variant">32</td>
+<td class="py-4 px-2 font-medium">950 د.ك</td>
+</tr>
+<tr class="border-b border-outline-variant/10 group hover:bg-surface-container/30 transition-colors">
+<td class="py-4 px-2 font-medium text-on-surface">غرفة النوم الماستر</td>
+<td class="py-4 px-2 text-on-surface-variant">28.0</td>
+<td class="py-4 px-2 text-primary font-medium">Oak Wood Effect 20x120</td>
+<td class="py-4 px-2 text-on-surface-variant">20</td>
+<td class="py-4 px-2 font-medium">420 د.ك</td>
+</tr>
+<tr class="group hover:bg-surface-container/30 transition-colors">
+<td class="py-4 px-2 font-medium text-on-surface">الحمام الرئيسي</td>
+<td class="py-4 px-2 text-on-surface-variant">12.5</td>
+<td class="py-4 px-2 text-primary font-medium">Grey Stone Matte 60x60</td>
+<td class="py-4 px-2 text-on-surface-variant">10</td>
+<td class="py-4 px-2 font-medium">180 د.ك</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Visual Layout Preview -->
+<div class="bg-surface-container-high/30 rounded-xl p-8 border border-surface-container-high flex flex-col justify-center items-center h-48 relative overflow-hidden group">
+<!-- Architectural grid lines simulation -->
+<div class="absolute inset-0 opacity-20" style="background-image: linear-gradient(to right, #a8853a 1px, transparent 1px), linear-gradient(to bottom, #a8853a 1px, transparent 1px); background-size: 20px 20px;"></div>
+<div class="relative z-10 text-center">
+<span class="material-symbols-outlined text-4xl text-primary/50 mb-3" data-icon="architecture">architecture</span>
+<p class="text-sm text-on-surface-variant font-medium">معاينة توزيع البلاط على المخطط</p>
+<p class="text-xs text-on-surface-variant/70 mt-1">تتوفر المعاينة بعد رفع المخطط الفعلي</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-20 px-8 bg-surface-container-low transition-colors duration-500">
+<div class="flex flex-col items-center justify-center space-y-8 text-center max-w-screen-xl mx-auto">
+<div class="font-headline text-xl text-on-surface font-light tracking-widest">
+                NI Ceramics
+            </div>
+<nav class="flex flex-wrap justify-center gap-8">
+<a class="text-on-surface-variant font-body text-sm hover:text-primary transition-colors duration-500 hover:scale-95 transform" href="#">Collections</a>
+<a class="text-on-surface-variant font-body text-sm hover:text-primary transition-colors duration-500 hover:scale-95 transform" href="#">Instagram</a>
+<a class="text-on-surface-variant font-body text-sm hover:text-primary transition-colors duration-500 hover:scale-95 transform" href="#">LinkedIn</a>
+<a class="text-on-surface-variant font-body text-sm hover:text-primary transition-colors duration-500 hover:scale-95 transform" href="#">Privacy</a>
+</nav>
+<div class="font-body text-sm italic text-secondary">
+                Cobalt depth & golden craft — made in Kuwait © NI Ceramics
+            </div>
+</div>
+</footer>
+<script>
+        // Simple script to handle file drag and drop visuals
+        const dropZone = document.querySelector('.group.cursor-pointer');
+        
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, preventDefaults, false);
+        });
+
+        function preventDefaults (e) {
+            e.preventDefault();
+            e.stopPropagation();
+        }
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+            dropZone.addEventListener(eventName, highlight, false);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+            dropZone.addEventListener(eventName, unhighlight, false);
+        });
+
+        function highlight(e) {
+            dropZone.querySelector('.border-dashed').classList.add('border-primary', 'bg-primary/5');
+        }
+
+        function unhighlight(e) {
+            dropZone.querySelector('.border-dashed').classList.remove('border-primary', 'bg-primary/5');
+        }
+    </script>
+</body></html>

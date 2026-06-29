@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NI Ceramics - Lapis &amp; Gold</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&amp;family=El+Messiri:wght@400;500;600;700&amp;family=Tajawal:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: #f6f4ee;
+            color: #13283f;
+        }
+        h1, h2, h3, h4, h5, h6, .font-markazi {
+            font-family: 'El Messiri', serif;
+        }
+        .font-cormorant {
+            font-family: 'Raleway', serif;
+        }
+        .shadow-long {
+            box-shadow: 10px 20px 40px rgba(0, 0, 0, 0.05);
+        }
+        .border-stone {
+            border-color: #a8853a;
+        }
+        .text-stone {
+            color: #a8853a;
+        }
+        .bg-sand {
+            background-color: #e7d6a8;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-dim": "#1f5e93",
+                        "secondary": "#3a6a96",
+                        "on-primary-container": "#2b5586",
+                        "primary-fixed-dim": "#d7dee7",
+                        "primary-fixed": "#e6ebf1",
+                        "on-tertiary-container": "#2f5b86",
+                        "on-secondary-fixed-variant": "#2f5b86",
+                        "outline": "#a8853a",
+                        "on-error": "#ffffff",
+                        "tertiary-fixed": "#f7efd9",
+                        "primary": "#00508f",
+                        "error-dim": "#4a140a",
+                        "secondary-dim": "#235a8a",
+                        "inverse-primary": "#faf8f2",
+                        "secondary-fixed-dim": "#e3d09f",
+                        "on-secondary-container": "#2b5586",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed": "#2a4258",
+                        "on-surface-variant": "#5a6e88",
+                        "surface-container-low": "#faf8f2",
+                        "on-background": "#21384f",
+                        "surface-container": "#f1f3ef",
+                        "on-tertiary-fixed": "#34506c",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-surface": "#0a1726",
+                        "on-primary-fixed-variant": "#1f5891",
+                        "inverse-on-surface": "#94a2b5",
+                        "surface-container-highest": "#e9edf2",
+                        "outline-variant": "#b9c4d2",
+                        "on-tertiary-fixed-variant": "#5a6e88",
+                        "surface-tint": "#00508f",
+                        "on-error-container": "#6e2418",
+                        "surface": "#f6f4ee",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#e6ebf1",
+                        "error-container": "#e8a48f",
+                        "surface-container-high": "#eef0ec",
+                        "on-primary-fixed": "#2a4258",
+                        "on-primary": "#faf8f2",
+                        "secondary-container": "#f0e6cb",
+                        "primary-dim": "#1a5a97",
+                        "tertiary": "#3a6a96",
+                        "error": "#b23a2e",
+                        "surface-bright": "#f6f4ee",
+                        "surface-variant": "#e9edf2",
+                        "surface-dim": "#e6ebf1",
+                        "secondary-fixed": "#f0e6cb",
+                        "background": "#f6f4ee",
+                        "on-surface": "#21384f",
+                        "tertiary-container": "#f7efd9",
+                        "tertiary-fixed-dim": "#f0e6cb"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem", // 4px
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased selection:bg-[#e7d6a8] selection:text-[#13283f]">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 transition-all duration-700 ease-in-out bg-transparent backdrop-blur-sm px-12 py-6 flex flex-row justify-between items-center" id="navbar">
+<!-- Brand -->
+<div class="font-cormorant text-2xl font-light tracking-[0.2em] text-[#13283f] uppercase" dir="ltr">
+            NI Ceramics
+        </div>
+<!-- Links (Desktop) -->
+<div class="hidden md:flex items-center gap-8">
+<a class="font-body text-[#13283f] hover:text-[#a8853a] transition-colors duration-500" href="#">المجموعات</a>
+<a class="font-body text-[#13283f] hover:text-[#a8853a] transition-colors duration-500" href="#">الذكاء الاصطناعي</a>
+<a class="font-body text-[#13283f] hover:text-[#a8853a] transition-colors duration-500" href="#">المشاريع</a>
+<a class="font-body text-[#13283f] hover:text-[#a8853a] transition-colors duration-500" href="#">من نحن</a>
+<a class="font-body text-[#13283f] hover:text-[#a8853a] transition-colors duration-500" href="#">تواصل</a>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-6 text-[#13283f]">
+<button class="font-body text-sm tracking-widest hover:text-[#a8853a] transition-colors duration-500" dir="ltr">
+                AR / <span class="text-[#a8853a]">EN</span>
+</button>
+<button class="hover:text-[#a8853a] transition-colors duration-500">
+<span class="material-symbols-outlined font-light">person</span>
+</button>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 w-full h-full">
+<img class="object-cover w-full h-full opacity-90" data-alt="A grand, light-filled architectural interior featuring large, smooth ceramic surfaces bathed in warm, directional sunlight. The setting evokes a serene, minimalist museum space in Kuwait. High-key lighting, soft shadows, pristine alabaster and sand tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCufwSGeom4nhCenQ3uDpkpSU_pEw9fzbGwXuvPk0Jfd9gZmHLbqmUQGVIK2tRMv9WccevDsLdRIde31TYYM3eBOVAuUBpMiCekRzAmPQ3_YZmMvHmgG3oS_PgH5BK0aA27rhgA7oMwMQhCH_BxABBFMc-4SNNeOoLHJDGR1ba4C_zIA-uS8AYWx4mFgl_tNIZtZov28nc-aMNOrT3xrwKP983G3k8u1AU3H_DxUt-ERcBRRi5fvGWlPDgWDmKjLDsx-1cC9Q7zp9g"/>
+<div class="absolute inset-0 bg-gradient-to-b from-[#00508f]/55 to-[#0a1a2c]/72"></div>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-24">
+<h1 class="font-markazi text-6xl md:text-8xl font-light leading-tight mb-8 text-white tracking-wide" style="line-height: 1.1;">
+                اللازوردُ<br/>يَلتقي الذهب
+            </h1>
+<p class="font-body text-lg md:text-xl text-[#f6f4ee]/90 max-w-2xl mx-auto mb-16 leading-relaxed font-light">
+                أزرقُ الكوبالت وعمقُ الذهب — حِرفةُ السيراميك الفاخر من أعرق دارٍ في الكويت.
+            </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-8">
+<a class="font-body text-lg text-[#f6f4ee] pb-1 border-b border-[#c9a24a] hover:border-[#a8853a] hover:text-[#a8853a] transition-all duration-500" href="#">
+                    اكتشف المجموعات
+                </a>
+<a class="font-body text-lg text-[#f6f4ee] pb-1 border-b border-transparent hover:border-[#a8853a] hover:text-[#a8853a] transition-all duration-500" href="#">
+                    احسب تكلفة مشروعك
+                </a>
+</div>
+</div>
+</section>
+<!-- AI Estimator Section -->
+<section class="py-32 px-6 md:px-12 bg-[#f6f4ee]">
+<div class="max-w-6xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-markazi text-4xl md:text-5xl font-light text-[#13283f] mb-6">قدّر تكلفة مشروعك بالذكاء الاصطناعي</h2>
+<p class="font-body text-[#13283f]/70 max-w-3xl mx-auto text-lg leading-relaxed">
+                    ارفع مخطط البيت (PDF) ويقرأ النظام المساحات تلقائياً ويحسب الكميات ويعطيك تكلفة تقريبية فورية.
+                </p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<!-- Upload Area -->
+<div class="bg-white rounded p-12 border border-[#ddc89a]/50 shadow-long text-center relative overflow-hidden group cursor-pointer transition-all duration-500 hover:border-[#a8853a]/30">
+<div class="absolute inset-0 bg-[#e7d6a8]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<span class="material-symbols-outlined text-5xl text-[#a8853a] mb-6 font-light">upload_file</span>
+<h3 class="font-markazi text-2xl text-[#13283f] mb-2">اسحب وأفلت المخطط هنا</h3>
+<p class="font-body text-sm text-[#13283f]/50">صيغة PDF مدعومة</p>
+</div>
+<!-- Steps -->
+<div class="space-y-12">
+<div class="flex items-start gap-6">
+<span class="font-cormorant text-4xl text-[#a8853a] font-light">1</span>
+<div>
+<h4 class="font-markazi text-2xl text-[#13283f] mb-2">ارفع المخطط</h4>
+<p class="font-body text-[#13283f]/60">قم برفع ملف المخطط المعماري الخاص بك.</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="font-cormorant text-4xl text-[#a8853a] font-light">2</span>
+<div>
+<h4 class="font-markazi text-2xl text-[#13283f] mb-2">يقرأ المساحات</h4>
+<p class="font-body text-[#13283f]/60">يقوم الذكاء الاصطناعي بتحليل الأبعاد وحساب الكميات.</p>
+</div>
+</div>
+<div class="flex items-start gap-6">
+<span class="font-cormorant text-4xl text-[#a8853a] font-light">3</span>
+<div>
+<h4 class="font-markazi text-2xl text-[#13283f] mb-2">احصل على التكلفة</h4>
+<p class="font-body text-[#13283f]/60">تقدير فوري ومفصل للمواد المطلوبة.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Curated Collections -->
+<section class="py-32 px-6 md:px-12 bg-white">
+<div class="max-w-screen-2xl mx-auto">
+<h2 class="font-markazi text-4xl md:text-5xl font-light text-[#13283f] mb-16 text-center">المجموعات المنتقاة</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+<div class="group relative overflow-hidden rounded bg-[#f6f4ee] shadow-long aspect-[4/3]">
+<img class="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105" data-alt="A macro shot of a pristine white marble ceramic tile with delicate, pale grey veining. Soft, warm directional light highlights the subtle texture of the surface. Minimalist, high-end gallery aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXK4eU2I7NILQQdRb2VzG9cIjk85z8GRP1pWgh3m9Nhpz35EtKnS1MNarGUq3_x5b4mjYM8BWZMvMHFmScnAtK0_3fBHF8nGGMbUcDCj0VxQ4iIkhwqB_5gYmNaXKLhh7JF0rAOWwZlfQ1H51-0XWjx5sLvSGQ8kSLJYlkDNTvpzt5e4_5b1PaPmLZ5VcqI7kr7lUBB6eo76wEzxXsOuWxS3DMhcJUok78lGJqSX-0MvrQPz4Sew4-jddzms92iJeKOjdVnKz3VUs"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500"></div>
+<div class="absolute bottom-8 right-8 text-white">
+<h3 class="font-markazi text-3xl mb-1 drop-shadow-md">رخام</h3>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded bg-[#e7d6a8] shadow-long aspect-[4/3]">
+<img class="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105" data-alt="A close-up of a natural stone-textured ceramic tile in warm sand tones. The rugged, tactile surface is illuminated by low-angle side lighting, creating elongated, subtle shadows. Earthy, architectural feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXK4eU2I7NILQQdRb2VzG9cIjk85z8GRP1pWgh3m9Nhpz35EtKnS1MNarGUq3_x5b4mjYM8BWZMvMHFmScnAtK0_3fBHF8nGGMbUcDCj0VxQ4iIkhwqB_5gYmNaXKLhh7JF0rAOWwZlfQ1H51-0XWjx5sLvSGQ8kSLJYlkDNTvpzt5e4_5b1PaPmLZ5VcqI7kr7lUBB6eo76wEzxXsOuWxS3DMhcJUok78lGJqSX-0MvrQPz4Sew4-jddzms92iJeKOjdVnKz3VUs"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500"></div>
+<div class="absolute bottom-8 right-8 text-white">
+<h3 class="font-markazi text-3xl mb-1 drop-shadow-md">حجر</h3>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded bg-gray-200 shadow-long aspect-[4/3]">
+<img class="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105" data-alt="A minimalist architectural shot of a smooth, concrete-look ceramic tile in cool, pale grey. Soft, diffused lighting emphasizes its matte finish and subtle tonal variations. Clean, modern industrial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXK4eU2I7NILQQdRb2VzG9cIjk85z8GRP1pWgh3m9Nhpz35EtKnS1MNarGUq3_x5b4mjYM8BWZMvMHFmScnAtK0_3fBHF8nGGMbUcDCj0VxQ4iIkhwqB_5gYmNaXKLhh7JF0rAOWwZlfQ1H51-0XWjx5sLvSGQ8kSLJYlkDNTvpzt5e4_5b1PaPmLZ5VcqI7kr7lUBB6eo76wEzxXsOuWxS3DMhcJUok78lGJqSX-0MvrQPz4Sew4-jddzms92iJeKOjdVnKz3VUs"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500"></div>
+<div class="absolute bottom-8 right-8 text-white">
+<h3 class="font-markazi text-3xl mb-1 drop-shadow-md">أسمنتي</h3>
+</div>
+</div>
+<div class="group relative overflow-hidden rounded bg-[#ddc89a] shadow-long aspect-[4/3]">
+<img class="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105" data-alt="A detailed view of a wood-grain patterned ceramic tile in warm, natural oak tones. The intricate grain texture is highlighted by warm side lighting, creating a cozy yet sophisticated surface. Elegant and natural." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXK4eU2I7NILQQdRb2VzG9cIjk85z8GRP1pWgh3m9Nhpz35EtKnS1MNarGUq3_x5b4mjYM8BWZMvMHFmScnAtK0_3fBHF8nGGMbUcDCj0VxQ4iIkhwqB_5gYmNaXKLhh7JF0rAOWwZlfQ1H51-0XWjx5sLvSGQ8kSLJYlkDNTvpzt5e4_5b1PaPmLZ5VcqI7kr7lUBB6eo76wEzxXsOuWxS3DMhcJUok78lGJqSX-0MvrQPz4Sew4-jddzms92iJeKOjdVnKz3VUs"/>
+<div class="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-500"></div>
+<div class="absolute bottom-8 right-8 text-white">
+<h3 class="font-markazi text-3xl mb-1 drop-shadow-md">خشبي</h3>
+</div>
+</div>
+</div>
+<div class="text-center">
+<a class="inline-flex items-center gap-2 font-body text-[#13283f] pb-1 border-b border-[#00508f] hover:border-[#a8853a] hover:text-[#a8853a] transition-all duration-500" href="#">
+                    استعرض الكتالوج كاملاً
+                    <span class="material-symbols-outlined text-sm rtl:rotate-180">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<!-- Heritage & Factory -->
+<section class="py-32 bg-[#f6f4ee] overflow-hidden relative">
+<div class="max-w-screen-2xl mx-auto px-6 md:px-12 flex flex-col lg:flex-row items-center gap-16">
+<div class="w-full lg:w-1/2 z-10 relative">
+<h2 class="font-markazi text-4xl md:text-5xl font-light text-[#13283f] mb-8 leading-tight">أعرق وأكبر مصنع سيراميك في الكويت</h2>
+<p class="font-body text-[#13283f]/70 text-lg mb-12 max-w-lg leading-relaxed">
+                    نجمع بين الإرث الكويتي الأصيل وأحدث تقنيات التصنيع العالمية لإنتاج أسطح تعكس الضوء بجماليات معمارية فريدة.
+                </p>
+<div class="flex gap-12 mb-12 border-t border-[#ddc89a] pt-8">
+<div>
+<div class="font-cormorant text-4xl text-[#a8853a] mb-2 font-light">64,000</div>
+<div class="font-body text-sm text-[#13283f]/60">متر مربع مساحة المصنع</div>
+</div>
+<div>
+<div class="font-cormorant text-4xl text-[#a8853a] mb-2 font-light">40+</div>
+<div class="font-body text-sm text-[#13283f]/60">عاماً من الخبرة</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-2 font-body text-[#13283f] pb-1 border-b border-[#00508f] hover:border-[#a8853a] hover:text-[#a8853a] transition-all duration-500" href="#">
+                    قصتنا
+                </a>
+</div>
+<div class="w-full lg:w-1/2 relative h-[600px] rounded overflow-hidden shadow-long">
+<img class="object-cover w-full h-full" data-alt="An expansive, architecturally striking ceramic factory interior in Kuwait. The immense space features monumental geometric concrete structures and massive windows letting in angled, dramatic sunlight. The scene is bathed in pale, warm tones, emphasizing the scale and precision of the facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1hZzN_RT9nTUiTtWeYVpJIHksfzlfLsiTv5yG6afXHPNEM0xCiKi0EO6l0GadzWc1TEmYrnuZrZkmWSc93SLQ_YmgPachUtlN4Irh_9ybKOS_M6cWbLcVjvwGmjWeRsKJNG5u90AQBDcjE4SkXVEq1Dn42Pyk1Tj9-QhK3LDmtTvgK48jmEOQQbCPKCxXm-xyDH8nzWKzW0ZSY_slEpFywCS9CCg4UUBic8Zw6SyyolCsH8xjVbxK5FfV_x6Kq5acjrviDoq6YPM"/>
+</div>
+</div>
+</section>
+<!-- Reference Projects -->
+<section class="py-32 bg-white">
+<div class="max-w-screen-2xl mx-auto px-6 md:px-12">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<h2 class="font-markazi text-4xl md:text-5xl font-light text-[#13283f]">المشاريع المرجعية</h2>
+<a class="inline-flex items-center gap-2 font-body text-[#13283f] pb-1 border-b border-[#00508f] hover:border-[#a8853a] hover:text-[#a8853a] transition-all duration-500 whitespace-nowrap" href="#">
+                    شاهد المشاريع
+                </a>
+</div>
+<div class="flex gap-6 overflow-x-auto pb-8 snap-x" style="scrollbar-width: thin;">
+<div class="min-w-[80vw] md:min-w-[600px] h-[400px] flex-shrink-0 snap-center rounded overflow-hidden shadow-long">
+<img class="object-cover w-full h-full" data-alt="A luxurious residential interior featuring expansive, pale alabaster ceramic flooring. The space is minimalist, with sunlight casting long, elegant shadows across the pristine surface. High-end, serene Gulf architecture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCufwSGeom4nhCenQ3uDpkpSU_pEw9fzbGwXuvPk0Jfd9gZmHLbqmUQGVIK2tRMv9WccevDsLdRIde31TYYM3eBOVAuUBpMiCekRzAmPQ3_YZmMvHmgG3oS_PgH5BK0aA27rhgA7oMwMQhCH_BxABBFMc-4SNNeOoLHJDGR1ba4C_zIA-uS8AYWx4mFgl_tNIZtZov28nc-aMNOrT3xrwKP983G3k8u1AU3H_DxUt-ERcBRRi5fvGWlPDgWDmKjLDsx-1cC9Q7zp9g"/>
+</div>
+<div class="min-w-[80vw] md:min-w-[600px] h-[400px] flex-shrink-0 snap-center rounded overflow-hidden shadow-long">
+<img class="object-cover w-full h-full" data-alt="A grand commercial lobby adorned with monumental, sand-colored ceramic wall panels. The lighting is architectural, highlighting the subtle textures of the stone-look surfaces. Sophisticated, institutional elegance." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCufwSGeom4nhCenQ3uDpkpSU_pEw9fzbGwXuvPk0Jfd9gZmHLbqmUQGVIK2tRMv9WccevDsLdRIde31TYYM3eBOVAuUBpMiCekRzAmPQ3_YZmMvHmgG3oS_PgH5BK0aA27rhgA7oMwMQhCH_BxABBFMc-4SNNeOoLHJDGR1ba4C_zIA-uS8AYWx4mFgl_tNIZtZov28nc-aMNOrT3xrwKP983G3k8u1AU3H_DxUt-ERcBRRi5fvGWlPDgWDmKjLDsx-1cC9Q7zp9g"/>
+</div>
+<div class="min-w-[80vw] md:min-w-[600px] h-[400px] flex-shrink-0 snap-center rounded overflow-hidden shadow-long">
+<img class="object-cover w-full h-full" data-alt="An outdoor, sun-drenched courtyard featuring textured, slip-resistant ceramic tiles in warm earth tones. The setting suggests a premium Kuwaiti villa, with soft, directional light enhancing the depth of the material." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCufwSGeom4nhCenQ3uDpkpSU_pEw9fzbGwXuvPk0Jfd9gZmHLbqmUQGVIK2tRMv9WccevDsLdRIde31TYYM3eBOVAuUBpMiCekRzAmPQ3_YZmMvHmgG3oS_PgH5BK0aA27rhgA7oMwMQhCH_BxABBFMc-4SNNeOoLHJDGR1ba4C_zIA-uS8AYWx4mFgl_tNIZtZov28nc-aMNOrT3xrwKP983G3k8u1AU3H_DxUt-ERcBRRi5fvGWlPDgWDmKjLDsx-1cC9Q7zp9g"/>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#f6f4ee] pt-24 pb-12 px-6 md:px-12 w-full flex flex-col items-center text-center space-y-12">
+<div class="font-cormorant text-3xl font-light text-[#13283f] tracking-[0.2em] uppercase" dir="ltr">
+            NI Ceramics
+        </div>
+<div class="flex flex-wrap justify-center gap-8 font-body text-sm text-[#13283f]/80">
+<a class="hover:text-[#a8853a] transition-colors duration-500" href="#">المجموعات</a>
+<a class="hover:text-[#a8853a] transition-colors duration-500" href="#">الذكاء الاصطناعي</a>
+<a class="hover:text-[#a8853a] transition-colors duration-500" href="#">المشاريع</a>
+<a class="hover:text-[#a8853a] transition-colors duration-500" href="#">من نحن</a>
+<a class="hover:text-[#a8853a] transition-colors duration-500" href="#">تواصل</a>
+<a class="hover:text-[#a8853a] transition-colors duration-500" dir="ltr" href="#">LinkedIn</a>
+</div>
+<div class="space-y-4 pt-8 border-t border-[#ddc89a]/50 w-full max-w-2xl">
+<p class="font-cormorant italic text-lg text-[#a8853a]" dir="ltr">
+                "Cobalt depth & golden craft — made in Kuwait."
+            </p>
+<div class="flex justify-center items-center gap-4 text-xs text-[#13283f]/50 font-body">
+<span>© 2024 NI Ceramics.</span>
+<span class="w-1 h-1 rounded-full bg-[#ddc89a]"></span>
+<span class="font-cormorant tracking-widest" dir="ltr">EST. KUWAIT</span>
+</div>
+</div>
+</footer>
+<script>
+        // Simple scroll effect for navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                nav.classList.add('bg-[#f6f4ee]/90', 'shadow-sm', 'py-4');
+                nav.classList.remove('bg-transparent', 'py-6');
+            } else {
+                nav.classList.remove('bg-[#f6f4ee]/90', 'shadow-sm', 'py-4');
+                nav.classList.add('bg-transparent', 'py-6');
+            }
+        });
+    </script>
+</body></html>

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>الكتالوج - NI Ceramics</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700&amp;family=Eb+Garamond:wght@400;500;600;700&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary-dim": "#1a5a97",
+                        "on-tertiary-fixed-variant": "#5a6e88",
+                        "primary-container": "#e6ebf1",
+                        "tertiary-fixed-dim": "#f0e6cb",
+                        "secondary-fixed-dim": "#e3d09f",
+                        "on-primary-container": "#2b5586",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#94a2b5",
+                        "secondary-container": "#f0e6cb",
+                        "on-secondary-container": "#2b5586",
+                        "tertiary": "#3a6a96",
+                        "surface-container-highest": "#e9edf2",
+                        "surface-variant": "#e9edf2",
+                        "on-surface": "#21384f",
+                        "secondary-fixed": "#f0e6cb",
+                        "on-primary-fixed": "#2a4258",
+                        "secondary-dim": "#235a8a",
+                        "on-tertiary-fixed": "#34506c",
+                        "error": "#b23a2e",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-low": "#faf8f2",
+                        "outline-variant": "#b9c4d2",
+                        "tertiary-fixed": "#f7efd9",
+                        "surface-tint": "#00508f",
+                        "on-tertiary-container": "#2f5b86",
+                        "on-primary-fixed-variant": "#1f5891",
+                        "on-surface-variant": "#5a6e88",
+                        "tertiary-dim": "#1f5e93",
+                        "on-secondary-fixed-variant": "#2f5b86",
+                        "background": "#f6f4ee",
+                        "on-error": "#ffffff",
+                        "inverse-surface": "#0a1726",
+                        "surface-container-high": "#eef0ec",
+                        "on-error-container": "#6e2418",
+                        "on-primary": "#faf8f2",
+                        "on-background": "#21384f",
+                        "surface": "#f6f4ee",
+                        "inverse-primary": "#faf8f2",
+                        "primary-fixed-dim": "#d7dee7",
+                        "on-secondary-fixed": "#2a4258",
+                        "primary-fixed": "#e6ebf1",
+                        "tertiary-container": "#f7efd9",
+                        "primary": "#00508f",
+                        "error-dim": "#4a140a",
+                        "surface-container": "#f1f3ef",
+                        "secondary": "#3a6a96",
+                        "surface-dim": "#e6ebf1",
+                        "outline": "#a8853a",
+                        "surface-bright": "#f6f4ee",
+                        "error-container": "#e8a48f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "fontFamily": {
+                        "headline": ["Eb Garamond", "serif"],
+                        "display": ["Eb Garamond", "serif"],
+                        "body": ["Tajawal", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f6f4ee;
+            color: #13283f;
+        }
+        .text-ink { color: #13283f; }
+        .border-stone-light { border-color: #ddc89a; }
+        .hover-lift {
+            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .hover-lift:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px -10px rgba(38, 36, 31, 0.08);
+        }
+        .card-actions {
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.5s ease-out;
+        }
+        .group:hover .card-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f6f4ee; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ddc89a; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #cbb488; 
+        }
+    </style>
+</head>
+<body class="font-body antialiased selection:bg-surface-dim selection:text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-transparent backdrop-blur-sm text-primary dark:text-primary-fixed fixed top-0 w-full z-50 font-display text-lg tracking-widest bg-transparent flat no shadows flex flex-row-reverse justify-between items-center px-12 py-6 w-full transition-all duration-700 ease-in-out border-b border-stone-light/30">
+<!-- Logo -->
+<a class="font-display text-2xl font-light tracking-tighter text-on-surface" href="#">NI Ceramics</a>
+<!-- Navigation Links -->
+<ul class="hidden md:flex flex-row-reverse space-x-8 space-x-reverse items-center">
+<li><a class="text-on-surface border-b border-on-surface pb-1 transition-all duration-700 ease-in-out hover:text-on-surface transition-colors duration-500" href="#">Collections</a></li>
+<li><a class="text-on-surface-variant font-body transition-all duration-700 ease-in-out hover:text-on-surface transition-colors duration-500" href="#">AI Estimator</a></li>
+<li><a class="text-on-surface-variant font-body transition-all duration-700 ease-in-out hover:text-on-surface transition-colors duration-500" href="#">Projects</a></li>
+<li><a class="text-on-surface-variant font-body transition-all duration-700 ease-in-out hover:text-on-surface transition-colors duration-500" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant font-body transition-all duration-700 ease-in-out hover:text-on-surface transition-colors duration-500" href="#">Contact</a></li>
+</ul>
+<!-- Trailing Actions -->
+<div class="flex flex-row-reverse space-x-6 space-x-reverse items-center">
+<button aria-label="language" class="hover:text-on-surface transition-colors duration-500">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">language</span>
+</button>
+<button aria-label="person" class="hover:text-on-surface transition-colors duration-500">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow pt-32 pb-24 px-6 md:px-12 max-w-screen-2xl mx-auto w-full flex flex-col">
+<!-- Header Section -->
+<header class="mb-16 md:mb-24 flex flex-col items-center text-center">
+<h1 class="font-display text-5xl md:text-7xl font-light mb-6 text-ink tracking-wide">الكتالوج</h1>
+<p class="font-body text-lg md:text-xl text-on-surface-variant max-w-2xl font-light leading-relaxed">
+                اكتشف مجموعتنا المختارة بعناية من الأسطح المعمارية الفاخرة، حيث يلتقي الضوء بالملمس.
+            </p>
+<!-- Search Bar -->
+<div class="mt-12 w-full max-w-md relative">
+<input class="w-full bg-transparent border-0 border-b border-stone-light focus:ring-0 focus:border-ink py-3 px-0 text-ink placeholder-on-surface-variant/60 font-body transition-colors duration-300" placeholder="ابحث عن المجموعات أو الرموز..." type="text"/>
+<span class="material-symbols-outlined absolute left-0 top-1/2 -translate-y-1/2 text-on-surface-variant/60 pointer-events-none">search</span>
+</div>
+</header>
+<!-- Layout Grid: Sidebar + Product Grid -->
+<div class="flex flex-col lg:flex-row gap-12 lg:gap-20">
+<!-- Sidebar Filters -->
+<aside class="w-full lg:w-64 flex-shrink-0 space-y-10 border-b lg:border-b-0 lg:border-l border-stone-light pb-10 lg:pb-0 lg:pl-10">
+<!-- Filter Group: Type -->
+<div class="space-y-4">
+<h3 class="font-display text-lg text-ink font-medium tracking-wide">النوع</h3>
+<ul class="space-y-3 font-body text-sm text-on-surface-variant">
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-ink border-stone-light rounded-sm focus:ring-ink transition duration-200" type="checkbox"/>
+<span class="group-hover:text-ink transition-colors">رخام</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input checked="" class="form-checkbox h-4 w-4 text-ink border-stone-light rounded-sm focus:ring-ink transition duration-200" type="checkbox"/>
+<span class="group-hover:text-ink transition-colors">حجر طبيعي</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-ink border-stone-light rounded-sm focus:ring-ink transition duration-200" type="checkbox"/>
+<span class="group-hover:text-ink transition-colors">إسمنت</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-ink border-stone-light rounded-sm focus:ring-ink transition duration-200" type="checkbox"/>
+<span class="group-hover:text-ink transition-colors">خشب</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-ink border-stone-light rounded-sm focus:ring-ink transition duration-200" type="checkbox"/>
+<span class="group-hover:text-ink transition-colors">بورسلان</span>
+</label>
+</li>
+</ul>
+</div>
+<!-- Filter Group: Color -->
+<div class="space-y-4">
+<h3 class="font-display text-lg text-ink font-medium tracking-wide">اللون</h3>
+<div class="flex flex-wrap gap-3">
+<button aria-label="أبيض" class="w-6 h-6 rounded-full bg-[#f5f7fa] border border-stone-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ink hover:scale-110 transition-transform"></button>
+<button aria-label="رمادي فاتح" class="w-6 h-6 rounded-full bg-[#e6ebf1] border border-stone-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ink hover:scale-110 transition-transform"></button>
+<button aria-label="رمادي" class="w-6 h-6 rounded-full bg-[#9aa7ba] border border-stone-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ink hover:scale-110 transition-transform"></button>
+<button aria-label="بيج" class="w-6 h-6 rounded-full bg-[#ddc89a] border border-stone-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ink hover:scale-110 transition-transform"></button>
+<button aria-label="أسود" class="w-6 h-6 rounded-full bg-[#21384f] border border-stone-light focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ink hover:scale-110 transition-transform"></button>
+</div>
+</div>
+<!-- Filter Group: Size -->
+<div class="space-y-4">
+<h3 class="font-display text-lg text-ink font-medium tracking-wide">المقاس</h3>
+<ul class="space-y-3 font-body text-sm text-on-surface-variant">
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-ink border-stone-light rounded-sm focus:ring-ink transition duration-200" type="checkbox"/>
+<span class="group-hover:text-ink transition-colors">60x60 سم</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-ink border-stone-light rounded-sm focus:ring-ink transition duration-200" type="checkbox"/>
+<span class="group-hover:text-ink transition-colors">60x120 سم</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-ink border-stone-light rounded-sm focus:ring-ink transition duration-200" type="checkbox"/>
+<span class="group-hover:text-ink transition-colors">120x120 سم</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-ink border-stone-light rounded-sm focus:ring-ink transition duration-200" type="checkbox"/>
+<span class="group-hover:text-ink transition-colors">120x240 سم (ألواح)</span>
+</label>
+</li>
+</ul>
+</div>
+<!-- Filter Group: Quality Class -->
+<div class="space-y-4">
+<h3 class="font-display text-lg text-ink font-medium tracking-wide">الفئة</h3>
+<ul class="space-y-3 font-body text-sm text-on-surface-variant">
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input class="form-radio h-4 w-4 text-ink border-stone-light focus:ring-ink transition duration-200" name="quality" type="radio"/>
+<span class="group-hover:text-ink transition-colors">Class A</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input class="form-radio h-4 w-4 text-ink border-stone-light focus:ring-ink transition duration-200" name="quality" type="radio"/>
+<span class="group-hover:text-ink transition-colors">Class B</span>
+</label>
+</li>
+</ul>
+</div>
+<!-- Filter Group: Usage -->
+<div class="space-y-4">
+<h3 class="font-display text-lg text-ink font-medium tracking-wide">الاستخدام</h3>
+<ul class="space-y-3 font-body text-sm text-on-surface-variant">
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-ink border-stone-light rounded-sm focus:ring-ink transition duration-200" type="checkbox"/>
+<span class="group-hover:text-ink transition-colors">أرضيات</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-ink border-stone-light rounded-sm focus:ring-ink transition duration-200" type="checkbox"/>
+<span class="group-hover:text-ink transition-colors">جدران</span>
+</label>
+</li>
+<li>
+<label class="flex items-center space-x-3 space-x-reverse cursor-pointer group">
+<input class="form-checkbox h-4 w-4 text-ink border-stone-light rounded-sm focus:ring-ink transition duration-200" type="checkbox"/>
+<span class="group-hover:text-ink transition-colors">خارجي</span>
+</label>
+</li>
+</ul>
+</div>
+</aside>
+<!-- Product Grid Area -->
+<div class="flex-grow flex flex-col">
+<!-- Sort and Results Count -->
+<div class="flex justify-between items-center mb-10 pb-4 border-b border-stone-light/50">
+<span class="font-body text-sm text-on-surface-variant">عرض 1-12 من 48 نتيجة</span>
+<div class="flex items-center space-x-2 space-x-reverse">
+<span class="font-body text-sm text-on-surface-variant">ترتيب حسب:</span>
+<select class="bg-transparent border-0 border-b border-transparent hover:border-stone-light focus:ring-0 focus:border-ink py-1 pl-6 pr-0 text-ink font-body text-sm cursor-pointer transition-colors appearance-none outline-none">
+<option>الأحدث</option>
+<option>الأكثر شيوعاً</option>
+<option>الاسم (أ-ي)</option>
+</select>
+<span class="material-symbols-outlined text-sm pointer-events-none text-on-surface-variant">expand_more</span>
+</div>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 gap-y-16">
+<!-- Product Card 1 -->
+<div class="group flex flex-col hover-lift cursor-pointer rounded bg-[#f6f4ee]">
+<div class="relative aspect-square overflow-hidden mb-6 bg-surface-container rounded-sm shadow-sm">
+<img class="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105" data-alt="Close up architectural photography of a pristine white marble ceramic slab with subtle grey veining. The slab is illuminated by a soft, warm side light casting a gentle gradient across the textured surface, evoking a serene gallery aesthetic. Minimalist, high-end design, right-to-left layout context." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3WOCMPt2izf04naC3qSY01WlKE-iNNNCyS4iW6XGbxvHznJaxpk4ozYoY95SIOGj6dYMPJgBHUWn0o9tRIj-vDCnqqDUfkgfeF6gku6hwqobUKS2vvWQ17bNSF-43A2An2P0dKO6vX2njflXo_DhXHQ8FVhv-w4Usq6NMaEAzWY40IBHm0nUtEhZ7GoOjX9Ac99RJ1PT2YqosxP3Tqz3Syk9vWJ59YBm43Mjc1ILIOYmQP9ICHH4fZRadqIcJ0xlHSqEOSVyNwXs"/>
+<!-- Hover Actions Overlay -->
+<div class="absolute inset-0 bg-surface/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 pb-6">
+<div class="card-actions flex flex-col space-y-3">
+<button class="w-full py-3 border border-ink text-ink font-body text-sm hover:bg-ink hover:text-surface transition-colors duration-300">اطلب عينة</button>
+<button class="w-full py-3 bg-transparent border border-stone-light text-ink font-body text-sm hover:border-ink transition-colors duration-300 flex items-center justify-center space-x-2 space-x-reverse">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">calculate</span>
+<span>أضف لتقدير الـAI</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col text-center px-2">
+<h3 class="font-display text-xl text-ink mb-1">كلكتا بيانكو</h3>
+<div class="font-body text-xs text-on-surface-variant tracking-wider space-x-3 space-x-reverse flex justify-center">
+<span>#MRB-001</span>
+<span>•</span>
+<span>120x240 سم</span>
+</div>
+</div>
+</div>
+<!-- Product Card 2 (Reference Style) -->
+<div class="group flex flex-col hover-lift cursor-pointer rounded bg-[#f6f4ee]">
+<div class="relative aspect-square overflow-hidden mb-6 bg-surface-container rounded-sm shadow-sm">
+<img class="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg"/>
+<div class="absolute inset-0 bg-surface/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 pb-6">
+<div class="card-actions flex flex-col space-y-3">
+<button class="w-full py-3 border border-ink text-ink font-body text-sm hover:bg-ink hover:text-surface transition-colors duration-300">اطلب عينة</button>
+<button class="w-full py-3 bg-transparent border border-stone-light text-ink font-body text-sm hover:border-ink transition-colors duration-300 flex items-center justify-center space-x-2 space-x-reverse">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">calculate</span>
+<span>أضف لتقدير الـAI</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col text-center px-2">
+<h3 class="font-display text-xl text-ink mb-1">ترافرتين رومانو</h3>
+<div class="font-body text-xs text-on-surface-variant tracking-wider space-x-3 space-x-reverse flex justify-center">
+<span>#NST-042</span>
+<span>•</span>
+<span>60x120 سم</span>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="group flex flex-col hover-lift cursor-pointer rounded bg-[#f6f4ee]">
+<div class="relative aspect-square overflow-hidden mb-6 bg-surface-container rounded-sm shadow-sm">
+<img class="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105" data-alt="Macro photography of a minimalist cement-look ceramic tile. The surface features a very subtle, matte micro-texture with soft grey tones. A dramatic, long side-shadow sweeps across the lower third of the tile, suggesting a warm afternoon light. The composition is highly architectural and austere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5W4dj8NyvXBVrhpbEQRU62tF2nhqSMcWCHv2KMYJlZctnazzaopRxagNHKJ47nyXCWKBSTQjLg9pskbL5S6icZprfQ3-Vj2FEhfIX1PRDy_b2jUk9U2HL5NeSu9UH9YKSsfkVsvNjjTLLtLuceldyn8zjuiV19__87l2Z97NT1RKcVMEcpv3bP6dkRC_B6__mn-w_XF8dgOvjPRJW1nBlZ6aO-ZoiGyVFqhLQckGk_Bh5n4OHRZDSDFPn9fTBFVl0IYYKYlmGDmo"/>
+<div class="absolute inset-0 bg-surface/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 pb-6">
+<div class="card-actions flex flex-col space-y-3">
+<button class="w-full py-3 border border-ink text-ink font-body text-sm hover:bg-ink hover:text-surface transition-colors duration-300">اطلب عينة</button>
+<button class="w-full py-3 bg-transparent border border-stone-light text-ink font-body text-sm hover:border-ink transition-colors duration-300 flex items-center justify-center space-x-2 space-x-reverse">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">calculate</span>
+<span>أضف لتقدير الـAI</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col text-center px-2">
+<h3 class="font-display text-xl text-ink mb-1">لوفت جراي</h3>
+<div class="font-body text-xs text-on-surface-variant tracking-wider space-x-3 space-x-reverse flex justify-center">
+<span>#CMT-108</span>
+<span>•</span>
+<span>120x120 سم</span>
+</div>
+</div>
+</div>
+<!-- Product Card 4 -->
+<div class="group flex flex-col hover-lift cursor-pointer rounded bg-[#f6f4ee]">
+<div class="relative aspect-square overflow-hidden mb-6 bg-surface-container rounded-sm shadow-sm">
+<img class="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105" data-alt="High-end studio shot of a ceramic surface mimicking warm, ribbed oak wood. The lighting is cinematic, highlighting the delicate linear grain and texture of the faux wood. The background is a clean alabaster to ensure the warm tones of the tile stand out elegantly. Minimalist, luxury product photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAf3h-iO07CXD-HCux1mvCRmAEeOzMPFT2-mU3oZZZMsV7Jnxs607SD8qxEUf1Ew6jOZBxkXG9erwhLbvH2X0V3ESC1XFo9odBkERwjh1YDlpU1HPXfksna_qQfS8ILhTEIjKGLQcxauyzVA1Z9CWGP7ND-1RyLVTH-UK1x97zPZPPt8l0Qejbq_fT9xAmXXJJymsbxS8sh9SR66TjPHeiUOwQNF_b_07JCJTAQxb5alyBpCEYgnqwSrYuPmhXAA_b8kE8IU09zqJM"/>
+<div class="absolute inset-0 bg-surface/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 pb-6">
+<div class="card-actions flex flex-col space-y-3">
+<button class="w-full py-3 border border-ink text-ink font-body text-sm hover:bg-ink hover:text-surface transition-colors duration-300">اطلب عينة</button>
+<button class="w-full py-3 bg-transparent border border-stone-light text-ink font-body text-sm hover:border-ink transition-colors duration-300 flex items-center justify-center space-x-2 space-x-reverse">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">calculate</span>
+<span>أضف لتقدير الـAI</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col text-center px-2">
+<h3 class="font-display text-xl text-ink mb-1">أوك نورديك</h3>
+<div class="font-body text-xs text-on-surface-variant tracking-wider space-x-3 space-x-reverse flex justify-center">
+<span>#WOD-022</span>
+<span>•</span>
+<span>20x120 سم</span>
+</div>
+</div>
+</div>
+<!-- Product Card 5 -->
+<div class="group flex flex-col hover-lift cursor-pointer rounded bg-[#f6f4ee]">
+<div class="relative aspect-square overflow-hidden mb-6 bg-surface-container rounded-sm shadow-sm">
+<img class="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105" data-alt="A dark, moody architectural image featuring a Nero Marquina style black marble slab with stark white veins. The slab is presented flat against a pale sand-colored background to create stark contrast. Lighting is very low-angle, emphasizing the polished surface reflection." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0KcSiCI1VBXNFWqznGeHgpe_3SmV34LkuFZfDzEXOkiP3SVMl4d2LYetz3BqZC6gz_dl1ibOY3lDQyLHC2yhBUQ7a4e8ftasNvxZx-EjK7tcYSTWH0GvB2oYRrhVSMsdBdveT1_4B1ZQ-EZLaChN0EVBBaPJVZwHFpXJwOU9hXuu0IKC60YPmOj7rJ_qm_GZQ799U3fp-7d0g9F4yvgk5oOwu8P-RuiCHy6Ke2WUbF6LxBii2LAKe_RzpdVp3bjPlKP9311VMFLk"/>
+<div class="absolute inset-0 bg-surface/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 pb-6">
+<div class="card-actions flex flex-col space-y-3">
+<button class="w-full py-3 border border-ink text-ink font-body text-sm hover:bg-ink hover:text-surface transition-colors duration-300">اطلب عينة</button>
+<button class="w-full py-3 bg-transparent border border-stone-light text-ink font-body text-sm hover:border-ink transition-colors duration-300 flex items-center justify-center space-x-2 space-x-reverse">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">calculate</span>
+<span>أضف لتقدير الـAI</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col text-center px-2">
+<h3 class="font-display text-xl text-ink mb-1">نيرو ماركينا</h3>
+<div class="font-body text-xs text-on-surface-variant tracking-wider space-x-3 space-x-reverse flex justify-center">
+<span>#MRB-089</span>
+<span>•</span>
+<span>120x240 سم</span>
+</div>
+</div>
+</div>
+<!-- Product Card 6 -->
+<div class="group flex flex-col hover-lift cursor-pointer rounded bg-[#f6f4ee]">
+<div class="relative aspect-square overflow-hidden mb-6 bg-surface-container rounded-sm shadow-sm">
+<img class="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-105" data-alt="Detail shot of a warm terracotta-colored ceramic surface with an uneven, handmade artisanal texture. A distinct, elongated shadow from an unseen architectural element falls across the surface, giving depth and a sense of a sunny courtyard in the Gulf region." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCot7Y_NXSO-1HIxn6PsCbi5IRHy8zdIuCz3BIdA-a15S_kE6LTYi-L_OADwzD3nyNTN3KL31d4-zqnBx-VYtBj9PZVRlqc2c4avVy20oFATy67KuJy3N8s-8mJV0_j78CdJUiLlar6V7Zy84pZgZq0yP2MQoNc0PU7joNMe1Z85GRjM-tHHWRelh3qXl50s8rGCk8o5vE9A9y0wcjvIl-7626qoCAKxQAGCzzmO0xV_ibitniGznJTvogK8e8kd-qz2E1pAplnaaM"/>
+<div class="absolute inset-0 bg-surface/20 backdrop-blur-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 pb-6">
+<div class="card-actions flex flex-col space-y-3">
+<button class="w-full py-3 border border-ink text-ink font-body text-sm hover:bg-ink hover:text-surface transition-colors duration-300">اطلب عينة</button>
+<button class="w-full py-3 bg-transparent border border-stone-light text-ink font-body text-sm hover:border-ink transition-colors duration-300 flex items-center justify-center space-x-2 space-x-reverse">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 0;">calculate</span>
+<span>أضف لتقدير الـAI</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col text-center px-2">
+<h3 class="font-display text-xl text-ink mb-1">كوتا صحراوية</h3>
+<div class="font-body text-xs text-on-surface-variant tracking-wider space-x-3 space-x-reverse flex justify-center">
+<span>#PRC-005</span>
+<span>•</span>
+<span>60x60 سم</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Pagination -->
+<div class="mt-20 flex justify-center items-center space-x-4 space-x-reverse">
+<button class="p-2 text-stone-light hover:text-ink transition-colors" disabled="">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">chevron_right</span>
+</button>
+<div class="flex space-x-6 space-x-reverse font-body text-sm">
+<span class="text-ink font-medium border-b border-ink pb-1 px-1">1</span>
+<a class="text-on-surface-variant hover:text-ink transition-colors pb-1 px-1" href="#">2</a>
+<a class="text-on-surface-variant hover:text-ink transition-colors pb-1 px-1" href="#">3</a>
+<span class="text-on-surface-variant">...</span>
+<a class="text-on-surface-variant hover:text-ink transition-colors pb-1 px-1" href="#">8</a>
+</div>
+<button class="p-2 text-on-surface-variant hover:text-ink transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">chevron_left</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-low dark:bg-surface-dim text-primary dark:text-primary-fixed-dim font-body text-sm tracking-wide bg-surface-container-low flat no shadows flex flex-col items-center text-center space-y-8 w-full py-20 px-12 border-t border-stone-light/30">
+<!-- Brand Logo -->
+<div class="font-display text-3xl font-light text-on-surface mb-8">NI Ceramics</div>
+<!-- Links -->
+<ul class="flex flex-wrap justify-center gap-x-8 gap-y-4">
+<li><a class="text-primary font-bold hover:underline decoration-stone transition-all opacity-90 hover:opacity-100 transition-opacity" href="#">Collections</a></li>
+<li><a class="text-on-surface-variant hover:underline decoration-stone transition-all opacity-90 hover:opacity-100 transition-opacity" href="#">AI Estimator</a></li>
+<li><a class="text-on-surface-variant hover:underline decoration-stone transition-all opacity-90 hover:opacity-100 transition-opacity" href="#">Projects</a></li>
+<li><a class="text-on-surface-variant hover:underline decoration-stone transition-all opacity-90 hover:opacity-100 transition-opacity" href="#">About Us</a></li>
+<li><a class="text-on-surface-variant hover:underline decoration-stone transition-all opacity-90 hover:opacity-100 transition-opacity" href="#">Contact</a></li>
+<li><a class="text-on-surface-variant hover:underline decoration-stone transition-all opacity-90 hover:opacity-100 transition-opacity" href="#">LinkedIn</a></li>
+</ul>
+<!-- Copyright -->
+<div class="mt-12 text-on-surface-variant/70 text-xs font-light tracking-wider">
+            © 2024 NI Ceramics. Cobalt depth & golden craft — made in Kuwait.
+        </div>
+</footer>
+</body></html>

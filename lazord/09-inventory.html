@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+
+<html class="light" dir="rtl" lang="ar"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NI Ceramics - المخزون</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600;700;800&amp;family=Tajawal:wght@300;400;500;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed": "#f7efd9",
+                        "tertiary-container": "#f7efd9",
+                        "on-tertiary-fixed-variant": "#5a6e88",
+                        "secondary": "#3a6a96",
+                        "on-tertiary-container": "#2f5b86",
+                        "outline": "#a8853a",
+                        "surface-bright": "#f6f4ee",
+                        "on-background": "#21384f",
+                        "secondary-fixed": "#f0e6cb",
+                        "on-primary": "#faf8f2",
+                        "on-surface-variant": "#5a6e88",
+                        "on-error-container": "#6e2418",
+                        "on-tertiary": "#ffffff",
+                        "surface-tint": "#00508f",
+                        "surface-container-low": "#faf8f2",
+                        "surface-container-highest": "#e9edf2",
+                        "on-primary-fixed": "#2a4258",
+                        "error": "#b23a2e",
+                        "on-error": "#ffffff",
+                        "surface-variant": "#e9edf2",
+                        "primary-fixed-dim": "#d7dee7",
+                        "outline-variant": "#b9c4d2",
+                        "error-container": "#e8a48f",
+                        "tertiary": "#3a6a96",
+                        "secondary-fixed-dim": "#e3d09f",
+                        "secondary-dim": "#235a8a",
+                        "on-secondary-fixed-variant": "#2f5b86",
+                        "on-secondary": "#ffffff",
+                        "surface-container-high": "#eef0ec",
+                        "inverse-on-surface": "#94a2b5",
+                        "primary-dim": "#1a5a97",
+                        "primary-container": "#e6ebf1",
+                        "on-surface": "#21384f",
+                        "tertiary-dim": "#1f5e93",
+                        "surface-dim": "#e6ebf1",
+                        "on-primary-fixed-variant": "#1f5891",
+                        "tertiary-fixed-dim": "#f0e6cb",
+                        "primary": "#00508f",
+                        "surface-container": "#f1f3ef",
+                        "inverse-surface": "#0a1726",
+                        "primary-fixed": "#e6ebf1",
+                        "on-primary-container": "#2b5586",
+                        "on-secondary-fixed": "#2a4258",
+                        "surface": "#f6f4ee",
+                        "inverse-primary": "#faf8f2",
+                        "on-tertiary-fixed": "#34506c",
+                        "background": "#f6f4ee",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary-container": "#2b5586",
+                        "secondary-container": "#f0e6cb",
+                        "error-dim": "#4a140a"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    fontFamily: {
+                        "headline": ["EB Garamond", "serif"],
+                        "display": ["EB Garamond", "serif"],
+                        "body": ["Tajawal", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: #f6f4ee; /* Alabaster override per prompt */
+            color: #13283f; /* Ink override per prompt */
+        }
+        .surface-card {
+            background-color: #f7f8f5; /* Lighter surface */
+            border: 1px solid #ddc89a;
+            border-radius: 4px;
+        }
+        /* Custom scrollbar for tables */
+        ::-webkit-scrollbar {
+            height: 6px;
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f6f4ee; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ddc89a; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b9c4d2; 
+        }
+    </style>
+</head>
+<body class="font-body antialiased selection:bg-primary-container selection:text-on-primary-container overflow-hidden h-screen flex">
+<!-- SideNavBar (Right Side) -->
+<nav class="hidden md:flex fixed right-0 top-0 h-full w-72 bg-surface-container-low border-l border-outline-variant/30 shadow-md flex-col py-6 z-20">
+<!-- Header -->
+<div class="px-8 pb-8 border-b border-outline-variant/30 mb-6">
+<h1 class="font-headline text-2xl font-bold text-on-surface mb-1 text-primary">NI Ceramics</h1>
+<p class="font-headline text-xl text-primary mt-4">المسؤول</p>
+<p class="text-sm text-on-surface-variant font-label">مدير النظام</p>
+</div>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto px-4 space-y-2">
+<a class="flex items-center gap-4 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 rounded transition-all ease-in-out font-body text-label-lg hover:translate-x-[-4px] duration-500" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span>لوحة القيادة</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 rounded transition-all ease-in-out font-body text-label-lg hover:translate-x-[-4px] duration-500" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">payments</span>
+<span>المبيعات</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 rounded transition-all ease-in-out font-body text-label-lg hover:translate-x-[-4px] duration-500" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">group</span>
+<span>الزوار</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 rounded transition-all ease-in-out font-body text-label-lg hover:translate-x-[-4px] duration-500" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">category</span>
+<span>المنتجات</span>
+</a>
+<!-- Active State -->
+<a class="flex items-center gap-4 bg-secondary-container text-on-secondary-container rounded p-3 mx-2 font-body text-label-lg transition-all ease-in-out" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">inventory_2</span>
+<span>المخزون</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 rounded transition-all ease-in-out font-body text-label-lg hover:translate-x-[-4px] duration-500" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person_search</span>
+<span>العملاء</span>
+</a>
+<a class="flex items-center gap-4 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 rounded transition-all ease-in-out font-body text-label-lg hover:translate-x-[-4px] duration-500" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">analytics</span>
+<span>التقارير</span>
+</a>
+</div>
+<!-- Bottom Settings -->
+<div class="px-4 pt-4 border-t border-outline-variant/30 mt-auto">
+<a class="flex items-center gap-4 text-on-surface-variant p-3 mx-2 hover:bg-surface-variant/50 rounded transition-all ease-in-out font-body text-label-lg hover:translate-x-[-4px] duration-500" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings_suggest</span>
+<span>الإعدادات</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 mr-0 md:mr-72 flex flex-col h-screen overflow-hidden">
+<!-- Top Bar -->
+<header class="h-20 flex-shrink-0 border-b border-[#ddc89a] px-8 flex items-center justify-between z-10 sticky top-0" style="background-color: #f6f4ee;">
+<div class="flex items-center gap-6">
+<h2 class="font-headline text-3xl font-bold tracking-wide">المخزون</h2>
+<!-- Search & Filters -->
+<div class="hidden lg:flex items-center gap-4 ml-6">
+<div class="relative">
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-outline text-sm">search</span>
+<input class="bg-transparent border-b border-[#ddc89a] focus:border-[#13283f] focus:ring-0 pl-4 pr-10 py-1 text-sm font-label w-64 transition-colors placeholder:text-outline/70 pb-2 border-t-0 border-l-0 border-r-0 rounded-none shadow-none focus:outline-none" placeholder="بحث برمز المنتج أو الاسم..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="flex items-center gap-1 text-sm font-label text-on-surface-variant hover:text-primary transition-colors px-3 py-1 border border-[#ddc89a] rounded">
+<span class="material-symbols-outlined text-[16px]">filter_list</span>
+                            النوع
+                        </button>
+<button class="flex items-center gap-1 text-sm font-label text-on-surface-variant hover:text-primary transition-colors px-3 py-1 border border-[#ddc89a] rounded">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+                            الحالة
+                        </button>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 text-sm font-label text-primary hover:text-on-surface transition-colors pb-1 border-b border-transparent hover:border-primary">
+<span class="material-symbols-outlined text-[18px]">download</span>
+                    تصدير
+                </button>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<!-- Scrollable Content Canvas -->
+<div class="flex-1 overflow-y-auto p-8">
+<div class="max-w-7xl mx-auto space-y-10">
+<!-- Summary Cards Row -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1 -->
+<div class="surface-card p-6 flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="flex justify-between items-start">
+<p class="font-label text-sm text-on-surface-variant">إجمالي الأصناف</p>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">category</span>
+</div>
+<p class="font-headline text-3xl font-bold">1,248</p>
+<!-- Subtle background geometric hint -->
+<div class="absolute -left-4 -bottom-4 w-16 h-16 border border-outline-variant/10 rotate-45"></div>
+</div>
+<!-- Card 2 -->
+<div class="surface-card p-6 flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="flex justify-between items-start">
+<p class="font-label text-sm text-on-surface-variant">المتوفر</p>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">check_box</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="font-headline text-3xl font-bold">1,092</p>
+<span class="text-xs font-label text-[#a8853a]">صنف</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="surface-card p-6 flex flex-col justify-between h-32 relative overflow-hidden group">
+<div class="flex justify-between items-start">
+<p class="font-label text-sm text-on-surface-variant">نافد</p>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors">inventory_2</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="font-headline text-3xl font-bold text-[#5a6e88]">45</p>
+<span class="text-xs font-label text-[#a8853a]">صنف</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="surface-card p-6 flex flex-col justify-between h-32 relative overflow-hidden group border-b-2 border-b-[#a8853a]">
+<div class="flex justify-between items-start">
+<p class="font-label text-sm text-on-surface-variant">قارب على النفاد</p>
+<span class="material-symbols-outlined text-[#5a6e88] group-hover:text-primary transition-colors">warning</span>
+</div>
+<div class="flex items-baseline gap-2">
+<p class="font-headline text-3xl font-bold">111</p>
+<span class="text-xs font-label text-[#a8853a]">تنبيهات</span>
+</div>
+</div>
+</div>
+<!-- Inventory Table Section -->
+<div class="surface-card overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-right border-collapse">
+<thead>
+<tr class="border-b border-[#ddc89a] text-sm font-label text-on-surface-variant">
+<th class="py-4 px-6 font-medium w-16"></th>
+<th class="py-4 px-6 font-medium">المنتج والرمز</th>
+<th class="py-4 px-6 font-medium">الفئة</th>
+<th class="py-4 px-6 font-medium">الكمية المتاحة</th>
+<th class="py-4 px-6 font-medium">الحد الأدنى</th>
+<th class="py-4 px-6 font-medium">الحالة</th>
+<th class="py-4 px-6 font-medium">آخر تحديث</th>
+<th class="py-4 px-6 font-medium w-24">إجراءات</th>
+</tr>
+</thead>
+<tbody class="text-sm font-body divide-y divide-[#ddc89a]/50">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-variant/20 transition-colors group">
+<td class="py-4 px-6">
+<div class="w-12 h-12 rounded overflow-hidden border border-outline/20">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg'); background-position: 0% 0%; background-size: 200%;"></div>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="font-bold text-on-surface text-base">كلكتا بيانكو</p>
+<p class="text-on-surface-variant text-xs mt-1 font-label">CLK-01</p>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">رخام مصقول</td>
+<td class="py-4 px-6">
+<p class="font-medium">1,200 م²</p>
+<p class="text-xs text-on-surface-variant mt-1">450 صندوق</p>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">200 م²</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#e9edf2] text-[#2a4258] text-xs font-medium border border-[#b9c4d2]/50">
+<span class="w-1.5 h-1.5 rounded-full bg-[#00508f]"></span>
+                                            متوفر
+                                        </span>
+</td>
+<td class="py-4 px-6 text-on-surface-variant font-label text-xs">2023-10-24</td>
+<td class="py-4 px-6 text-left">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-variant/20 transition-colors group">
+<td class="py-4 px-6">
+<div class="w-12 h-12 rounded overflow-hidden border border-outline/20">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg'); background-position: 100% 0%; background-size: 200%;"></div>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="font-bold text-on-surface text-base">حجر صحراوي</p>
+<p class="text-on-surface-variant text-xs mt-1 font-label">DST-04</p>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">حجر طبيعي</td>
+<td class="py-4 px-6">
+<p class="font-medium text-[#5a6e88]">150 م²</p>
+<p class="text-xs text-on-surface-variant mt-1">60 صندوق</p>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">250 م²</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#f0e6cb] text-[#2b5586] text-xs font-medium border border-[#b9c4d2]/50">
+<span class="w-1.5 h-1.5 rounded-full bg-[#5a6e88]"></span>
+                                            قارب على النفاد
+                                        </span>
+</td>
+<td class="py-4 px-6 text-on-surface-variant font-label text-xs">2023-10-22</td>
+<td class="py-4 px-6 text-left">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-variant/20 transition-colors group">
+<td class="py-4 px-6">
+<div class="w-12 h-12 rounded overflow-hidden border border-outline/20">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg'); background-position: 0% 100%; background-size: 200%;"></div>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="font-bold text-on-surface text-base">أسمنت رمادي</p>
+<p class="text-on-surface-variant text-xs mt-1 font-label">CMT-12</p>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">بورسلين صناعي</td>
+<td class="py-4 px-6">
+<p class="font-medium text-outline-variant line-through decoration-1">0 م²</p>
+<p class="text-xs text-on-surface-variant mt-1">0 صندوق</p>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">500 م²</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#e6ebf1] text-[#34506c] text-xs font-medium border border-[#b9c4d2]/50 opacity-70">
+<span class="w-1.5 h-1.5 rounded-full bg-[#a8853a]"></span>
+                                            نافد
+                                        </span>
+</td>
+<td class="py-4 px-6 text-on-surface-variant font-label text-xs">2023-10-15</td>
+<td class="py-4 px-6 text-left">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-variant/20 transition-colors group">
+<td class="py-4 px-6">
+<div class="w-12 h-12 rounded overflow-hidden border border-outline/20">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida/AP1WRLv9ZzKix3yGtNGQeDaJxrCUbuoqCjzccO_058E1zbbL3nx8xFB6AdAmT8eDl2iwysssRwz2mZYTGKtizx92pCCRJXDDWJDCqP7uNLKGklI-h6vtmtkPsAwhvmsdGKJ7Jc64D-tDWrV7l3Dp0-mZvLFw0oCFsfwGYQP-hJY_RvRAlA5CLqMetXT7tD-nYz3kxbQiOOT7yJo-7y-tpNougzuF7NwAy1v-XNJ_2GEmRhaSgmVBMXCcf36AXg'); background-position: 100% 100%; background-size: 200%;"></div>
+</div>
+</td>
+<td class="py-4 px-6">
+<p class="font-bold text-on-surface text-base">سنديان دافئ</p>
+<p class="text-on-surface-variant text-xs mt-1 font-label">WOD-08</p>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">باركيه سيراميك</td>
+<td class="py-4 px-6">
+<p class="font-medium">850 م²</p>
+<p class="text-xs text-on-surface-variant mt-1">320 صندوق</p>
+</td>
+<td class="py-4 px-6 text-on-surface-variant">150 م²</td>
+<td class="py-4 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded bg-[#e9edf2] text-[#2a4258] text-xs font-medium border border-[#b9c4d2]/50">
+<span class="w-1.5 h-1.5 rounded-full bg-[#00508f]"></span>
+                                            متوفر
+                                        </span>
+</td>
+<td class="py-4 px-6 text-on-surface-variant font-label text-xs">2023-10-25</td>
+<td class="py-4 px-6 text-left">
+<div class="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">edit</span></button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[18px]">visibility</span></button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="p-4 border-t border-[#ddc89a] flex items-center justify-between text-sm font-label text-on-surface-variant bg-[#f7f8f5]">
+<p>عرض 1 إلى 10 من أصل 1,248 صنف</p>
+<div class="flex items-center gap-2">
+<button class="p-1 text-outline-variant hover:text-primary transition-colors disabled:opacity-50" disabled="">
+<span class="material-symbols-outlined text-[20px] rtl:-scale-x-100">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-[#ddc89a] bg-white text-primary font-medium">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-transparent hover:border-[#ddc89a] hover:bg-white transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-transparent hover:border-[#ddc89a] hover:bg-white transition-colors">3</button>
+<span class="px-1">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-transparent hover:border-[#ddc89a] hover:bg-white transition-colors">125</button>
+<button class="p-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[20px] rtl:-scale-x-100">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom spacing -->
+<div class="h-20"></div>
+</div>
+</main>
+</body></html>
