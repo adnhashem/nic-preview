@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NI Ceramics — من موقع مخفّضات إلى منصّة عالمية · قبل / بعد</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+ :root{--cobalt:#00508F;--gold:#a8853a;--ivory:#f6f4ee;--navy:#13283f;--slate:#3f5a78;--red:#b23b3b}
+ *{margin:0;padding:0;box-sizing:border-box}
+ html{scroll-behavior:smooth}
+ body{font-family:'Rubik',sans-serif;background:var(--ivory);color:var(--navy);overflow-x:hidden}
+ body *{font-family:'Rubik',sans-serif}
+ .progress{position:fixed;top:0;right:0;height:3px;background:var(--gold);width:0;z-index:99}
+ .topbar{position:fixed;top:0;right:0;left:0;display:flex;justify-content:space-between;align-items:center;padding:14px 28px;z-index:50;font-size:13px;color:var(--slate);background:linear-gradient(#f6f4eeee,#f6f4ee00)}
+ .topbar .b img{height:22px;width:auto;display:inline-block;vertical-align:middle}
+ .topbar a{color:var(--slate);text-decoration:none}
+ /* hero */
+ .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 8vw;position:relative;background:radial-gradient(120% 90% at 50% 0%,#0e2236 0%,#13283f 45%,#0a1a2b 100%);color:#fff}
+ .hero .brand img{height:34px;filter:brightness(0) invert(1);opacity:.9}
+ .hero h1{font-size:clamp(30px,6vw,68px);line-height:1.45;margin:26px 0 18px;font-weight:600;word-spacing:2px}
+ .hero h1 .g{color:var(--gold)}
+ .hero .sub{font-weight:300;font-size:clamp(16px,2.4vw,22px);line-height:1.9;color:#c7d4e2;max-width:760px}
+ .scoreline{display:flex;align-items:center;gap:22px;margin-top:40px;flex-wrap:wrap;justify-content:center}
+ .scorebox{background:#ffffff10;border:1px solid #ffffff22;border-radius:12px;padding:18px 26px;text-align:center;min-width:150px}
+ .scorebox .lab{font-size:12px;letter-spacing:2px;color:#9fb2c6}
+ .scorebox .val{font-size:38px;font-weight:700;margin-top:4px}
+ .scorebox.old .val{color:#e08a8a}
+ .scorebox.new .val{color:var(--gold)}
+ .arrowbig{font-size:34px;color:var(--gold)}
+ .cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);color:#9fb2c6;font-size:13px;letter-spacing:2px;animation:bob 1.8s ease-in-out infinite}
+ @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,10px)}}
+ /* sections */
+ .screen{position:relative}
+ .sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;gap:3vw;padding:0 4vw}
+ .info{flex:0 0 27%;max-width:27%}
+ .info .num{letter-spacing:3px;color:var(--gold);font-size:14px}
+ .info .star{display:inline-block;margin-top:8px;background:var(--gold);color:#0e2236;font-size:12px;padding:4px 12px;border-radius:4px;font-weight:600}
+ .info h2{font-size:clamp(26px,3.6vw,46px);margin:10px 0 14px;color:var(--navy);font-weight:600;line-height:1.15}
+ .info .row{padding:10px 0;border-top:1px solid #00000014}
+ .info .row .t{font-size:12px;letter-spacing:1px;font-weight:600;display:flex;align-items:center;gap:7px}
+ .info .row.b4 .t{color:var(--red)} .info .row.aft .t{color:var(--cobalt)}
+ .info .row p{font-weight:300;font-size:15.5px;line-height:1.6;margin-top:4px;color:var(--navy)}
+ .chipx{display:inline-flex;width:18px;height:18px;border-radius:50%;background:var(--red);color:#fff;align-items:center;justify-content:center;font-size:12px}
+ .chipc{display:inline-flex;width:18px;height:18px;border-radius:50%;background:var(--cobalt);color:#fff;align-items:center;justify-content:center;font-size:12px}
+ .info .live{display:inline-block;margin-top:16px;font-size:14px;color:var(--navy);border-bottom:1px solid var(--gold);padding-bottom:3px;text-decoration:none}
+ .info .live:hover{color:var(--gold)}
+ .frames{flex:1;display:flex;gap:18px;height:84vh}
+ .col{flex:1;display:flex;flex-direction:column;min-width:0}
+ .tag{font-size:12px;font-weight:600;letter-spacing:1px;padding:5px 0;display:flex;align-items:center;gap:7px}
+ .tag.old{color:var(--red)} .tag.new{color:var(--cobalt)}
+ .frame{flex:1;overflow:hidden;border-radius:9px;background:#fff;position:relative}
+ .frame.old{border:1px solid #b23b3b55;box-shadow:0 18px 50px -34px rgba(178,59,59,.7)}
+ .frame.new{border:1px solid #00508f66;box-shadow:0 22px 60px -34px rgba(0,80,143,.7)}
+ .frame img{width:100%;height:auto;display:block;will-change:transform}
+ .frames.solo .col{flex:0 0 78%;margin:0 auto}
+ /* reveal */
+ .info>*{opacity:0;transform:translateY(22px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+ .screen.in .info>*{opacity:1;transform:none}
+ .screen.in .info>*:nth-child(2){transition-delay:.05s}.screen.in .info>*:nth-child(3){transition-delay:.1s}
+ .screen.in .info>*:nth-child(4){transition-delay:.15s}.screen.in .info>*:nth-child(5){transition-delay:.2s}.screen.in .info>*:nth-child(6){transition-delay:.25s}
+ /* scorecard */
+ .card{max-width:1000px;margin:0 auto;padding:90px 6vw 40px}
+ .card h2{text-align:center;font-size:clamp(28px,4.6vw,50px);font-weight:600;margin-bottom:8px}
+ .card .csub{text-align:center;color:var(--slate);font-weight:300;margin-bottom:34px}
+ .axis{display:grid;grid-template-columns:1.4fr 3fr auto;gap:14px;align-items:center;padding:12px 0;border-top:1px solid #00000012}
+ .axis .nm{font-weight:500;font-size:15px}
+ .bar{position:relative;height:14px;border-radius:7px;background:#0000000d;overflow:hidden}
+ .bar .o{position:absolute;inset:0;width:var(--o);background:#e0a0a0;border-radius:7px}
+ .bar .n{position:absolute;inset:0;width:var(--n);background:linear-gradient(90deg,var(--cobalt),var(--gold));border-radius:7px;opacity:.92}
+ .axis .dl{font-size:13px;font-weight:600;color:var(--cobalt);white-space:nowrap}
+ .legend{display:flex;gap:22px;justify-content:center;margin-top:18px;font-size:13px;color:var(--slate)}
+ .legend span{display:inline-flex;align-items:center;gap:7px}
+ .sw{width:16px;height:10px;border-radius:3px;display:inline-block}
+ /* value */
+ .value{background:var(--navy);color:#fff;padding:74px 6vw}
+ .value h2{text-align:center;font-size:clamp(26px,4.4vw,46px);font-weight:600;margin-bottom:34px}
+ .grid{max-width:1040px;margin:0 auto;display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+ .vc{background:#ffffff0a;border:1px solid #ffffff18;border-radius:12px;padding:22px 24px}
+ .vc .ic{font-size:24px}
+ .vc h3{font-size:18px;margin:8px 0 6px;color:var(--gold);font-weight:600}
+ .vc p{font-weight:300;font-size:15px;line-height:1.7;color:#cdd8e4}
+ /* end */
+ .end{min-height:78vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;background:var(--gold);color:#0e2236;padding:60px 8vw}
+ .end h2{font-size:clamp(28px,5.4vw,56px);font-weight:600}
+ .end p{margin-top:12px;font-weight:300;font-size:18px;max-width:680px}
+ .end a.big{display:inline-block;margin-top:26px;background:#0e2236;color:var(--gold);padding:15px 32px;border-radius:6px;text-decoration:none;font-weight:600;letter-spacing:1px}
+ .end .note{margin-top:26px;font-size:12px;opacity:.8}
+ @media(max-width:860px){
+   .topbar{padding:11px 16px;font-size:12px}
+   .info{max-width:100%;flex:none}
+   .screen{height:auto!important}
+   .sticky{flex-direction:column;height:auto;position:static;padding:84px 5vw 30px;gap:16px;align-items:stretch}
+   .frames{flex-direction:column;height:auto;gap:22px}
+   .frames.solo .col{flex:none}
+   .frame{height:auto}
+   .frame img{transform:none!important}
+   .info>*{opacity:1!important;transform:none!important}
+   .grid{grid-template-columns:1fr}
+   .axis{grid-template-columns:1fr;gap:6px}
+ }
+</style></head><body>
+ <div class="progress" id="prog"></div>
+ <div class="topbar"><span class="b"><img src="ni-logo.png" alt="NI Ceramics"></span><a href="present.html">الهويّات الثلاث ←</a></div>
+
+ <!-- HERO -->
+ <section class="hero">
+   <div class="brand"><img src="ni-logo.png" alt="NI Ceramics"></div>
+   <h1>من «موقع مخفّضات»<br>إلى <span class="g">منصّة عالمية</span></h1>
+   <div class="sub">المحرّك عندكم أقوى من عمالقة أوروبا. ما نغيّره — نبني فوقه طبقة فخامة وذكاء اصطناعي لا يملكها أحد في القطاع.</div>
+   <div class="scoreline">
+     <div class="scorebox old"><div class="lab">الموقع الحالي</div><div class="val">22<span style="font-size:18px;color:#9fb2c6">/60</span></div></div>
+     <div class="arrowbig">⟵</div>
+     <div class="scorebox new"><div class="lab">الهدف بالهوية الجديدة</div><div class="val">40<span style="font-size:18px;color:#9fb2c6">+/60</span></div></div>
+   </div>
+   <div class="cue">انزل لترى التحوّل ↓</div>
+ </section>
+
+ <!-- 1 الانطباع الأول -->
+ <section class="screen">
+  <div class="sticky">
+   <div class="info">
+     <div class="num">01 / 07</div>
+     <h2>الانطباع الأول</h2>
+     <div class="row b4"><div class="t"><span class="chipx">✕</span> الموقع الحالي</div><p>يفتح مباشرةً على «DISCOUNTED TILES / OUTLET» وبانرات «Shop Now» وأسعار مشطوبة — إحساس متجر تخفيضات لا علامة فاخرة.</p></div>
+     <div class="row aft"><div class="t"><span class="chipc">✓</span> الهوية الجديدة</div><p>هيرو سينمائي بالهوية، وأداة الذكاء الاصطناعي بطل الصفحة («احسب تكلفة مشروعك») — لا تخفيضات في الواجهة.</p></div>
+     <a class="live" href="lazord/01-landing.html" target="_blank">افتح الشاشة الجديدة ↗</a>
+   </div>
+   <div class="frames">
+     <div class="col"><div class="tag old">قبل — niceramics.com</div><div class="frame old"><img class="scan" src="compare-old/home.png" alt="الرئيسية الحالية"></div></div>
+     <div class="col"><div class="tag new">بعد — NI Ceramics</div><div class="frame new"><img class="scan" src="lazord/shots/01-landing.png" alt="الرئيسية الجديدة"></div></div>
+   </div>
+  </div>
+ </section>
+
+ <!-- 2 الكتالوج -->
+ <section class="screen">
+  <div class="sticky">
+   <div class="info">
+     <div class="num">02 / 07</div>
+     <h2>الكتالوج / المتجر</h2>
+     <div class="row b4"><div class="t"><span class="chipx">✕</span> الموقع الحالي</div><p>أسعار وسلة شراء، والصدارة ٢٠ منتجاً كلها OUTLET — تموضع «بيع رخيص».</p></div>
+     <div class="row aft"><div class="t"><span class="chipc">✓</span> الهوية الجديدة</div><p>تصفّح راقٍ بلا أسعار/سلة، فلترة احترافية (نوع · لون · مقاس · فئة جودة)، وزرّا «اطلب عيّنة» و«أضف لتقدير الـAI».</p></div>
+     <a class="live" href="lazord/04-catalog.html" target="_blank">افتح الشاشة الجديدة ↗</a>
+   </div>
+   <div class="frames">
+     <div class="col"><div class="tag old">قبل — niceramics.com</div><div class="frame old"><img class="scan" src="compare-old/catalog.png" alt="المتجر الحالي"></div></div>
+     <div class="col"><div class="tag new">بعد — NI Ceramics</div><div class="frame new"><img class="scan" src="lazord/shots/04-catalog.png" alt="الكتالوج الجديد"></div></div>
+   </div>
+  </div>
+ </section>
+
+ <!-- 3 صفحة المنتج -->
+ <section class="screen">
+  <div class="sticky">
+   <div class="info">
+     <div class="num">03 / 07</div>
+     <h2>صفحة المنتج</h2>
+     <div class="row b4"><div class="t"><span class="chipx">✕</span> الموقع الحالي</div><p>مواصفات بدائية (طول/عرض/سماكة/لون) وسعر مشطوب، بلا مشاهد غرف ولا datasheet ولا طلب عيّنة — وفيها خلل تخطيط فعلي.</p></div>
+     <div class="row aft"><div class="t"><span class="chipc">✓</span> الهوية الجديدة</div><p>معرض صور + مشاهد غرف + مواصفات فنية كاملة + تحميل PDF + «اطلب عيّنة» و«أضف لتقدير الـAI» + منتجات مشابهة.</p></div>
+     <a class="live" href="lazord/05-product.html" target="_blank">افتح الشاشة الجديدة ↗</a>
+   </div>
+   <div class="frames">
+     <div class="col"><div class="tag old">قبل — niceramics.com</div><div class="frame old"><img class="scan" src="compare-old/product.png" alt="منتج حالي"></div></div>
+     <div class="col"><div class="tag new">بعد — NI Ceramics</div><div class="frame new"><img class="scan" src="lazord/shots/05-product.png" alt="منتج جديد"></div></div>
+   </div>
+  </div>
+ </section>
+
+ <!-- 4 قصة العلامة -->
+ <section class="screen">
+  <div class="sticky">
+   <div class="info">
+     <div class="num">04 / 07</div>
+     <h2>قصّة العلامة</h2>
+     <div class="row b4"><div class="t"><span class="chipx">✕</span> الموقع الحالي</div><p>«من نحن» نحو ٢٠٠ كلمة جافّة — بلا قصة تأسيس ولا شهادات ISO ولا استدامة ولا تصوير مصنع.</p></div>
+     <div class="row aft"><div class="t"><span class="chipc">✓</span> الهوية الجديدة</div><p>سرد ريادة الكويت + المصنع (٦٤,٠٠٠م²، الروبوتات، الفرن) + خط زمني + شهادات الجودة والأرقام بإخراج سينمائي.</p></div>
+     <a class="live" href="lazord/02-about.html" target="_blank">افتح الشاشة الجديدة ↗</a>
+   </div>
+   <div class="frames">
+     <div class="col"><div class="tag old">قبل — niceramics.com</div><div class="frame old"><img class="scan" src="compare-old/about.png" alt="من نحن الحالية"></div></div>
+     <div class="col"><div class="tag new">بعد — NI Ceramics</div><div class="frame new"><img class="scan" src="lazord/shots/02-about.png" alt="من نحن الجديدة"></div></div>
+   </div>
+  </div>
+ </section>
+
+ <!-- 5 المشاريع -->
+ <section class="screen">
+  <div class="sticky">
+   <div class="info">
+     <div class="num">05 / 07</div>
+     <h2>المشاريع المرجعية</h2>
+     <div class="row b4"><div class="t"><span class="chipx">✕</span> الموقع الحالي</div><p>٤ مشاريع فقط من ٢٠٢١، صورة واحدة لكل مشروع، بلا دراسة حالة — أثر ضعيف على ثقة B2B.</p></div>
+     <div class="row aft"><div class="t"><span class="chipc">✓</span> الهوية الجديدة</div><p>دراسات حالة بصور كبيرة، فلترة (سكني/تجاري/ضيافة)، والمنتجات المستخدمة في كل مشروع.</p></div>
+     <a class="live" href="lazord/03-projects.html" target="_blank">افتح الشاشة الجديدة ↗</a>
+   </div>
+   <div class="frames">
+     <div class="col"><div class="tag old">قبل — niceramics.com</div><div class="frame old"><img class="scan" src="compare-old/projects.png" alt="مشاريع حالية"></div></div>
+     <div class="col"><div class="tag new">بعد — NI Ceramics</div><div class="frame new"><img class="scan" src="lazord/shots/03-projects.png" alt="مشاريع جديدة"></div></div>
+   </div>
+  </div>
+ </section>
+
+ <!-- 6 أداة AI (جديد كلياً) -->
+ <section class="screen">
+  <div class="sticky">
+   <div class="info">
+     <div class="num">06 / 07</div>
+     <span class="star">★ سلاح بيع جديد كلياً</span>
+     <h2>أداة التقدير بالذكاء الاصطناعي</h2>
+     <div class="row aft"><div class="t"><span class="chipc">✓</span> غير موجودة في الموقع الحالي</div><p>العميل يرفع مخطط بيته (PDF) → النظام يقرأ المساحات، يحسب الكميات، ويعطي تكلفة تقريبية فورية. المطبخ = جدار + أرضية؛ الغرفة = أرضية.</p></div>
+     <div class="row aft"><div class="t"><span class="chipc">✓</span> ميزة سبق على القطاع</div><p>تحوّل الزائر من «متصفّح» إلى عميل بتقدير جاهز وطلب عرض سعر — لا يملكها أيٌّ من الـ٨ الأوروبيين.</p></div>
+     <a class="live" href="lazord/06-ai-estimator.html" target="_blank">افتح الشاشة الجديدة ↗</a>
+   </div>
+   <div class="frames solo">
+     <div class="col"><div class="tag new">جديد — NI Ceramics</div><div class="frame new"><img class="scan" src="lazord/shots/06-ai-estimator.png" alt="أداة التقدير"></div></div>
+   </div>
+  </div>
+ </section>
+
+ <!-- 7 لوحة الإدارة (جديد كلياً) -->
+ <section class="screen">
+  <div class="sticky">
+   <div class="info">
+     <div class="num">07 / 07</div>
+     <span class="star">★ قوّة للإدارة</span>
+     <h2>لوحة المبيعات والإدارة</h2>
+     <div class="row aft"><div class="t"><span class="chipc">✓</span> غير موجودة في الموقع الحالي</div><p>عدد الزوّار + الدول الزائرة + أفضل منتج والأكثر مبيعاً + مناطق الشراء + متوسط قيمة المبيعات + حالة المخزون.</p></div>
+     <div class="row aft"><div class="t"><span class="chipc">✓</span> قرار مبني على بيانات</div><p>الشركة ترى «شلون كل شي صاير» لحظياً — رؤية لم تكن متاحة في الموقع الحالي إطلاقاً.</p></div>
+     <a class="live" href="lazord/08-dashboard.html" target="_blank">افتح الشاشة الجديدة ↗</a>
+   </div>
+   <div class="frames solo">
+     <div class="col"><div class="tag new">جديد — NI Ceramics</div><div class="frame new"><img class="scan" src="lazord/shots/08-dashboard.png" alt="لوحة الإدارة"></div></div>
+   </div>
+  </div>
+ </section>
+
+ <!-- SCORECARD -->
+ <section class="card">
+   <h2>الفجوة بالأرقام</h2>
+   <div class="csub">تقييم موقعكم الحالي مقابل هدف الهوية الجديدة — على معايير الفخامة الأوروبية الستة (من ١٠).</div>
+   <div class="axis"><div class="nm">الهوية البصرية</div><div class="bar"><div class="o" style="--o:30%"></div><div class="n" style="--n:80%"></div></div><div class="dl">٣ ← ٨</div></div>
+   <div class="axis"><div class="nm">تجربة المستخدم</div><div class="bar"><div class="o" style="--o:50%"></div><div class="n" style="--n:75%"></div></div><div class="dl">٥ ← ٧.٥</div></div>
+   <div class="axis"><div class="nm">عرض المنتجات</div><div class="bar"><div class="o" style="--o:40%"></div><div class="n" style="--n:80%"></div></div><div class="dl">٤ ← ٨</div></div>
+   <div class="axis"><div class="nm">محتوى العلامة</div><div class="bar"><div class="o" style="--o:30%"></div><div class="n" style="--n:80%"></div></div><div class="dl">٣ ← ٨</div></div>
+   <div class="axis"><div class="nm">أدوات المحترفين B2B</div><div class="bar"><div class="o" style="--o:30%"></div><div class="n" style="--n:80%"></div></div><div class="dl">٣ ← ٨</div></div>
+   <div class="axis"><div class="nm">الأداء التقني / SEO</div><div class="bar"><div class="o" style="--o:40%"></div><div class="n" style="--n:75%"></div></div><div class="dl">٤ ← ٧.٥</div></div>
+   <div class="legend"><span><span class="sw" style="background:#e0a0a0"></span> الموقع الحالي (٢٢/٦٠)</span><span><span class="sw" style="background:linear-gradient(90deg,#00508f,#a8853a)"></span> الهدف بالهوية الجديدة (٤٠+/٦٠)</span></div>
+ </section>
+
+ <!-- VALUE -->
+ <section class="value">
+   <h2>ماذا يكسب النظام والشركة</h2>
+   <div class="grid">
+     <div class="vc"><div class="ic">🤖</div><h3>قوّة للنظام · أداة AI</h3><p>تقدير تلقائي من مخطط PDF يحوّل الزوّار إلى عملاء — سلاح بيع فريد لا يملكه المنافسون.</p></div>
+     <div class="vc"><div class="ic">📊</div><h3>قوّة للنظام · لوحة إدارة</h3><p>تحليلات حيّة (زوّار/دول/مخزون/مبيعات) تعطي الإدارة قراراً مبنياً على بيانات.</p></div>
+     <div class="vc"><div class="ic">🧱</div><h3>قوّة للنظام · فصل الواجهة عن النواة</h3><p>نحتفظ بمحرّك التجارة القوي ونعيد بناء الطبقة الأمامية فوقه بأمان وبلا فقدان وظائف.</p></div>
+     <div class="vc"><div class="ic">💎</div><h3>قوّة للشركة · تموضع فاخر</h3><p>قفزة من «متجر مخفّضات» إلى مستوى Florim/Marazzi العالمي = تبرير سعري أعلى وعملاء معماريين.</p></div>
+     <div class="vc"><div class="ic">🌍</div><h3>قوّة للشركة · ريادة عربية</h3><p>عربي RTL فاخر كامل — واحد فقط من ٨ منافسين يدعم العربية = تموضع خليجي متفرّد.</p></div>
+     <div class="vc"><div class="ic">🏭</div><h3>قوّة للشركة · مصداقية الإرث</h3><p>سرد «أعرق وأكبر مصنع سيراميك بالكويت» (٦٤,٠٠٠م²) يُترجَم بصرياً إلى ثقة B2B.</p></div>
+   </div>
+ </section>
+
+ <!-- END -->
+ <section class="end">
+   <h2>المحرّك جاهز. ننتظر الواجهة.</h2>
+   <p>الهويّة معتمدة، والشاشات التسع جاهزة للعرض. الخطوة التالية: بناء الهوية المختارة فعلياً فوق المحرّك الحالي.</p>
+   <a class="big" href="present.html">استعرض الهويّات الثلاث ↗</a>
+   <div class="note">NI Ceramics · EST. KUWAIT — منصة الصناعات الوطنية للسيراميك</div>
+ </section>
+
+<script>
+ const prog=document.getElementById('prog');
+ const secs=[...document.querySelectorAll('.screen')];
+ const isMobile=()=>window.innerWidth<=860;
+ function shiftFor(img,frame){
+   if(!img.naturalWidth) return 0;
+   const rh=frame.clientWidth*(img.naturalHeight/img.naturalWidth);
+   return Math.max(0,rh-frame.clientHeight);
+ }
+ function layout(){
+   if(isMobile()){
+     secs.forEach(sec=>{sec.style.height='';sec.querySelectorAll('img.scan').forEach(i=>i.style.transform='none');});
+     onScroll();return;
+   }
+   secs.forEach(sec=>{
+     let maxShift=0;
+     sec.querySelectorAll('.frame').forEach(f=>{const img=f.querySelector('img.scan');const s=shiftFor(img,f);img.dataset.shift=s;maxShift=Math.max(maxShift,s);});
+     sec.dataset.maxshift=maxShift;
+     sec.style.height=(window.innerHeight+maxShift+window.innerHeight*0.4)+'px';
+   });
+   onScroll();
+ }
+ function onScroll(){
+   const h=document.documentElement;
+   prog.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100)+'%';
+   if(isMobile())return;
+   secs.forEach(sec=>{
+     const total=sec.offsetHeight-window.innerHeight;
+     let p=total>0?(-sec.getBoundingClientRect().top)/total:0;
+     p=Math.max(0,Math.min(1,p));
+     sec.querySelectorAll('img.scan').forEach(img=>{const s=+img.dataset.shift||0;img.style.transform='translateY('+(-s*p)+'px)';});
+   });
+ }
+ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')}),{threshold:.2});
+ secs.forEach(s=>io.observe(s));
+ window.addEventListener('scroll',onScroll,{passive:true});
+ window.addEventListener('resize',layout);
+ window.addEventListener('load',layout);
+ secs.forEach(sec=>sec.querySelectorAll('img.scan').forEach(img=>{if(img.complete)layout();else img.addEventListener('load',layout);}));
+ layout();
+</script>
+</body></html>
