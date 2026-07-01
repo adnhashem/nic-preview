@@ -3,9 +3,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NI Ceramics — العرض التقديمي</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=Questrial&display=swap" rel="stylesheet">
 <style>
- :root{--cobalt:#00508F;--gold:#a8853a;--ivory:#f6f4ee;--navy:#13283f;--slate:#3f5a78;--red:#b23b3b}
+ :root{
+   /* The Team brand palette */
+   --blue:#1E2C87;--orange:#DE7A0F;--purple:#A118A0;--green:#1C8B23;--gray:#9B9B9B;
+   /* roles (remap of the old deck vars → The Team) */
+   --cobalt:#2536a8;   /* primary/structural — brand blue (brightened for dark bg) */
+   --gold:#DE7A0F;     /* accent/highlight/CTA — brand orange */
+   --ivory:#f4f5fb;--navy:#0f1436;--slate:#7d82a6;--red:#c0453f}
  *{margin:0;padding:0;box-sizing:border-box}
  html,body{height:100%}
  body{font-family:'Rubik',sans-serif;background:var(--navy);color:var(--ivory);overflow:hidden}
@@ -25,8 +31,14 @@
  .slide li b{font-weight:600;color:#fff}
  .slide .big{color:var(--gold);font-weight:600}
  /* cover */
- .cover{background:radial-gradient(120% 90% at 50% 0%,#0e2236 0%,#13283f 45%,#0a1a2b 100%);text-align:center;align-items:center}
- .cover img.logo{height:44px;filter:brightness(0) invert(1);opacity:.92;margin-bottom:30px}
+ .cover{background:radial-gradient(120% 90% at 50% 0%,#1b2358 0%,#0f1436 52%,#090d26 100%);text-align:center;align-items:center}
+ #logoCover{margin-bottom:26px}
+ .logolock{display:inline-flex;align-items:center;gap:.5em;direction:ltr}
+ .tl-icons{height:2.35em;width:auto;display:block}
+ .tl-word{font-family:'Questrial',sans-serif;line-height:.92;letter-spacing:-.01em;color:var(--wc);text-align:left}
+ .tl-word b{display:block;font-weight:400;font-size:1.28em}
+ #logoCover .logolock{font-size:32px}
+ #logoTop .logolock{font-size:13px}
  .cover h1{margin-bottom:20px}
  .cover .en{letter-spacing:6px;text-transform:uppercase;font-size:13px;color:#9fb2c6;margin-top:8px}
  .cover .tag{margin-top:26px;color:#9fb2c6;font-size:15px}
@@ -63,7 +75,9 @@
  .livebtns a{background:linear-gradient(90deg,var(--cobalt),var(--gold));color:#fff;text-decoration:none;padding:13px 26px;border-radius:8px;font-weight:500;font-size:16px}
  .close .livebtns a{background:#0e2236;color:var(--gold)}
  /* chrome */
- .bar{position:fixed;top:0;right:0;height:4px;background:var(--gold);width:0;z-index:40;transition:width .3s}
+ .bar{position:fixed;top:0;right:0;height:4px;background:linear-gradient(90deg,var(--orange),var(--purple),var(--blue),var(--green));width:0;z-index:40;transition:width .3s}
+ .sig{position:fixed;top:0;left:0;right:0;height:4px;display:flex;z-index:39}
+ .sig i{flex:1}.sig i:nth-child(1){background:var(--orange)}.sig i:nth-child(2){background:var(--purple)}.sig i:nth-child(3){background:var(--blue)}.sig i:nth-child(4){background:var(--green)}
  .hud{position:fixed;bottom:18px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:16px;z-index:30;font-size:14px;color:#9fb2c6}
  .hud button{background:#ffffff14;border:1px solid #ffffff26;color:var(--ivory);width:44px;height:44px;border-radius:50%;font-size:20px;cursor:pointer;transition:.2s}
  .hud button:hover{background:var(--gold);color:#0e2236;border-color:var(--gold)}
@@ -82,19 +96,20 @@
  }
  @media print{.hud,.bar,.toplogo,.hint,.notes{display:none}}
 </style></head><body>
+ <div class="sig"><i></i><i></i><i></i><i></i></div>
  <div class="bar" id="bar"></div>
- <div class="toplogo"><img src="ni-logo.png" alt="NI Ceramics"></div>
+ <div class="toplogo"><span id="logoTop"></span></div>
  <div class="hint" id="hint">مسافة/→ للتالي · N للملاحظات · F ملء الشاشة</div>
 
  <div class="deck" id="deck">
 
   <!-- 0 COVER -->
   <section class="slide cover active" data-notes="ابدأ واثق وهادئ. لا تبدأ بالنقد. رسالتك: «عندكم محرّك قوي، جينا نبنيله واجهة تليق فيه». خذ نفس، ثم انتقل للشريحة الجاية.">
-    <img class="logo" src="ni-logo.png" alt="NI Ceramics">
+    <span id="logoCover"></span>
     <div class="kicker">عرض تقديمي · ٢٠٢٦</div>
     <h1>من إرثٍ عريق<br>إلى <span class="g">حضورٍ رقميٍّ عالمي</span></h1>
-    <div class="en">National Industries Ceramics</div>
     <div class="tag">منصّة الصناعات الوطنية للسيراميك — رؤية التحوّل الرقمي</div>
+    <div class="en" style="margin-top:22px">إعداد وتقديم: The Team · لصالح الصناعات الوطنية للسيراميك</div>
   </section>
 
   <!-- 1 HOOK -->
@@ -237,6 +252,27 @@
  </div>
 
 <script>
+ // ── The Team logo (recreated: SVG icons + Questrial wordmark; swap with official asset if available) ──
+ function teamLogo(word){const O='#DE7A0F',P='#A118A0',B='#1E2C87',G='#1C8B23';return `
+ <span class="logolock" style="--wc:${word}">
+  <svg class="tl-icons" viewBox="0 0 630 520" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="The Team">
+   <g stroke="${O}" stroke-width="15" stroke-linejoin="round" stroke-linecap="round">
+     <circle cx="85" cy="70" r="40"/><circle cx="195" cy="70" r="40"/>
+     <rect x="30" y="128" width="230" height="130" rx="6"/><path d="M262 150 L320 120 L320 266 L262 236 Z"/></g>
+   <g stroke="${P}" stroke-width="15" stroke-linejoin="round" stroke-linecap="round">
+     <rect x="470" y="30" width="86" height="150" rx="43"/><path d="M425 150 a88 78 0 0 0 176 0"/>
+     <line x1="513" y1="188" x2="513" y2="248"/><line x1="470" y1="250" x2="556" y2="250"/></g>
+   <g stroke="${B}" stroke-width="16" stroke-linejoin="round" stroke-linecap="round">
+     <rect x="30" y="300" width="240" height="165" rx="14"/><path d="M110 505 L150 468 L190 505"/></g>
+   <g stroke="${G}" stroke-width="15" stroke-linejoin="round" stroke-linecap="round">
+     <path d="M400 355 L440 355 L458 328 L560 328 L578 355 L620 355 L620 500 L400 500 Z"/>
+     <circle cx="510" cy="430" r="56"/><circle cx="510" cy="430" r="30"/></g>
+  </svg>
+  <span class="tl-word"><b>The</b><b>Team</b></span>
+ </span>`;}
+ { const t=document.getElementById('logoTop'), c=document.getElementById('logoCover');
+   if(t) t.innerHTML=teamLogo('#c9cce0'); if(c) c.innerHTML=teamLogo('#eef0f8'); }
+
  const slides=[...document.querySelectorAll('.slide')];
  const bar=document.getElementById('bar'),count=document.getElementById('count');
  const notes=document.getElementById('notes'),notesBody=document.getElementById('notesBody');
