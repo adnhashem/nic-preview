@@ -123,9 +123,15 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
 .shots figcaption{font-family:var(--display);font-size:12.5px;letter-spacing:.06em;color:var(--muted);display:flex;align-items:center;gap:7px}
 .dot{width:9px;height:9px;border-radius:99px;display:inline-block}
 .dot.light{background:#26241F}.dot.lazord{background:#00508F}
-.frame{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--panel);
-       flex:1;min-height:0;max-height:64dvh;display:block}
-.frame img{width:100%;height:100%;object-fit:cover;object-position:top center;display:block}
+.frame{border:1px solid var(--line);border-radius:12px;background:var(--panel);
+       overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;
+       max-height:66dvh;position:relative;scrollbar-width:thin}
+.frame img{width:100%;height:auto;display:block}
+.frame::-webkit-scrollbar{width:7px}
+.frame::-webkit-scrollbar-thumb{background:#10154033;border-radius:99px}
+.hint{font-family:var(--display);font-size:11px;letter-spacing:.04em;color:var(--muted);
+      display:flex;align-items:center;gap:5px;margin-top:2px}
+.hint b{font-weight:400;color:var(--gold)}
 
 /* ---- الختام ---- */
 .steps{display:flex;flex-direction:column;gap:14px;margin-top:4px}
@@ -186,16 +192,16 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
           <circle cx="510" cy="430" r="56"/><circle cx="510" cy="430" r="30"/></g>
       </svg><span class="tl-word">The<b>Team</b></span></span>
     <p class="eyebrow">Discovery · NI Ceramics</p>
-    <h1>أحد عشر سؤالاً<br><span class="g">وتصميمان ينتظران اختياركم</span></h1>
+    <h1>عشرة أسئلة<br><span class="g">وتصميمان ينتظران اختياركم</span></h1>
     <p class="lead">راجعنا ما ذكرتموه في اجتماعنا وفي وثيقة مواصفات الشاشات، واستخرجنا منه ما استطعنا. فأكثر ما في هذا العرض ليس سؤالاً جديداً — بل <b>تأكيدٌ لفهمنا عنكم</b>.</p>
-    <div class="cmeta"><span><b>القسم الأول:</b> ١١ سؤالاً</span><span><b>القسم الثاني:</b> ٩ شاشات × اتجاهان</span><span><b>المصدر:</b> اجتماعنا + مواصفات الشاشات</span></div>
+    <div class="cmeta"><span><b>القسم الأول:</b> ١٠ أسئلة</span><span><b>القسم الثاني:</b> ٩ شاشات × اتجاهان</span><span><b>المصدر:</b> اجتماعنا + مواصفات الشاشات</span></div>
   </div>
 </section>
 <section class="s divider" data-part="1">
   <div class="mid">
     <p class="dnum">القسم الأول</p>
-    <h2>الأسئلة الأحد عشر</h2>
-    <p class="lead">الموقع الإلكتروني (١–٧) · وبوابة الموظفين (٨–١٢).<br>لكل شريحة: <b>السؤال</b>، ثم <b>ما فهمناه منكم</b>، ثم <b>مقترحنا</b>. فأكثرها يحتاج منكم كلمةً واحدة: «نعم، هذا صحيح» — أو تصحيحاً إن أخطأنا الفهم.</p>
+    <h2>الأسئلة العشرة</h2>
+    <p class="lead">الموقع الإلكتروني (١–٧) · وبوابة الموظفين (٨–١٠).<br>لكل شريحة: <b>السؤال</b>، ثم <b>ما فهمناه منكم</b>، ثم <b>مقترحنا</b>. فأكثرها يحتاج منكم كلمةً واحدة: «نعم، هذا صحيح» — أو تصحيحاً إن أخطأنا الفهم.</p>
     <div class="warnbox"><b>ملاحظة على مصدرنا:</b> ما نسبناه إليكم مستخرَجٌ من تفريغٍ آلي لتسجيل الاجتماع، وهو غير دقيق حرفياً بطبيعته. فإن فهمنا شيئاً على غير وجهه، فالخطأ خطأ أداة التفريغ — <b>وتصحيحكم هو المرجع</b>.</div>
   </div>
 </section>
@@ -215,15 +221,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
       <p class="asknote">وإن كان لديكم سببٌ تجاري لإبقاء مسار الطلب بأسعاره، نسمعه <b>الآن قبل البناء</b> — فتغييره لاحقاً يعيد بناء الكتالوج وصفحة المنتج وأداة التقدير معاً.</p>
     </div>
     <div class="col side">
-      <div class="hbox">
-        <span class="cl">ما طرحناه نحن في الاجتماع <i class="chip">طرحناه نحن</i></span>
-        <p>ذكرنا لكم أننا نرى <b>إزالة مسار البيع الإلكتروني</b> من الموقع، واستبداله بثلاثة مسارات. وعلى هذا الاتجاه بُني التصميم المعروض عليكم بالفعل.</p>
-      </div>
+      
       <div class="pbox">
-        <span class="cl">مقترحنا</span>
-        <p><b>منصّة علامة بلا بيع مباشر:</b> لا أسعار ولا سلة. البديل «اطلب عرض سعر» و«اطلب عيّنة» و«أضف إلى تقدير الذكاء الاصطناعي». وهذا نهج كل المصانع العالمية الفاخرة تقريباً.</p>
+        <span class="cl">الإجابة</span>
+        <p><b>منصّة علامة بلا بيع مباشر:</b> لا أسعار معروضة ولا سلة شراء. والبديل ثلاثة مسارات — <b>«اطلب عرض سعر»</b> و<b>«اطلب عيّنة»</b> و<b>«أضف إلى تقدير الذكاء الاصطناعي»</b>. وهذا نهج كل المصانع العالمية الفاخرة تقريباً: مواقعها منصّات علامة ومواصفات وإلهام، لا متاجر. وعلى هذا الاتجاه بُني التصميم المعروض عليكم بالفعل.</p>
       </div>
-      <div class="why"><span class="wl">لماذا يهم</span><p>مسار الطلب بأسعار يحتاج ربطاً حيّاً صادقاً بالمخزون لحظةً بلحظة، وإلا وَعَد الموقع بما لا يُوفى به.</p></div>
+      
     </div>
   </div>
 </section>
@@ -243,10 +246,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
       
     </div>
     <div class="col side">
-      <div class="hbox">
-        <span class="cl">ما فهمناه منكم <i class="chip">الاجتماع</i></span>
-        <p>لا تريدون وضع أربعمئة موديل، بل مجموعة مختارة. والموقع الحالي يعرض بين مئتين وثلاثمئة بلا تصنيف ولا مقاسات.</p>
-      </div>
+      <div class="hbox"><span class="cl">ما فهمناه منكم <i class="chip">الاجتماع</i></span><p>لا تريدون وضع أربعمئة موديل، بل مجموعة مختارة. والموقع الحالي يعرض بين مئتين وثلاثمئة بلا تصنيف ولا مقاسات.</p></div>
       <div class="pbox">
         <span class="cl">مقترحنا</span>
         <p><b>ستون إلى مئة منتج</b> في الواجهة، والكتالوج الكامل خلف البحث والفلترة.</p>
@@ -271,15 +271,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
       
     </div>
     <div class="col side">
-      <div class="hbox">
-        <span class="cl">ما فهمناه منكم <i class="chip">الاجتماع</i></span>
-        <p>الصور هي المشكلة، وصور الهاتف كميتها غير كافية، و<b>المصنع يستطيع التصوير</b>.</p>
-      </div>
+      <div class="hbox"><span class="cl">ما فهمناه منكم <i class="chip">الاجتماع</i></span><p>الصور هي المشكلة، وصور الهاتف كميتها غير كافية، و<b>المصنع يستطيع التصوير</b>.</p></div>
       <div class="pbox">
         <span class="cl">مقترحنا</span>
         <p>التصوير من طرفكم، ونحدّد معاً موعد الدفعة الأولى ونربطه بجدول الإطلاق.</p>
       </div>
-      <div class="why"><span class="wl">لماذا يهم</span><p>موقع فاخر بصور ضعيفة يسقط بصرياً مهما كان التصميم — وهذا أحد أسباب سقوط الموقع الحالي في التقييم.</p></div>
+      
     </div>
   </div>
 </section>
@@ -299,15 +296,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
       <div class="obox"><h4>الطبقة الأولى — واقع بياناتكم</h4><p class="osub">على أي مستوى يُسجَّل المخزون عندكم اليوم؟</p><ul><li><b>(أ)</b> لكل تركيبة كاملة — درجة × تدرّج × مقاس معاير، بكمية مستقلة</li><li><b>(ب)</b> على مستوى كود المنتج فقط</li><li><b>(ج)</b> شيء بينهما — نرجو وصفه</li></ul></div><div class="obox"><h4>الطبقة الثانية — ما يراه الزائر</h4><p class="osub">بناءً على ما سبق، ماذا نعرض في صفحة المنتج؟</p><ul><li><b>(١)</b> المواصفة فقط + تنبيه «قد تختلف الدفعات»</li><li><b>(٢)</b> المواصفة + مدى توفّر كل تركيبة</li><li><b>(٣)</b> المواصفة + التوفّر + رقم الدفعة الحالية</li></ul></div>
     </div>
     <div class="col side">
-      <div class="hbox">
-        <span class="cl">ما فهمناه منكم <i class="chip">الاجتماع + المواصفات</i></span>
-        <p>المنتج الواحد شبكة تركيبات: درجات (أ/ب/ج) × ٤–٥ تدرّجات لونية × ٥ مقاسات معايرة — أي عشرات التركيبات لكود واحد. <b>والألم:</b> العميل يعود ليكمل طلبه فيحصل على دفعة بلون مختلف.</p>
-      </div>
+      <div class="hbox"><span class="cl">ما فهمناه منكم <i class="chip">الاجتماع + المواصفات</i></span><p>المنتج الواحد شبكة تركيبات: درجات (أ/ب/ج) × ٤–٥ تدرّجات لونية × ٥ مقاسات معايرة — أي عشرات التركيبات لكود واحد. <b>والألم:</b> العميل يعود ليكمل طلبه فيحصل على دفعة بلون مختلف.</p></div>
       <div class="pbox">
         <span class="cl">مقترحنا</span>
         <p>حتى يصلنا الجواب نبني على <b>الحد الآمن</b> — المواصفة الفنية مع تنبيه اختلاف الدفعات — ونترك في البنية مكاناً لإضافة التوفّر لاحقاً بلا إعادة بناء.</p>
       </div>
-      <div class="why"><span class="wl">لماذا يهم</span><p>إن كان الجواب (ب) فالخياران (٢) و(٣) <b>وعدٌ مستحيل</b>. والفرق ليس في التصميم بل في <b>ما تستطيع الشركة أن تَعِد به علناً</b>.</p></div>
+      
     </div>
   </div>
 </section>
@@ -327,10 +321,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
       
     </div>
     <div class="col side">
-      <div class="hbox">
-        <span class="cl">ما فهمناه منكم <i class="chip">المواصفات</i></span>
-        <p>عربي أساساً مع دعم إنجليزي.</p>
-      </div>
+      <div class="hbox"><span class="cl">ما فهمناه منكم <i class="chip">المواصفات</i></span><p>عربي أساساً مع دعم إنجليزي.</p></div>
       <div class="pbox">
         <span class="cl">مقترحنا</span>
         <p>العربية هي الأصل، و<b>الإنجليزية متوفّرة كاملةً</b> في الإطلاق نفسه.</p>
@@ -355,15 +346,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
       
     </div>
     <div class="col side">
-      <div class="hbox">
-        <span class="cl">ما فهمناه منكم <i class="chip">المواصفات</i></span>
-        <p>الأداة تعطي <b>تكلفة تقريبية</b> بطريقة بسيطة وواضحة.</p>
-      </div>
+      <div class="hbox"><span class="cl">ما فهمناه منكم <i class="chip">المواصفات</i></span><p>الأداة تعطي <b>تكلفة تقريبية</b> بطريقة بسيطة وواضحة.</p></div>
       <div class="pbox">
         <span class="cl">مقترحنا</span>
         <p>الرقم يخرج <b>ضمن نموذج حساب تكلفة يراه العميل</b> — لا رقماً مجرّداً — ويُوسم دائماً بأنه <b>تقدير غير مُلزِم</b> لا يصير عرضاً رسمياً إلا بعد مراجعة المبيعات.</p>
       </div>
-      <div class="why"><span class="wl">لماذا يهم</span><p>هذا ما يحمي الشركة: فحتى لو أخطأ التقدير في حالة نادرة، لا يتحول الخطأ إلى التزام مالي عليكم.</p></div>
+      
     </div>
   </div>
 </section>
@@ -383,10 +371,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
       <div class="obox"><ul><li><b>(أ)</b> الحساب كاملاً في الإطلاق الأول</li><li><b>(ب)</b> نبدأ بالتقديرات وطلبات الأسعار وحالتها فقط، ويُضاف الباقي بعد الإطلاق</li></ul></div>
     </div>
     <div class="col side">
-      <div class="hbox">
-        <span class="cl">ما فهمناه منكم <i class="chip">المواصفات</i></span>
-        <p>تقديراته المحفوظة، وطلبات عروض الأسعار وحالتها، ومشاريعه ومنتجاته المحفوظة وعيّناته.</p>
-      </div>
+      <div class="hbox"><span class="cl">ما فهمناه منكم <i class="chip">المواصفات</i></span><p>تقديراته المحفوظة، وطلبات عروض الأسعار وحالتها، ومشاريعه ومنتجاته المحفوظة وعيّناته.</p></div>
       <div class="pbox">
         <span class="cl">مقترحنا</span>
         <p>نرجّح (ب) للإطلاق الأول — يختصر الزمن ويُبقي الباقي جاهزاً للإضافة.</p>
@@ -399,27 +384,24 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
   <div class="qhead">
     <span class="qn">٠٨</span>
     <div class="qt">
-      <span class="tag">بوابة الموظفين</span><span class="star">أهم سؤال</span>
+      <span class="tag">بوابة الموظفين</span>
       <h3>النظام القائم وبياناته</h3>
-      
+      <p class="kick">ما مصيره؟</p>
     </div>
   </div>
   <div class="qbody">
     <div class="col ask">
       <span class="cl">السؤال</span>
-      <p class="askq">ثلاثة أسئلة:</p>
-      <div class="obox"><ul><li>١. نؤكد أننا نعتمد على بيانات النظام القائم ونبني الواجهة الجديدة فوقها؟</li><li>٢. أي البيانات تريدون الاحتفاظ بها — منتجات؟ مخزون؟ عملاء؟ طلبات سابقة؟</li><li>٣. من يفتح لنا الوصول إليها؟</li></ul></div>
+      <p class="askq">نبني على النظام القائم ونطوّر واجهته — ولا نستبدله. نعتمد هذا؟</p>
+      
     </div>
     <div class="col side">
-      <div class="hbox">
-        <span class="cl">ما فهمناه منكم <i class="chip">الاجتماع</i></span>
-        <p>الاتجاه أن نُبقي النظام القائم ببياناته، ونطوّر عليه <b>واجهة جديدة</b> — لا أن نستبدله.</p>
-      </div>
+      
       <div class="pbox">
-        <span class="cl">مقترحنا</span>
-        <p>نعتمد بياناته ونبني الواجهة فوقها. ونحدّد معاً ما يُحتفظ به وما يُستغنى عنه.</p>
+        <span class="cl">الإجابة</span>
+        <p><b>نبني عليه، ولا نستبدله.</b> النظام القائم من بنائنا، وبياناته محفوظة لدينا ويمكن الرجوع إليها في أي وقت — فلا هجرة بيانات ولا انقطاع في العمل.<br><br>والذي يتغيّر هو <b>الواجهة</b>: نطوّر واجهة جديدة فوق البيانات نفسها، ونعدّل بداخله ما يحتاج تعديلاً — نحذف ما لم يعد يُستخدم، ونطوّر ما تحتاجونه.</p>
       </div>
-      <div class="why"><span class="wl">لماذا يهم</span><p>حالة البيانات تحدّد مدة العمل. وإن احتاجت تنظيفاً فذلك <b>بندٌ مستقل بوقته وكلفته</b> — لا يُفترض صامتاً.</p></div>
+      
     </div>
   </div>
 </section>
@@ -439,15 +421,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
       
     </div>
     <div class="col side">
-      <div class="hbox">
-        <span class="cl">ما فهمناه منكم <i class="chip">لم يُذكر</i></span>
-        <p>لم تُحدَّد أدوار في أي جلسة — نحتاج جوابكم من الصفر.</p>
-      </div>
+      <div class="hbox"><span class="cl">ما فهمناه منكم <i class="chip">لم يُذكر</i></span><p>لم تُحدَّد أدوار في أي جلسة — نحتاج جوابكم من الصفر.</p></div>
       <div class="pbox">
         <span class="cl">مقترحنا</span>
         <p>أربعة أدوار: <b>مبيعات</b> · <b>مخزون</b> · <b>مسؤول محتوى</b> · <b>مدير يرى كل شيء</b>.</p>
       </div>
-      <div class="why"><span class="wl">لماذا يهم</span><p>الصلاحيات تُبنى في الأساس ولا تُضاف لاحقاً بلا إعادة بناء.</p></div>
+      
     </div>
   </div>
 </section>
@@ -467,43 +446,12 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
       
     </div>
     <div class="col side">
-      <div class="hbox">
-        <span class="cl">ما فهمناه منكم <i class="chip">المواصفات</i></span>
-        <p>عدد الزوّار · الزوّار حسب الدولة · أفضل منتج · الأكثر مبيعاً · مناطق الشراء · متوسط قيمة المبيعات · المتوفر والنافد.</p>
-      </div>
+      <div class="hbox"><span class="cl">ما فهمناه منكم <i class="chip">المواصفات</i></span><p>عدد الزوّار · الزوّار حسب الدولة · أفضل منتج · الأكثر مبيعاً · مناطق الشراء · متوسط قيمة المبيعات · المتوفر والنافد.</p></div>
       <div class="pbox">
         <span class="cl">مقترحنا</span>
         <p>نبدأ بـ<b>أربعة مؤشرات</b> تغيّر قراراً فعلياً، ويُضاف الباقي بعد ثبوت الاستخدام.</p>
       </div>
       <div class="why"><span class="wl">لماذا يهم</span><p>لوحة بعشرين مؤشراً لا يُنظر إليها؛ ولوحة بأربعة تُفتح يومياً.</p></div>
-    </div>
-  </div>
-</section>
-<section class="s q" data-part="1">
-  <div class="qhead">
-    <span class="qn">١١</span>
-    <div class="qt">
-      <span class="tag">بوابة الموظفين</span>
-      <h3>الموافقات — أي موافقة هي المؤلمة؟</h3>
-      <p class="kick">فصلٌ يوفّر شهوراً</p>
-    </div>
-  </div>
-  <div class="qbody">
-    <div class="col ask">
-      <span class="cl">السؤال</span>
-      <p class="askq">أي الموافقتين هي المؤلمة فعلاً؟</p>
-      <div class="obox"><ul><li><b>(أ) موافقة نشر محتوى</b> — نصّ أو صورة تنتظر اعتماداً قبل النزول &nbsp;<span class='pill in'>داخل النطاق</span></li><li><b>(ب) إدارة مهام الشركة</b> — توزيع المهام على الفرق ومتابعتها &nbsp;<span class='pill out'>خارج النطاق</span></li></ul></div>
-    </div>
-    <div class="col side">
-      <div class="hbox">
-        <span class="cl">ما فهمناه منكم <i class="chip">الاجتماع</i></span>
-        <p>العمل يمشي عبر مجموعات المحادثة · المهام لا تُوزَّع على الفريق بنظام · والمتابعة تحتاج ملاحقة بالهاتف.</p>
-      </div>
-      <div class="pbox">
-        <span class="cl">مقترحنا</span>
-        <p>إن كانت المؤلمة <b>(أ)</b> نبنيها ضمن المشروع بلا زيادة تُذكر. أما <b>(ب)</b> فنرصدها مشروعاً مستقلاً بتقديره الخاص.</p>
-      </div>
-      <div class="why"><span class="wl">لماذا يهم</span><p>خلط النوعين يحوّل منصّة علامة إلى نظام إداري — فيضاعف المدة والكلفة بلا أن يحلّ ما يؤلمكم.</p></div>
     </div>
   </div>
 </section>
@@ -529,6 +477,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
     <figure><figcaption><span class="dot lazord"></span>الاتجاه الثاني</figcaption>
       <div class="frame"><img loading="lazy" src="lazord/shots/01-landing.png" alt="الصفحة الرئيسية — الاتجاه الثاني"></div></figure>
   </div>
+  <p class="hint"><b>↕</b> الصفحة أطول من الإطار — مرّر بداخله لرؤيتها كاملة، والإطاران يتحرّكان معاً.</p>
 </section>
 <section class="s scr" data-part="2">
   <div class="shead">
@@ -541,6 +490,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
     <figure><figcaption><span class="dot lazord"></span>الاتجاه الثاني</figcaption>
       <div class="frame"><img loading="lazy" src="lazord/shots/02-about.png" alt="من نحن — الاتجاه الثاني"></div></figure>
   </div>
+  <p class="hint"><b>↕</b> الصفحة أطول من الإطار — مرّر بداخله لرؤيتها كاملة، والإطاران يتحرّكان معاً.</p>
 </section>
 <section class="s scr" data-part="2">
   <div class="shead">
@@ -553,6 +503,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
     <figure><figcaption><span class="dot lazord"></span>الاتجاه الثاني</figcaption>
       <div class="frame"><img loading="lazy" src="lazord/shots/03-projects.png" alt="المشاريع — الاتجاه الثاني"></div></figure>
   </div>
+  <p class="hint"><b>↕</b> الصفحة أطول من الإطار — مرّر بداخله لرؤيتها كاملة، والإطاران يتحرّكان معاً.</p>
 </section>
 <section class="s scr" data-part="2">
   <div class="shead">
@@ -565,6 +516,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
     <figure><figcaption><span class="dot lazord"></span>الاتجاه الثاني</figcaption>
       <div class="frame"><img loading="lazy" src="lazord/shots/04-catalog.png" alt="الكتالوج — الاتجاه الثاني"></div></figure>
   </div>
+  <p class="hint"><b>↕</b> الصفحة أطول من الإطار — مرّر بداخله لرؤيتها كاملة، والإطاران يتحرّكان معاً.</p>
 </section>
 <section class="s scr" data-part="2">
   <div class="shead">
@@ -577,6 +529,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
     <figure><figcaption><span class="dot lazord"></span>الاتجاه الثاني</figcaption>
       <div class="frame"><img loading="lazy" src="lazord/shots/05-product.png" alt="تفاصيل المنتج — الاتجاه الثاني"></div></figure>
   </div>
+  <p class="hint"><b>↕</b> الصفحة أطول من الإطار — مرّر بداخله لرؤيتها كاملة، والإطاران يتحرّكان معاً.</p>
 </section>
 <section class="s scr" data-part="2">
   <div class="shead">
@@ -589,6 +542,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
     <figure><figcaption><span class="dot lazord"></span>الاتجاه الثاني</figcaption>
       <div class="frame"><img loading="lazy" src="lazord/shots/06-ai-estimator.png" alt="أداة الذكاء الاصطناعي — الاتجاه الثاني"></div></figure>
   </div>
+  <p class="hint"><b>↕</b> الصفحة أطول من الإطار — مرّر بداخله لرؤيتها كاملة، والإطاران يتحرّكان معاً.</p>
 </section>
 <section class="s scr" data-part="2">
   <div class="shead">
@@ -601,6 +555,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
     <figure><figcaption><span class="dot lazord"></span>الاتجاه الثاني</figcaption>
       <div class="frame"><img loading="lazy" src="lazord/shots/07-client.png" alt="حساب العميل — الاتجاه الثاني"></div></figure>
   </div>
+  
 </section>
 <section class="s scr" data-part="2">
   <div class="shead">
@@ -613,6 +568,7 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
     <figure><figcaption><span class="dot lazord"></span>الاتجاه الثاني</figcaption>
       <div class="frame"><img loading="lazy" src="lazord/shots/08-dashboard.png" alt="لوحة الإدارة — الاتجاه الثاني"></div></figure>
   </div>
+  
 </section>
 <section class="s scr" data-part="2">
   <div class="shead">
@@ -625,13 +581,14 @@ body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17
     <figure><figcaption><span class="dot lazord"></span>الاتجاه الثاني</figcaption>
       <div class="frame"><img loading="lazy" src="lazord/shots/09-inventory.png" alt="المخزون — الاتجاه الثاني"></div></figure>
   </div>
+  
 </section>
 <section class="s divider end" data-part="2">
   <div class="mid">
     <p class="dnum">الخطوة التالية</p>
     <h2>ثلاثة قرارات</h2>
     <div class="steps">
-      <div class="st"><span class="sn">١</span><div><h4>أجوبتكم على الأحد عشر</h4><p>وأهمّها <b>٤</b> (تفصيل تسجيل المخزون) و<b>٨</b> (بيانات النظام القائم) — وهما وحدهما ما يعطّل العمل إن تأخّرا.</p></div></div>
+      <div class="st"><span class="sn">١</span><div><h4>أجوبتكم على العشرة</h4><p>وأهمّها <b>٤</b> (تفصيل تسجيل المخزون) و<b>٨</b> (بيانات النظام القائم) — وهما وحدهما ما يعطّل العمل إن تأخّرا.</p></div></div>
       <div class="st"><span class="sn">٢</span><div><h4>اختيار اتجاهٍ بصريٍّ واحد</h4><p>الاتجاه الأول أو الثاني — ويُبنى عليه كل ما بعده.</p></div></div>
       <div class="st"><span class="sn">٣</span><div><h4>وثيقة المتطلبات</h4><p>تُصاغ على أجوبتكم، وما لم تُجيبوا عنه يُوثَّق <b>كافتراض معلَّم لا كحقيقة</b>. ثم يبدأ البناء.</p></div></div>
     </div>
@@ -688,6 +645,16 @@ addEventListener('keydown',e=>{
   if(k==='Home'){e.preventDefault();go(0);} if(k==='End'){e.preventDefault();go(S.length-1);}
 });
 sync();
+document.querySelectorAll('.scr').forEach(s=>{
+  const fr=[...s.querySelectorAll('.frame')]; if(fr.length<2) return;
+  let lock=false;
+  fr.forEach((f,i)=>f.addEventListener('scroll',()=>{
+    if(lock) return; lock=true;
+    const d=f.scrollHeight-f.clientHeight, r=d>0? f.scrollTop/d : 0;
+    fr.forEach((g,j)=>{ if(j!==i){ const gd=g.scrollHeight-g.clientHeight; if(gd>0) g.scrollTop=r*gd; } });
+    requestAnimationFrame(()=>{lock=false;});
+  },{passive:true}));
+});
 </script>
 </body>
 </html>
