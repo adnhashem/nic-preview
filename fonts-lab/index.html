@@ -5,9 +5,8 @@
 :root{--bg:#f4f1ea;--fg:#26241f;--muted:#8a8473;--line:#d8d0c0;--card:#fbf9f6}
 *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--fg);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.75}
 .wrap{max-width:1080px;margin:0 auto;padding:28px 20px 60px}
-header{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:24px;display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+header{border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:24px}
 h1{font-size:24px;margin:0 0 6px;font-weight:600} header p{margin:0;color:var(--muted);max-width:62ch;font-size:14px}
-.lab{display:inline-block;border:1px solid var(--fg);padding:8px 16px;color:var(--fg);text-decoration:none;font-size:14px;white-space:nowrap}
 .toc{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 26px;padding:0;list-style:none;font-size:13px}
 .toc a{color:var(--fg);text-decoration:none;border:1px solid var(--line);border-radius:999px;padding:3px 12px;background:var(--card)}
 figure{margin:0 0 40px;border:1px solid var(--line);background:var(--card)}
@@ -17,35 +16,20 @@ figcaption{padding:16px 20px 12px} figcaption h2{font-size:18px;margin:0 0 2px;f
 figure img{display:block;width:100%;height:auto;border-top:1px solid var(--line)}
 footer{color:var(--muted);font-size:13px;border-top:1px solid var(--line);padding-top:14px;max-width:80ch}
 </style></head><body><div class="wrap">
-<header>
-  <div><h1>مختبر خطوط NI Ceramics</h1><p>ستّ عيّنات للخط العربي على نصوص الموقع والبوابة الفعلية: الأولى هي الحالية للمقارنة، والخمس بعدها بدائل مقترحة. كل صورة تعرض الشريط العلوي والعنوان الرئيسي والمتن والأزرار وقسم أداة التقدير، ثم جدولاً من البوابة الداكنة.</p></div>
-  <a class="lab" href="lab.html">النسخة التفاعلية: ركّب زوجك بنفسك</a>
-</header>
-<ul class="toc"><li><a href="#current">٠ · الحالي</a></li><li><a href="#unify">١ · توحيد الهوية (الموصى به)</a></li><li><a href="#kufi">٢ · كوفي هادئ</a></li><li><a href="#modern">٣ · معاصر مادّي</a></li><li><a href="#single">٤ · عائلة واحدة</a></li><li><a href="#portal">٥ · المصنع الحديث</a></li></ul>
-<figure id="current">
-  <figcaption><h2>٠ · الحالي</h2><p class="pair">Markazi Text 400 · Tajawal 400 · Cormorant Garamond</p><p class="why">نسخ كتابي في العناوين وهندسي شائع في المتن؛ للمقارنة فقط.</p></figcaption>
-  <a href="img/sample-current.png"><img src="img/sample-current.png" alt="عيّنة ٠ · الحالي" loading="lazy" width="1280" height="1024"></a>
-</figure>
-<figure id="unify">
-  <figcaption><h2>١ · توحيد الهوية (الموصى به)</h2><p class="pair">El Messiri 600 · HONOR Sans Arabic 400 · El Messiri</p><p class="why">زوج ملف التقدير PDF والوثائق نفسه، فيصير للعلامة صوت واحد من الموقع إلى الورقة.</p></figcaption>
-  <a href="img/sample-unify.png"><img src="img/sample-unify.png" alt="عيّنة ١ · توحيد الهوية (الموصى به)" loading="lazy" width="1280" height="1024"></a>
-</figure>
-<figure id="kufi">
-  <figcaption><h2>٢ · كوفي هادئ</h2><p class="pair">Reem Kufi 500 · Almarai 400 · Cormorant Garamond</p><p class="why">هندسة الكوفي تحاكي شبكة البلاط؛ لغة الفخامة الخليجية الهادئة.</p></figcaption>
-  <a href="img/sample-kufi.png"><img src="img/sample-kufi.png" alt="عيّنة ٢ · كوفي هادئ" loading="lazy" width="1280" height="1024"></a>
-</figure>
+<header><h1>مختبر خطوط NI Ceramics</h1><p>ثلاثة خيارات للخط العربي على نصوص الموقع والبوابة الفعلية. كل صورة تعرض الشريط العلوي والعنوان الرئيسي والمتن والأزرار وقسم أداة التقدير، ثم جدولاً من البوابة الداكنة.</p></header>
+<ul class="toc"><li><a href="#modern">١ · معاصر مادّي</a></li><li><a href="#tajarib">٢ · تجارب</a></li><li><a href="#honor">٣ · HONOR</a></li></ul>
 <figure id="modern">
-  <figcaption><h2>٣ · معاصر مادّي</h2><p class="pair">Kufam 500 · Beiruti 400 · Kufam</p><p class="why">زوج غير مستهلك، أبعد ما يكون عن القوالب الجاهزة.</p></figcaption>
-  <a href="img/sample-modern.png"><img src="img/sample-modern.png" alt="عيّنة ٣ · معاصر مادّي" loading="lazy" width="1280" height="1024"></a>
+  <figcaption><h2>١ · معاصر مادّي</h2><p class="pair">Kufam 500 · Beiruti 400 · Kufam</p><p class="why">Kufam كوفي حديث يحمل لاتينياً متناغماً، وBeiruti إنساني الملامح للقراءة الطويلة.</p></figcaption>
+  <a href="img/sample-modern.png"><img src="img/sample-modern.png" alt="عيّنة ١ · معاصر مادّي" loading="lazy" width="1280" height="1024"></a>
 </figure>
-<figure id="single">
-  <figcaption><h2>٤ · عائلة واحدة</h2><p class="pair">Fustat 300 للعناوين · Fustat 400 للمتن · Cormorant Garamond</p><p class="why">ملف متغيّر واحد؛ عنوان كبير خفيف الوزن هو حركة الفخامة الهادئة.</p></figcaption>
-  <a href="img/sample-single.png"><img src="img/sample-single.png" alt="عيّنة ٤ · عائلة واحدة" loading="lazy" width="1280" height="1024"></a>
+<figure id="tajarib">
+  <figcaption><h2>٢ · تجارب</h2><p class="pair">Tajarib 500 · Tajarib 400 · Tajarib</p><p class="why">عائلة واحدة بخمسة أوزان ولاتيني وأرقام خاصة بها، تغطّي العنوان والمتن والأرقام.</p></figcaption>
+  <a href="img/sample-tajarib.png"><img src="img/sample-tajarib.png" alt="عيّنة ٢ · تجارب" loading="lazy" width="1280" height="1024"></a>
 </figure>
-<figure id="portal">
-  <figcaption><h2>٥ · المصنع الحديث</h2><p class="pair">Noto Kufi Arabic 300 · IBM Plex Sans Arabic 400 · Cormorant Garamond</p><p class="why">تقني أكثر؛ يخدم كثافة جداول بوابة الموظفين أكثر من الموقع العام.</p></figcaption>
-  <a href="img/sample-portal.png"><img src="img/sample-portal.png" alt="عيّنة ٥ · المصنع الحديث" loading="lazy" width="1280" height="1024"></a>
+<figure id="honor">
+  <figcaption><h2>٣ · HONOR</h2><p class="pair">HONOR Sans Arabic 600 · HONOR Sans Arabic 400 · El Messiri</p><p class="why">خط ملف التقدير PDF ووثائق المشروع نفسه؛ الأرقام واللاتيني بـEl Messiri.</p></figcaption>
+  <a href="img/sample-honor.png"><img src="img/sample-honor.png" alt="عيّنة ٣ · HONOR" loading="lazy" width="1280" height="1024"></a>
 </figure>
-<figure id="all"><figcaption><h2>الستّ متتالية في صورة واحدة</h2><p class="why">للمقارنة السريعة بالتمرير.</p></figcaption><a href="img/nic-font-samples-all.png"><img src="img/nic-font-samples-all.png" alt="الاقتراحات الستّة متتالية" loading="lazy" width="1280" height="6315"></a></figure>
+<figure id="all"><figcaption><h2>الثلاثة متتالية في صورة واحدة</h2><p class="why">للمقارنة السريعة بالتمرير.</p></figcaption><a href="img/nic-font-samples-all.png"><img src="img/nic-font-samples-all.png" alt="الخيارات الثلاثة متتالية" loading="lazy" width="1280" height="3161"></a></figure>
 <footer>اضغط أي صورة لفتحها بحجمها الكامل. الأرقام والتقديرات في الجداول بيانات توضيحية.</footer>
 </div></body></html>
